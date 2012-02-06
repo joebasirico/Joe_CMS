@@ -6,6 +6,9 @@
 *.zip
 .cache
 
+#max stuff
+.DS_Store
+
 Libraries/
 
 
