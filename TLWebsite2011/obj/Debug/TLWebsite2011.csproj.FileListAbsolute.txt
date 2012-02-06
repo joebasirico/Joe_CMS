@@ -1,0 +1,15 @@
+C:\Users\joe\Dropbox\Technically Learning\TLWebsite2011\TLWebsite2011\bin\TLWebsite2011.dll
+C:\Users\joe\Dropbox\Technically Learning\TLWebsite2011\TLWebsite2011\bin\TLWebsite2011.pdb
+C:\Users\joe\Dropbox\Technically Learning\TLWebsite2011\TLWebsite2011\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\joe\Dropbox\Technically Learning\TLWebsite2011\TLWebsite2011\obj\Debug\TLWebsite2011.dll
+C:\Users\joe\Dropbox\Technically Learning\TLWebsite2011\TLWebsite2011\obj\Debug\TLWebsite2011.pdb
+\\vmware-host\Shared Folders\moertle On My Mac\Dropbox\Technically Learning\TLWebsite2011\TLWebsite2011\bin\TLWebsite2011.dll
+\\vmware-host\Shared Folders\moertle On My Mac\Dropbox\Technically Learning\TLWebsite2011\TLWebsite2011\bin\TLWebsite2011.pdb
+\\vmware-host\Shared Folders\moertle On My Mac\Dropbox\Technically Learning\TLWebsite2011\TLWebsite2011\obj\Debug\ResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\moertle On My Mac\Dropbox\Technically Learning\TLWebsite2011\TLWebsite2011\obj\Debug\TLWebsite2011.dll
+\\vmware-host\Shared Folders\moertle On My Mac\Dropbox\Technically Learning\TLWebsite2011\TLWebsite2011\obj\Debug\TLWebsite2011.pdb
+\\vmware-host\Shared Folders\jbasirico\Dropbox\Technically Learning\TL_CMS\TLWebsite2011\bin\TLWebsite2011.dll
+\\vmware-host\Shared Folders\jbasirico\Dropbox\Technically Learning\TL_CMS\TLWebsite2011\bin\TLWebsite2011.pdb
+\\vmware-host\Shared Folders\jbasirico\Dropbox\Technically Learning\TL_CMS\TLWebsite2011\obj\Debug\ResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\jbasirico\Dropbox\Technically Learning\TL_CMS\TLWebsite2011\obj\Debug\TLWebsite2011.dll
+\\vmware-host\Shared Folders\jbasirico\Dropbox\Technically Learning\TL_CMS\TLWebsite2011\obj\Debug\TLWebsite2011.pdb
