@@ -13,6 +13,15 @@ namespace TLWebsite2011 {
     public partial class MasterPage {
         
         /// <summary>
+        /// MasterStyleSheet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal MasterStyleSheet;
+        
+        /// <summary>
         /// head control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace TLWebsite2011 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        
+        /// <summary>
+        /// MasterHeader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal MasterHeader;
         
         /// <summary>
         /// form1 control.
@@ -31,6 +49,15 @@ namespace TLWebsite2011 {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// MasterPreBody control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal MasterPreBody;
+        
+        /// <summary>
         /// ContentPlaceHolder1 control.
         /// </summary>
         /// <remarks>
@@ -40,12 +67,12 @@ namespace TLWebsite2011 {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
         
         /// <summary>
-        /// loginlogout control.
+        /// MasterPostBody control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label loginlogout;
+        protected global::System.Web.UI.WebControls.Literal MasterPostBody;
     }
 }
