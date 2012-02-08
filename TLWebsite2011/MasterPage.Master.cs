@@ -32,7 +32,10 @@ namespace TLWebsite2011
 			}
 
             MasterHeader.Text = SettingsIO.GetSetting("MasterHeader");
-            MasterStyleSheet.Text = String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" />", SettingsIO.GetSetting("MasterStyleSheet"));
+            if (!string.IsNullOrEmpty(SettingsIO.GetSetting("MasterStyleSheet")))
+                MasterStyleSheet.Text = String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" />", SettingsIO.GetSetting("MasterStyleSheet"));
+            else
+                MasterStyleSheet.Text = String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" />", SettingsIO.GetSetting("DefaultStyleSheet"));
             MasterPreBody.Text = SettingsIO.GetSetting("MasterPreBody");
             MasterPostBody.Text = String.Format(SettingsIO.GetSetting("MasterPostBody"), loginText);
         }

@@ -9,68 +9,153 @@ using TLWebsite2011.Properties;
 
 namespace TLWebsite2011
 {
-	public partial class Default : System.Web.UI.Page
-	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
-			PopulatePage(Settings.Default.NewsCountFront);
+    public partial class Default : BasePage
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            base.Page_Load(sender, e);
+            pageName = "Default";
+            contentDescription = "News Items";
+            Page.Title = Settings.Default.SiteName;
 
-			Guid session = new Guid();
-            string loginText = "";
-			if (Request.Cookies["session"] != null && !string.IsNullOrEmpty(Request.Cookies["session"].Value) && Guid.TryParse(Request.Cookies["session"].Value, out session))
-			{
-				int userID = Auth.checkSession(session);
-				string username = Auth.LookupUserName(userID);
-				if (!string.IsNullOrEmpty(username))
-				{
-                    loginText = "You are currently logged in as: " + username + " <a href=\"/Logout.aspx\">click here to logout</a>";
-				}
-				else
-				{
-                    loginText = "<a href=\"/Login.aspx\">Login</a>";
-				}
-			}
-			else
-			{
-                loginText = "<a href=\"/Login.aspx\">Login</a>";
-			}
-            DefaultHeader.Text = SettingsIO.GetSetting("DefaultHeader");
-            DefaultPreNews.Text = SettingsIO.GetSetting("DefaultPreNews");
-            DefaultPostNews.Text = String.Format(SettingsIO.GetSetting("DefaultPostNews"), loginText);
-		}
+            if (0 < userID)
+            {
+                EditButton.Visible = true;
+                EditButton2.Visible = true;
+            }
 
-		private void PopulatePage(int count)
-		{
-			List<NewsIO> posts = NewsIO.GetRecentNews(count, false);
-			DataTable dt = new DataTable();
-			dt.Columns.Add("ID");
-			dt.Columns.Add("Link");
-			dt.Columns.Add("Title");
-			dt.Columns.Add("Date");
-			dt.Columns.Add("Author");
-			dt.Columns.Add("Body");
+            PopulateNews(Settings.Default.NewsCountFront);
 
-			foreach (NewsIO n in posts)
-			{
-				DataRow r = dt.NewRow();
-				string link = "NewsItem.aspx?id=" + n.ID + "&title=" + Server.UrlEncode(n.Title);
-				r["ID"] = n.ID;
-				r["Link"] = link;
-				r["Title"] = n.Title;
-				r["Date"] = n.Updated.ToShortDateString();
-				r["Author"] = Auth.LookupUserName(n.UpdatedBy);
-				string htmlBody = "";
-				bool wasTruncated = n.GetBodyAsHTML(Settings.Default.TruncateNewsFront, out htmlBody);
-				if (wasTruncated)
-					r["Body"] = htmlBody + "<a href=\"" + link + "\">... read more.</a>";
-				else
-					r["Body"] = htmlBody + "<a href=\"" + link + "\">Link to this article.</a>";
+            PopulateTemplate();
+        }
 
-				dt.Rows.Add(r);
-			}
+        private void PopulateTemplate()
+        {
+            //We can generate this login text early.
+            string loginText = "<a href=\"/Login.aspx\">Login</a>";
+            if (0 < userID)
+                loginText = "You are currently logged in as: " + username + " <a href=\"/Logout.aspx\">click here to logout</a>";
 
-			NewsList.DataSource = dt;
-			NewsList.DataBind();
-		}
-	}
+            //Header Template 
+            page = new PageIO(GetUniqueHeaderName());
+            if (-1 != page.ID && !string.IsNullOrWhiteSpace(page.Body))
+            {
+                CustomHeader.Visible = true;
+                CustomHeader.Text = page.Body;
+                Page.Title = Settings.Default.SiteName + page.Title;
+            }
+            else
+                SiteName.Text = Settings.Default.SiteName;
+
+            //General Template
+            page = new PageIO(GetUniqueTemplateName());
+            if (-1 != page.ID && !string.IsNullOrWhiteSpace(page.Body))
+            {
+                CustomPreContentPanel.Visible = true;
+                CustomPostContentPanel.Visible = true;
+                DefaultPostNewsPanel.Visible = false;
+                DefaultPreContentPanel.Visible = false;
+
+                string pageContent = page.GetBodyAsHTML();
+
+                //if we can't find it unencoded try encoding is and try again
+                if (pageContent.IndexOf(Server.HtmlEncode(loginPlaceHolder)) > -1)
+                    loginPlaceHolder = Server.HtmlEncode(loginPlaceHolder);
+                if (pageContent.IndexOf(loginPlaceHolder) > -1)
+                    pageContent = pageContent.Replace(loginPlaceHolder, loginText);
+
+                if (pageContent.IndexOf(Server.HtmlEncode(contentPlaceHolder)) > -1)
+                    contentPlaceHolder = Server.HtmlEncode(contentPlaceHolder);
+                if (pageContent.IndexOf(contentPlaceHolder) > -1)
+                {
+                    PreContentHTML.Text = pageContent.Substring(0, pageContent.IndexOf(contentPlaceHolder));
+                    string postContent = pageContent.Substring(pageContent.IndexOf(contentPlaceHolder) + contentPlaceHolder.Length);
+                    PostContentHTML.Text = postContent;
+                }
+                else
+                {
+                    PreContentHTML.Text = pageContent;
+                    PostContentHTML.Text = "";
+                }
+            }
+            else
+                DefaultLoginText.Text = loginText;
+
+            //Custom Stylesheet
+            if (!string.IsNullOrEmpty(SettingsIO.GetSetting(GetUniqueStyleSheetName())))
+                StyleSheet.Text = String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" />", SettingsIO.GetSetting(GetUniqueStyleSheetName()));
+            else
+                StyleSheet.Text = String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" />", SettingsIO.GetSetting("DefaultStyleSheet"));
+        }
+
+        private void PopulateNews(int count)
+        {
+            List<NewsIO> posts = NewsIO.GetRecentNews(count, false);
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ID");
+            dt.Columns.Add("Link");
+            dt.Columns.Add("Title");
+            dt.Columns.Add("Date");
+            dt.Columns.Add("Author");
+            dt.Columns.Add("Body");
+
+            foreach (NewsIO n in posts)
+            {
+                DataRow r = dt.NewRow();
+                string link = "NewsItem.aspx?id=" + n.ID + "&title=" + Server.UrlEncode(n.Title);
+                r["ID"] = n.ID;
+                r["Link"] = link;
+                r["Title"] = n.Title;
+                r["Date"] = n.Updated.ToShortDateString();
+                r["Author"] = Auth.LookupUserName(n.UpdatedBy);
+                string htmlBody = "";
+                bool wasTruncated = n.GetBodyAsHTML(Settings.Default.TruncateNewsFront, out htmlBody);
+                if (wasTruncated)
+                    r["Body"] = htmlBody + "<a href=\"" + link + "\">... read more.</a>";
+                else
+                    r["Body"] = htmlBody + "<a href=\"" + link + "\">Link to this article.</a>";
+
+                dt.Rows.Add(r);
+            }
+
+            NewsList.DataSource = dt;
+            NewsList.DataBind();
+        }
+
+        protected void EditButton_Click(object sender, EventArgs e)
+        {
+            if (0 < userID)
+            {
+                CustomPreContentPanel.Visible = false;
+                CustomPostContentPanel.Visible = false;
+                DefaultPostNewsPanel.Visible = false;
+                DefaultPreContentPanel.Visible = false;
+                SystemContent.Visible = false;
+
+                EditButton.Visible = false;
+                EditBody.Visible = true;
+
+                if (!string.IsNullOrEmpty(SettingsIO.GetSetting(GetUniqueStyleSheetName())))
+                    EditStyleSheetTextBox.Text = SettingsIO.GetSetting(GetUniqueStyleSheetName());
+                else
+                    EditStyleSheetTextBox.Text = SettingsIO.GetSetting("DefaultStyleSheet");
+
+                if (-1 != page.ID)
+                {
+                    EditTitleTextBox.Text = page.Title;
+                    EditBodyTextBox.Text = page.Body;
+                    ContentTypeDropDown.SelectedItem.Selected = false;
+                    ContentTypeDropDown.Items.FindByValue(page.ContentType).Selected = true;
+                }
+            }
+        }
+
+        protected void Save_Click(object sender, EventArgs e)
+        {
+            PageIO page = new PageIO(EditTitleTextBox.Text, "", GetUniqueTemplateName() , EditBodyTextBox.Text, System.DateTime.Now, ContentTypeDropDown.SelectedValue, userID, false);
+            page.SavePage();
+
+            Response.Redirect(Request.Url.AbsolutePath);
+        }
+    }
 }

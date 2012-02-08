@@ -1,83 +1,45 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="404.aspx.cs" Inherits="TLWebsite2011._404" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"
+    CodeBehind="404.aspx.cs" Inherits="TLWebsite2011._404" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-	<title>Page Not Found: 404</title>
-	<link href="/SiteResources/stylesheet.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-	<form id="form1" runat="server">
-	<table summary="" align="center" cellpadding="0" cellspacing="0">
-		<tr>
-			<td>
-				<img src="/SiteResources/Images/bg-top-shadow.jpg" alt="bg-top-shadow" />
-				<div class="pgbody">
-					<div class="header">
-						<div class="header-wrap">
-							<a href="Default.aspx">
-								<img src="SiteResources/Images/Logo.jpg" alt="Technically Learning - Enabling teachers to inspire and engage students in science, engineering, technology and math" /></a>
-						</div>
-						<div class="menu">
-							<a class="navlink" href="Default.aspx">Home</a> <a class="navlink" href="Show.aspx?page=about">
-								About</a> <a class="navlink" href="News.aspx">News</a> <a class="navlink" href="Show.aspx?page=programs">
-									Programs</a> <a class="navlink" href="Show.aspx?page=resources">Resources</a>
-							<a class="navlink" href="Show.aspx?page=donate">Donate</a>
-						</div>
-					</div>
-					<div class="page-sidebar">
-						<div class="box">
-							<div class="page-sidebar-wrap">
-								<div class="page-sidebar-title">
-									Please Donate</div>
-								<p>
-									Help Technically Learning continue to inspire children across Washington State in
-									the Science, Technology, Engineering and Math fields through innovative activities.</p>
-								<p>
-									We need your help to engage new schools and bring on new volunteers in the coming
-									year.</p>
-								<div class="button">
-									<a href="Show.aspx?page=Donate"><span class="donate-button">Donate Now</span></a></div>
-							</div>
-							<div class="page-sidebar-wrap">
-								<div class="page-sidebar-title">
-									Social Networks</div>
-								<a href="https://twitter.com/#!/TechLearn">
-									<img class="social-icon" src="/SiteResources/Images/twitter-icon-sm.png" alt="twitter-icon"
-										width="180" /></a> <a href="https://www.facebook.com/TechnicallyLearning">
-											<img class="social-icon" src="/SiteResources/Images/facebook-icon-sm.png" alt="facebook-icon"
-												width="180" /></a> <a href="http://www.linkedin.com/company/379262">
-													<img class="social-icon" src="/SiteResources/Images/linkedin-icon-sm.png" alt="linkedin-icon"
-														width="180" /></a> <a href="http://www.idealnetwork.com/seattle/technicallylearning">
-															<img class="social-icon" src="/SiteResources/Images/IdealNetworkLogo.gif" alt="idealNetwork-icon"
-																width="180" /></a>
-							</div>
-						</div>
-					</div>
-					<div class="main">
-						<div class="page-main">
-							<h1>
-								Page Not Found</h1>
-							<div>
-								We're sorry, but this page doesn't exist. Please browse around to find what you're
-								looking for or use the <a href="SiteMap.aspx">Site Map</a> to see all the pages
-								on the site.</div>
-						</div>
-						<div class="footer-nav">
-							<a class="footer-link" href="SiteMap.aspx">Sitemap</a> <a class="footer-link" href="Show.aspx?page=PrivacyPolicy">
-								Privacy Policy</a> <a class="footer-link" href="Show.aspx?page=About">About</a>
-							<a class="footer-link" href="Show.aspx?page=Contact">Contact</a>
-						</div>
-						<div class="footer">
-							Copyright &copy; 2011 Technically Learning. All Rights Reserved. Designed by <a href="http://www.revelae.com"
-								target="_blank">Revelae Design Studio</a><br />
-							<asp:Label ID="loginlogout" runat="server" /></div>
-					</div>
-				</div>
-				<img src="/SiteResources/Images/bg-bottom-shadow.jpg" alt="bg-bottom-shadow" />
-			</td>
-		</tr>
-	</table>
-	</form>
-</body>
-</html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <asp:Literal ID="StyleSheet404" runat="server"></asp:Literal>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:Label ID="Message" runat="server" Visible="false"></asp:Label>
+    <asp:Panel ID="DefaultBody" runat="server">
+        <h1>
+            Page Not Found (404)</h1>
+        <div>
+            We're sorry, but this page doesn't exist. Please browse around to find what you're
+            looking for or use the <a href="SiteMap.aspx">Site Map</a> to see all the pages
+            on the site.</div>
+    </asp:Panel>
+    <asp:Panel ID="CustomBody" runat="server" Visible="false">
+        <asp:Literal ID="CustomBodyHTML" runat="server"></asp:Literal>
+    </asp:Panel>
+    <asp:LinkButton ID="EditButton" runat="server" Visible="false" OnClick="EditButton_Click">Edit This Page</asp:LinkButton>
+    <asp:Panel ID="EditBody" runat="server" Visible="false">
+        <asp:TextBox ID="EditStyleSheetTextBox" runat="server" Width="665px"></asp:TextBox><br />
+        <asp:DropDownList ID="ContentTypeDropDown" runat="server">
+            <asp:ListItem Value="PlainText">Plain Text</asp:ListItem>
+            <asp:ListItem Selected="True">Markdown</asp:ListItem>
+            <asp:ListItem>HTML</asp:ListItem>
+        </asp:DropDownList>
+        <br />
+        This page accepts Markdown, and easy to learn markup language. <a href="Show.aspx?page=Markdown"
+            target="_blank">Click here</a> for more information.<br />
+        <table width="700px">
+            <tr>
+                <td>
+                    <a href="Upload.aspx" target="_blank"><strong>Upload</strong> image or file</a>
+                </td>
+                <td>
+                    <a href="UploadedFiles.aspx" target="_blank"><strong>View</strong> Uploaded Files</a>
+                </td>
+            </tr>
+        </table>
+        <asp:TextBox ID="EditBodyTextBox" runat="server" TextMode="MultiLine" Height="326px" Width="665px"></asp:TextBox>
+        <br />
+        <asp:Button ID="Save" runat="server" Text="Save" OnClick="Save_Click" />
+    </asp:Panel>
+</asp:Content>

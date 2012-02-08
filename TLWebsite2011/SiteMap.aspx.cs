@@ -12,6 +12,7 @@ namespace TLWebsite2011
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
+            SiteName.Text = SettingsIO.GetSetting("SiteName");
 			DataTable dt = new DataTable();
 			dt.Columns.Add("Title");
 			dt.Columns.Add("SubTitle");

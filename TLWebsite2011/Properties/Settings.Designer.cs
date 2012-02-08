@@ -159,5 +159,14 @@ namespace TLWebsite2011.Properties {
                 return ((string)(this["SocialLinks"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Technically Learning")]
+        public string SiteName {
+            get {
+                return ((string)(this["SiteName"]));
+            }
+        }
     }
 }

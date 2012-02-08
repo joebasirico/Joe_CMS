@@ -41,7 +41,7 @@
 				Password Recovery</h1>
 			<div class="section">
 				Success! You've reset your password, and you've been logged in. Feel free to browse
-				around! Go check out the <a href="Trending.aspx">Trending Articles!</a>
+				around!</a>
 			</div>
 	</asp:Panel>
 </asp:Content>
