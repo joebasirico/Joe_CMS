@@ -24,22 +24,22 @@ namespace TLWebsite2011
                     LoginPanel.Visible = false;
                     AlreadyLoggedIn.Visible = true;
                 }
+            }
 
-                String scriptName = "SetFocusScript";
-                Type scriptType = this.GetType();
+            String scriptName = "SetFocusScript";
+            Type scriptType = this.GetType();
 
-                ClientScriptManager cs = Page.ClientScript;
-                if (!cs.IsStartupScriptRegistered(scriptType, scriptName))
-                {
-                    StringBuilder setUserNameFocus = new StringBuilder();
+            ClientScriptManager cs = Page.ClientScript;
+            if (!cs.IsStartupScriptRegistered(scriptType, scriptName))
+            {
+                StringBuilder setUserNameFocus = new StringBuilder();
 
-                    setUserNameFocus.Append("<script language='Javascript'> function setfocus(){");
-                    setUserNameFocus.Append("document.getElementById(\"" +
-                    UsernameBox.ClientID + "\").focus();");
-                    setUserNameFocus.Append("} setfocus();</script>");
+                setUserNameFocus.Append("<script language='Javascript'> function setfocus(){");
+                setUserNameFocus.Append("document.getElementById(\"" +
+                UsernameBox.ClientID + "\").focus();");
+                setUserNameFocus.Append("} setfocus();</script>");
 
-                    cs.RegisterStartupScript(scriptType, scriptName, setUserNameFocus.ToString());
-                }
+                cs.RegisterStartupScript(scriptType, scriptName, setUserNameFocus.ToString());
             }
         }
 
