@@ -24,10 +24,11 @@
 		</tr>
 	</table>
 	<asp:Literal ID="BodyLiteral" runat="server" />
+    <asp:Literal ID="SocialLinks" runat="server" />
 	<br />
 	<br />
 	<br />
-	<br />
+	<br /> 
 	<br />
 	<div class="footer">
 		Last Updated By:

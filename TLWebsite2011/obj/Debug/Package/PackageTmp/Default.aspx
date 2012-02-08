@@ -40,7 +40,7 @@
 					<div class="header">
 						<div class="header-wrap">
 							<a href="Default.aspx">
-								<img src="SiteResources/Images/Logo.jpg" alt="Technically Learning - Enabling teachers to inspire and engage students in science, engineering, technology and math" /></a>
+								<img src="SiteResources/Images/Logo.jpg" alt="Technically Learning - Enabling teachers to inspire and engage students in science, technology, engineering and math" /></a>
 						</div>
 						<div class="menu">
 							<a class="navlink" href="Default.aspx">Home</a> <a class="navlink" href="Show.aspx?page=about">
@@ -51,7 +51,7 @@
 					</div>
 					<div class="main">
 						<div class="header-tag">
-							Enabling teachers to inspire and engage students in science, engineering, technology
+							Enabling teachers to inspire and engage students in science, technology, engineering
 							and math.</div>
 						<!--BEGIN Flashy Header-->
 						<div id="featured">
@@ -125,15 +125,6 @@
 											hands on guidance from their Technically Learning trained teacher.</a></p>
 								</div>
 							</div>
-							<!-- Sixth Content -->
-							<!--<div id="fragment-6" class="ui-tabs-panel ui-tabs-hide" style="">
-                    <a href="#" ><img src="SiteResources/Images/banner6.jpg" border="0" alt="" /></a>
-                    <div class="info" >
-                      <h2><a href="#" >Engaging Science</a></h2>
-                      <p><a href="#" >Students collaborate to solve difficult problems to create LEGO rovers that will
-                            detect objects, follow lines or use other sensors to make complex decisions.</a></p>
-                    </div>
-                  </div>-->
 						</div>
 						<!--END Flashy Header-->
 						<div class="sub-main">
@@ -144,31 +135,32 @@
 									<img class="idx-detail-pic" src="/SiteResources/Images/kids-sm.jpg" alt="kids-robotics" />
 									<div class="idx-detail-content">
 										<div class="idx-detail-title">
-											Lego Robots</div>
+											<a href="Show.aspx?page=LegoRobotics">Lego Robots</a></div>
 										Our LEGO robotics activities stress the scientific method by testing hypothesis
 										through experimentation, iterating designs, collaborating in groups, and documenting
-										results. Learn More
+										results.<br /><a href="Show.aspx?page=LegoRobotics">Learn More</a>
 									</div>
 								</div>
 								<div class="idx-detail-wrap">
 									<img class="idx-detail-pic" src="/SiteResources/Images/animation-sm.jpg" alt="animation" />
 									<div class="idx-detail-content">
 										<div class="idx-detail-title">
-											3D Animation</div>
+											<a href="Show.aspx?page=3DAnimation">3D Animation</a></div>
 										Students use a visual programming environment, Alice, to create 3D animations. Students
 										develop computer programming knowledge, build problem solving skills, and work in
-										groups. Learn More
+										groups. <br />
+										<a href="Show.aspx?page=3DAnimation">Learn More</a>
 									</div>
 								</div>
 								<div class="idx-detail-wrap">
 									<img class="idx-detail-pic" src="/SiteResources/Images/prog-sm.jpg" alt="programming" />
 									<div class="idx-detail-content">
 										<div class="idx-detail-title">
-											Basic Programming</div>
+											<a href="Show.aspx?page=BasicProgramming">Basic Programming</a></div>
 										Students use a programming language, Scratch, to design interactive stories, animations,
 										and games, while learning important math and logic concepts.
 										<br />
-										Learn More
+										<a href="Show.aspx?page=Programming">Learn More</a>
 									</div>
 								</div>
 							</div>
@@ -184,7 +176,7 @@
 										<div class="idx-news-wrap">
 											<div class="idx-news-content">
 												<div class="sub-main-title-small">
-													<%# Eval("Title")%></div>
+													<a href='<%# Eval("Link")%>'><%# Eval("Title")%></a></div>
 												<div class="idx-news-title">
 													<%# Eval("Date")%>
 													- Posted by

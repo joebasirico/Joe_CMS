@@ -1,8 +1,8 @@
-\\vmware-host\Shared Folders\jbasirico\Dropbox\Technically Learning\TL_CMS\Database1\sql\debug\Database1.deploymanifest
-\\vmware-host\Shared Folders\jbasirico\Dropbox\Technically Learning\TL_CMS\Database1\sql\debug\Database1.dbschema
-\\vmware-host\Shared Folders\jbasirico\Dropbox\Technically Learning\TL_CMS\Database1\obj\Debug\Database1.dbschema
 \\vmware-host\Shared Folders\jbasirico\Dropbox\Technically Learning\TL_CMS\Database1\sql\debug\TL_CMS_Script.PreDeployment.sql
 \\vmware-host\Shared Folders\jbasirico\Dropbox\Technically Learning\TL_CMS\Database1\sql\debug\TL_CMS_Script.PostDeployment.sql
 \\vmware-host\Shared Folders\jbasirico\Dropbox\Technically Learning\TL_CMS\Database1\sql\debug\TL_CMS_Database.sqlsettings
 \\vmware-host\Shared Folders\jbasirico\Dropbox\Technically Learning\TL_CMS\Database1\sql\debug\TL_CMS_Database.sqldeployment
 \\vmware-host\Shared Folders\jbasirico\Dropbox\Technically Learning\TL_CMS\Database1\sql\debug\TL_CMS_Database.sqlcmdvars
+\\vmware-host\Shared Folders\jbasirico\Dropbox\Technically Learning\TL_CMS\Database1\sql\debug\Database1.deploymanifest
+\\vmware-host\Shared Folders\jbasirico\Dropbox\Technically Learning\TL_CMS\Database1\sql\debug\Database1.dbschema
+\\vmware-host\Shared Folders\jbasirico\Dropbox\Technically Learning\TL_CMS\Database1\obj\Debug\Database1.dbschema

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TLWebsite2011.Properties;
 
 namespace TLWebsite2011
 {
@@ -43,6 +44,9 @@ namespace TLWebsite2011
 			}
 			else
 				Response.Redirect("Default.aspx");
+
+            if (Settings.Default.AddSocialLinks)
+                SocialLinks.Text = String.Format(Settings.Default.SocialLinks, Request.Url);
 		}
 
 		private void PopulatePage(PageIO page)

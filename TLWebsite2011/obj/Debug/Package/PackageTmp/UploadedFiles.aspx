@@ -15,6 +15,9 @@
 		<LayoutTemplate>
 			<table>
 				<tr>
+					<td width="20px">
+						&nbsp;
+					</td>
 					<td width="100px">
 						<strong>Type</strong>
 					</td>
@@ -27,6 +30,9 @@
 		</LayoutTemplate>
 		<ItemTemplate>
 			<tr>
+				<td>
+					<a href='UploadDelete.aspx?file=<%# Eval("File")%>'>Delete</a>
+				</td>
 				<td>
 					<%# Eval("Type")%>
 				</td>
