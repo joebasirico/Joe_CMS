@@ -13,6 +13,15 @@ namespace TLWebsite2011 {
     public partial class Default {
         
         /// <summary>
+        /// DefaultHeader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal DefaultHeader;
+        
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace TLWebsite2011 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
+        /// DefaultPreNews control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal DefaultPreNews;
         
         /// <summary>
         /// NewsList control.
@@ -31,12 +49,12 @@ namespace TLWebsite2011 {
         protected global::System.Web.UI.WebControls.ListView NewsList;
         
         /// <summary>
-        /// loginlogout control.
+        /// DefaultPostNews control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label loginlogout;
+        protected global::System.Web.UI.WebControls.Literal DefaultPostNews;
     }
 }

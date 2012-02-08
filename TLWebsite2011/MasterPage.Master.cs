@@ -31,10 +31,10 @@ namespace TLWebsite2011
                 loginText = "<a href=\"/Login.aspx\">Login</a>";
 			}
 
-            MasterHeader.Text = "";
-            MasterStyleSheet.Text = String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" />", "");
-            MasterPreBody.Text = "";
-            MasterPostBody.Text = String.Format("", loginText);
+            MasterHeader.Text = SettingsIO.GetSetting("MasterHeader");
+            MasterStyleSheet.Text = String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" />", SettingsIO.GetSetting("MasterStyleSheet"));
+            MasterPreBody.Text = SettingsIO.GetSetting("MasterPreBody");
+            MasterPostBody.Text = String.Format(SettingsIO.GetSetting("MasterPostBody"), loginText);
         }
 	}
 }
