@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Joe_CMS", "TLWebsite2011\Joe_CMS.csproj", "{47EF6D9A-B218-4730-A901-BAD861024F78}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Joe_CMS", "Joe_CMS\Joe_CMS.csproj", "{47EF6D9A-B218-4730-A901-BAD861024F78}"
 EndProject
 Project("{C8D11400-126E-41CD-887F-60BD40844F9E}") = "Database1", "Database1\Database1.dbproj", "{67CBC824-A49E-4E9B-A947-360F3DFE65C3}"
 EndProject
