@@ -24,7 +24,7 @@ namespace TLWebsite2011
         public PageIO(string urlTitle)
         {
             URLTitle = urlTitle;
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TLConnectionString"].ConnectionString))
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
             {
                 conn.Open();
                 SqlCommand command = new SqlCommand("GetRecentPage", conn);
@@ -50,7 +50,7 @@ namespace TLWebsite2011
             URLTitle = urlTitle;
             Updated = date;
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TLConnectionString"].ConnectionString))
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
             {
                 conn.Open();
                 SqlCommand command = new SqlCommand("GetPageVersion", conn);
@@ -91,7 +91,7 @@ namespace TLWebsite2011
 
         public void SavePage()
         {
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TLConnectionString"].ConnectionString))
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
             {
                 conn.Open();
                 SqlCommand command = new SqlCommand("CreatePage", conn);
@@ -110,7 +110,7 @@ namespace TLWebsite2011
 
         public void SavePage(DateTime UpdatedOverride)
         {
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TLConnectionString"].ConnectionString))
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
             {
                 conn.Open();
                 SqlCommand command = new SqlCommand("CreatePage", conn);
@@ -151,7 +151,7 @@ namespace TLWebsite2011
         {
             List<PageIO> pages = new List<PageIO>();
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TLConnectionString"].ConnectionString))
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
             {
                 conn.Open();
                 SqlCommand command = new SqlCommand("GetPageHistory", conn);
@@ -168,7 +168,7 @@ namespace TLWebsite2011
         {
             List<PageIO> pages = new List<PageIO>();
 
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TLConnectionString"].ConnectionString))
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
             {
                 conn.Open();
                 SqlCommand command = new SqlCommand("GetAllMostRecentPages", conn);

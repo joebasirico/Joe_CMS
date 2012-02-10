@@ -13,7 +13,7 @@ namespace TLWebsite2011
         {
             string value = "";
             int count = 0;
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TLConnectionString"].ConnectionString))
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
             {
                 conn.Open();
                 SqlCommand command = new SqlCommand("GetSetting", conn);
@@ -35,7 +35,7 @@ namespace TLWebsite2011
 
         public static void SaveSetting(string key, string value)
         {
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TLConnectionString"].ConnectionString))
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
             {
                 conn.Open();
                 //This will update the value if it exists, and create it if it doesn't

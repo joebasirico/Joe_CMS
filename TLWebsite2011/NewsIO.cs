@@ -21,7 +21,7 @@ namespace TLWebsite2011
 
 		public NewsIO(int id)
 		{
-			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TLConnectionString"].ConnectionString))
+			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
 			{
 				conn.Open();
 				SqlCommand command = new SqlCommand("GetNewsByID", conn);
@@ -49,7 +49,7 @@ namespace TLWebsite2011
 
 		public void Save()
 		{
-			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TLConnectionString"].ConnectionString))
+			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
 			{
 				SqlCommand command = new SqlCommand("", conn);
 				conn.Open();
@@ -81,7 +81,7 @@ namespace TLWebsite2011
 		{
 			List<NewsIO> news = new List<NewsIO>();
 
-			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TLConnectionString"].ConnectionString))
+			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
 			{
 				conn.Open();
 				SqlCommand command = new SqlCommand("GetRecentNews", conn);
@@ -102,7 +102,7 @@ namespace TLWebsite2011
 
 		public static void DeleteNews(int id)
 		{
-			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TLConnectionString"].ConnectionString))
+			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
 			{
 				conn.Open();
 				SqlCommand command = new SqlCommand("DeleteNews", conn);

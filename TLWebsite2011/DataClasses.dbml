@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TL2011" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLExpress;Initial Catalog=TL2011;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="TLConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLExpress;Initial Catalog=TL2011;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.EventLog" Member="EventLogs">
     <Type Name="EventLog">
       <Column Name="LogID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />

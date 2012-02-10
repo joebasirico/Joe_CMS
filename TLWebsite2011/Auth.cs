@@ -16,7 +16,7 @@ namespace TLWebsite2011
 		{
 			int count = 0;
 			int userID = 0;
-			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TLConnectionString"].ConnectionString))
+			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
 			{
 				conn.Open();
 				SqlCommand command = new SqlCommand("CheckUser", conn);
@@ -85,7 +85,7 @@ namespace TLWebsite2011
 		{
 			int userID = 0;
 			int count = 0;
-			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TLConnectionString"].ConnectionString))
+			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
 			{
 				conn.Open();
 				SqlCommand command = new SqlCommand("GetUserIDBySession", conn);
@@ -126,7 +126,7 @@ namespace TLWebsite2011
 		{
 			string username = "";
 			int count = 0;
-			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TLConnectionString"].ConnectionString))
+			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
 			{
 				conn.Open();
 				SqlCommand command = new SqlCommand("GetUserByID", conn);
@@ -148,7 +148,7 @@ namespace TLWebsite2011
 
 		public static void CreateResetValue(User currentUser, Guid resetValue)
 		{
-			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TLConnectionString"].ConnectionString))
+			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
 			{
 				conn.Open();
 				SqlCommand command = new SqlCommand("AddPasswordReset", conn);
@@ -165,7 +165,7 @@ namespace TLWebsite2011
 		{
 			int userID = 0;
 			int count = 0;
-			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TLConnectionString"].ConnectionString))
+			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
 			{
 				conn.Open();
 				SqlCommand command = new SqlCommand("LookupResetValue", conn);
@@ -188,7 +188,7 @@ namespace TLWebsite2011
 
 		public static void DeleteResetValue(Guid resetValue)
 		{
-			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TLConnectionString"].ConnectionString))
+			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
 			{
 				conn.Open();
 				SqlCommand command = new SqlCommand("DeleteResetValue", conn);
@@ -200,7 +200,7 @@ namespace TLWebsite2011
 
 		internal static void UpdateEmail(int userID, string newEmail)
 		{
-			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TLConnectionString"].ConnectionString))
+			using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
 			{
 				conn.Open();
 				SqlCommand command = new SqlCommand("UpdateEmail", conn);
