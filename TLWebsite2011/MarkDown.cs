@@ -89,7 +89,7 @@ using System.Configuration;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace TLWebsite2011
+namespace Joe_CMS
 {
 
 	public class MarkdownOptions

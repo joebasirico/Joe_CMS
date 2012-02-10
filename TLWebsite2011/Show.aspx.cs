@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TLWebsite2011.Properties;
 
-namespace TLWebsite2011
+namespace Joe_CMS
 {
 	public partial class Show : System.Web.UI.Page
 	{

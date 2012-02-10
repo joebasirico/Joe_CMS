@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TLWebsite2011 {
+namespace Joe_CMS {
     
     
     public partial class MasterPage {

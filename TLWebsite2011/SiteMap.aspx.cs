@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 
-namespace TLWebsite2011
+namespace Joe_CMS
 {
 	public partial class SiteMap : System.Web.UI.Page
 	{

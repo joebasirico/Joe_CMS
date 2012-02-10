@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
 
-namespace TLWebsite2011
+namespace Joe_CMS
 {
 	public partial class Upload : System.Web.UI.Page
 	{

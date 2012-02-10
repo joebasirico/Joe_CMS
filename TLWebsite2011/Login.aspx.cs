@@ -8,7 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 
-namespace TLWebsite2011
+namespace Joe_CMS
 {
     public partial class Login : BasePage
     {

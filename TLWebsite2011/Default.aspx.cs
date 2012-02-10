@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using TLWebsite2011.Properties;
 
-namespace TLWebsite2011
+namespace Joe_CMS
 {
     public partial class Default : BasePage
     {

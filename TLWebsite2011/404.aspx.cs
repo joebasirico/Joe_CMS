@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace TLWebsite2011
+namespace Joe_CMS
 {
     public partial class _404 : BasePage
     {

@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
 
-namespace TLWebsite2011
+namespace Joe_CMS
 {
 	public class Auth
 	{

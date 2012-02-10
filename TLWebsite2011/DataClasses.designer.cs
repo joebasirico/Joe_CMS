@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TLWebsite2011
+namespace Joe_CMS
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;

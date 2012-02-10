@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace TLWebsite2011
+namespace Joe_CMS
 {
     public partial class BasePage : System.Web.UI.Page
     {

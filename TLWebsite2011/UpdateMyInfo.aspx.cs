@@ -8,7 +8,7 @@ using System.Threading;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace TLWebsite2011
+namespace Joe_CMS
 {
 	public partial class UpdateMyInfo : System.Web.UI.Page
 	{

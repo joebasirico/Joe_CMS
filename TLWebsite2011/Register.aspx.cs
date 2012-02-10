@@ -11,7 +11,7 @@ using System.Security.Cryptography;
 using System.Net.Mail;
 using System.Net;
 
-namespace TLWebsite2011
+namespace Joe_CMS
 {
 	public partial class Register : System.Web.UI.Page
 	{

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.IO;
 using System.Data;
 
-namespace TLWebsite2011
+namespace Joe_CMS
 {
 	public partial class UploadedFiles : System.Web.UI.Page
 	{

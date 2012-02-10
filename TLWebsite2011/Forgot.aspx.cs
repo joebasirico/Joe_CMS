@@ -12,7 +12,7 @@ using System.Web.UI.WebControls;
 using TLWebsite2011;
 using TLWebsite2011.Properties;
 
-namespace TLWebsite2011
+namespace Joe_CMS
 {
 	public partial class Forgot : System.Web.UI.Page
 	{
