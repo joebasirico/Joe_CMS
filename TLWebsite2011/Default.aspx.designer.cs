@@ -175,15 +175,6 @@ namespace TLWebsite2011 {
         protected global::System.Web.UI.WebControls.TextBox EditStyleSheetTextBox;
         
         /// <summary>
-        /// ContentTypeDropDown control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ContentTypeDropDown;
-        
-        /// <summary>
         /// ContentDescription control.
         /// </summary>
         /// <remarks>
@@ -191,6 +182,15 @@ namespace TLWebsite2011 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label ContentDescription;
+        
+        /// <summary>
+        /// ContentTypeDropDown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ContentTypeDropDown;
         
         /// <summary>
         /// EditBodyTextBox control.
@@ -218,5 +218,14 @@ namespace TLWebsite2011 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Save;
+        
+        /// <summary>
+        /// Finish control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Finish;
     }
 }

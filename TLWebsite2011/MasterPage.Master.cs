@@ -9,6 +9,12 @@ namespace TLWebsite2011
 {
 	public partial class MasterPage : System.Web.UI.MasterPage
 	{
+        string template = "System_Master";
+        string header = "System_Master_Header";
+        string css = "System_Master_StyleSheet";
+        string contentPlaceHolder = "&&SYSTEM_CONTENT&&";
+        string loginPlaceHolder = "&&SYSTEM_LOGIN&&";
+
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			Guid session = new Guid();
@@ -31,13 +37,42 @@ namespace TLWebsite2011
                 loginText = "<a href=\"/Login.aspx\">Login</a>";
 			}
 
-            MasterHeader.Text = SettingsIO.GetSetting("MasterHeader");
-            if (!string.IsNullOrEmpty(SettingsIO.GetSetting("MasterStyleSheet")))
-                MasterStyleSheet.Text = String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" />", SettingsIO.GetSetting("MasterStyleSheet"));
+
+            if (!string.IsNullOrEmpty(SettingsIO.GetSetting(css)))
+                MasterStyleSheet.Text = String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" />", SettingsIO.GetSetting(css));
             else
                 MasterStyleSheet.Text = String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" />", SettingsIO.GetSetting("DefaultStyleSheet"));
-            MasterPreBody.Text = SettingsIO.GetSetting("MasterPreBody");
-            MasterPostBody.Text = String.Format(SettingsIO.GetSetting("MasterPostBody"), loginText);
+
+            //Header
+            PageIO headerPage = new PageIO(header);
+            MasterHeader.Text = headerPage.GetBodyAsHTML();
+
+            //General Template
+            PageIO page = new PageIO(template);
+            if (-1 != page.ID && !string.IsNullOrWhiteSpace(page.Body))
+            {
+                string pageContent = page.GetBodyAsHTML();
+
+                //if we can't find it unencoded try encoding is and try again
+                if (pageContent.IndexOf(Server.HtmlEncode(loginPlaceHolder)) > -1)
+                    loginPlaceHolder = Server.HtmlEncode(loginPlaceHolder);
+                if (pageContent.IndexOf(loginPlaceHolder) > -1)
+                    pageContent = pageContent.Replace(loginPlaceHolder, loginText);
+
+                if (pageContent.IndexOf(Server.HtmlEncode(contentPlaceHolder)) > -1)
+                    contentPlaceHolder = Server.HtmlEncode(contentPlaceHolder);
+                if (pageContent.IndexOf(contentPlaceHolder) > -1)
+                {
+                    MasterPreBody.Text = pageContent.Substring(0, pageContent.IndexOf(contentPlaceHolder));
+                    string postContent = pageContent.Substring(pageContent.IndexOf(contentPlaceHolder) + contentPlaceHolder.Length);
+                    MasterPostBody.Text = postContent;
+                }
+                else
+                {
+                    MasterPreBody.Text = pageContent;
+                    MasterPostBody.Text = "";
+                }
+            }
         }
 	}
 }

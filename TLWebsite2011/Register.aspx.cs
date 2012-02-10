@@ -17,26 +17,26 @@ namespace TLWebsite2011
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
+            supportMail.NavigateUrl = "mailto:" + SettingsIO.GetSetting("SupportMail");
 		}
 
 		protected void DoRegister_Click(object sender, EventArgs e)
 		{
 			try
 			{
-				if (RegCode.Text == Settings.Default.RegCode)
+                if (RegCode.Text == SettingsIO.GetSetting("AuthCode"))
 				{
 					if (!Auth.UserExists(UsernameBox.Text))
 					{
 						DataClassesDataContext dc = new DataClassesDataContext();
 						if (null == dc.Users.FirstOrDefault(u => u.email == email.Text))
 						{
-							if (!new Regex(Settings.Default.UsernameRegex).IsMatch(UsernameBox.Text))
-								Message.Text = Settings.Default.UsernameFailedMatchMessage;
+							if (!new Regex(SettingsIO.GetSetting("UsernameRegex")).IsMatch(UsernameBox.Text))
+								Message.Text = SettingsIO.GetSetting("UsernameFailedMatchMessage");
 							else
 							{
-								if (!new Regex(Settings.Default.emailRegex).IsMatch(email.Text))
-									Message.Text = Settings.Default.EmailFailedMatchMessage;
+								if (!new Regex(SettingsIO.GetSetting("emailRegex")).IsMatch(email.Text))
+									Message.Text = SettingsIO.GetSetting("EmailFailedMatchMessage");
 								else
 								{
 									//Add the user
@@ -67,7 +67,7 @@ namespace TLWebsite2011
 										RegistrationCompletePanel.Visible = true;
 
 										//send them a welcome email!
-										if (Settings.Default.SendWelcomeMail)
+										if (bool.Parse(SettingsIO.GetSetting("SendWelcomeMail")))
 											SendEmail(UsernameBox.Text, email.Text);
 									}
 									else
@@ -97,20 +97,20 @@ namespace TLWebsite2011
 
 		private void SendEmail(string Username, string email)
 		{
-			string subject = @"Registered on the TL Website!";
+			string subject = @"Registered on the "+ SettingsIO.GetSetting("SiteName") +" Website!";
 			string message =
 @"Hi there {0}!
 
-You have successfully registered for the Technically Learning Website
+You have successfully registered for the {1} Website
 
 The username you chose was: {0}
 
---Joe
+--The {1} Staff
 ";
 
-			message = string.Format(message, Username);
+            message = string.Format(message, Username, SettingsIO.GetSetting("SiteName"));
 
-			MailAddress from = new MailAddress(Settings.Default.emailUser, "Technically Learning");
+            MailAddress from = new MailAddress(SettingsIO.GetSetting("noReplyEmailUser"), SettingsIO.GetSetting("SiteName") + "Support");
 			MailAddress to = new MailAddress(email, Username);
 
 			MailMessage mm = new MailMessage(from, to);
@@ -120,7 +120,7 @@ The username you chose was: {0}
 			mm.IsBodyHtml = false;
 
 			SmtpClient client = new SmtpClient();
-			client.Credentials = new NetworkCredential(Settings.Default.emailUser, Settings.Default.emailPass);
+			client.Credentials = new NetworkCredential(SettingsIO.GetSetting("noReplyEmailUser"), SettingsIO.GetSetting("noReplyEmailName"));
 			client.Send(mm);
 		}
 	}

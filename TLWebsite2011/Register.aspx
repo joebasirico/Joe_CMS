@@ -65,7 +65,7 @@
 	<asp:Panel ID="ErrorPanel" runat="server" Visible="false">
 			<strong>Something went wrong</strong><br />
 			We're sorry there was an issue logging you in after you signed up. You can try to
-			<a href="Login.aspx">login</a>, or <a href="mailto:joe@technicallylearning.org">notify me</a>
+			<a href="Login.aspx">login</a>, or <asp:HyperLink ID="supportMail" runat="server" Text="notify me"></asp:HyperLink>
 			and I'll work to fix the error.
 	</asp:Panel>
 </asp:Content>

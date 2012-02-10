@@ -11,7 +11,7 @@
 						<strong>Please Login</strong>
 					</td>
 					<td align="right">
-						<a href="Register.aspx">...or register (auth code needed)</a>
+						<a href="Register.aspx">...or register <asp:Label ID="AuthCodeCheck" runat="server">(Authorization Code Needed)</asp:Label></a>
 					</td>
 				</tr>
 				<tr>
@@ -19,7 +19,7 @@
 						Username:
 					</td>
 					<td>
-						<asp:TextBox runat="server" ID="UsernameBox" />
+						<asp:TextBox runat="server" ID="UsernameBox" Width="300px" />
 					</td>
 				</tr>
 				<tr>
@@ -27,7 +27,7 @@
 						Password:
 					</td>
 					<td>
-						<asp:TextBox runat="server" ID="PasswordBox" TextMode="Password" />
+						<asp:TextBox runat="server" ID="PasswordBox" TextMode="Password"  Width="300px" />
 					</td>
 				</tr>
 				<tr>

@@ -9,28 +9,26 @@ using System.Data;
 
 namespace TLWebsite2011
 {
-    public partial class News : System.Web.UI.Page
+    public partial class News : BasePage
     {
-        int userID = 0;
-
         protected void Page_Load(object sender, EventArgs e)
         {
-            Guid session = new Guid();
-            if (Request.Cookies["session"] != null && Guid.TryParse(Request.Cookies["session"].Value, out session))
-            {
-                userID = Auth.checkSession(session);
-                if (userID != 0)
-                {
-                    AddNews.Visible = true;
-                    AddNews.Text = "<a href=\"EditNews.aspx\">Add New Article</a>";
-                }
-            } 
+            base.Page_Load(sender, e);
 
+            NewsTitle.Text = SettingsIO.GetSetting("NewsTitle");
+            if (userID != 0)
+            {
+                EditTitle.Visible = true; 
+                AddNews.Visible = true;
+                AddNews.Text = "<a href=\"EditNews.aspx\">Add New Article</a>";
+            }
         }
 
         protected void NewsPager_PreRender(object sender, EventArgs e)
         {
-            NewsPager.PageSize = Settings.Default.NewsCount;
+            int pageSize = 5;
+            int.TryParse(SettingsIO.GetSetting("NewsItemsPerPage"), out pageSize);
+            NewsPager.PageSize = pageSize;
             NewsList.DataSource = PopulatePage(10000000);
             NewsList.DataBind();
         }
@@ -61,7 +59,10 @@ namespace TLWebsite2011
                 r["Date"] = n.Updated.ToShortDateString();
                 r["Author"] = Auth.LookupUserName(n.UpdatedBy);
                 string htmlBody = "";
-                bool wasTruncated = n.GetBodyAsHTML(Settings.Default.TruncateNews, out htmlBody);
+
+                int newsLength = 2000;
+                int.TryParse(SettingsIO.GetSetting("TruncatedNews"), out newsLength);
+                bool wasTruncated = n.GetBodyAsHTML(newsLength, out htmlBody);
                 if (wasTruncated)
                     r["Body"] = htmlBody + "<a href=\"" + link + "\">... read more.</a>";
                 else
@@ -71,6 +72,27 @@ namespace TLWebsite2011
             }
 
             return dt;
+        }
+
+        protected void EditTitle_Click(object sender, EventArgs e)
+        {
+            NewsTitle.Visible = false;
+            SaveTitle.Visible = true;
+            EditTitle.Visible = false;
+            EditNewsTitleTextBox.Visible = true;
+            EditNewsTitleTextBox.Text = SettingsIO.GetSetting("NewsTitle");
+        }
+
+        protected void SaveTitle_Click(object sender, EventArgs e)
+        {
+            NewsTitle.Visible = true;
+            NewsTitle.Text = EditNewsTitleTextBox.Text; 
+            
+            SaveTitle.Visible = false;
+            EditTitle.Visible = true;
+            EditNewsTitleTextBox.Visible = false;
+            
+            SettingsIO.SaveSetting("NewsTitle", EditNewsTitleTextBox.Text);
         }
     }
 }

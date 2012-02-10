@@ -45,8 +45,10 @@ namespace TLWebsite2011
 			else
 				Response.Redirect("Default.aspx");
 
-            if (Settings.Default.AddSocialLinks)
-                SocialLinks.Text = String.Format(Settings.Default.SocialLinks, Request.Url);
+            bool addSocial = false;
+            bool.TryParse(SettingsIO.GetSetting("AddSocialLinks"), out addSocial);
+            if (addSocial)
+                SocialLinks.Text = String.Format(SettingsIO.GetSetting("SocialHTMLCode"), Request.Url);
 		}
 
 		private void PopulatePage(PageIO page)

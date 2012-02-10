@@ -96,7 +96,7 @@ namespace TLWebsite2011
 
 		private void SendEmail(User currentUser, Guid resetValue)
 		{
-			string subject = @"WikiRater Password Reset";
+			string subject = SettingsIO.GetSetting("SiteName") + @" Password Reset";
 			string message =
 @"Hey {0},
 
@@ -104,7 +104,7 @@ Sorry you lost your password. Never fear though, the link below will help you
 reset it. If you can't click the link just copy it and paste the whole thing in your 
 browser.
 
-Once you're back on the TL page, you'll get a chance to enter a new password. 
+Once you're back on the site, you'll get a chance to enter a new password. 
 Don't forget this one! Actually you can reset this as many times as you'd like, so don't
 worry too much :-)
 
@@ -113,16 +113,16 @@ In case you forgot your username too that's: {0}
 Here's your link:
 {1}
 
---Joe
+--Your friends at {2}
 
 P.S. One last thing. This link will only last for a week, so be sure to reset it as soon as you can.
 ";
 			string link = @"{0}/Forgot.aspx?resetValue={1}";
-			link = string.Format(link, Settings.Default.CurrentDomain, resetValue.ToString());
+            link = string.Format(link, HttpContext.Current.Request.Url.Host, resetValue.ToString(), SettingsIO.GetSetting("SiteName"));
 
 			message = string.Format(message, currentUser.UserName, link);
 
-			MailAddress from = new MailAddress(Settings.Default.emailUser, "Technically Learning Support");
+			MailAddress from = new MailAddress(SettingsIO.GetSetting("noReplyEmail"), SettingsIO.GetSetting("SiteName") + " Support");
 			MailAddress to = new MailAddress(currentUser.email, currentUser.UserName);
 
 			MailMessage mm = new MailMessage(from, to);
@@ -132,7 +132,7 @@ P.S. One last thing. This link will only last for a week, so be sure to reset it
 			mm.IsBodyHtml = false;
 
 			SmtpClient client = new SmtpClient();
-			client.Credentials = new NetworkCredential(Settings.Default.emailUser, Settings.Default.emailPass);
+            client.Credentials = new NetworkCredential(SettingsIO.GetSetting("noReplyEmailUser"), SettingsIO.GetSetting("noReplyEmailPass"));
 			client.Send(mm);
 		}
 	}

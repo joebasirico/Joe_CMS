@@ -13,6 +13,24 @@ namespace TLWebsite2011 {
     public partial class News {
         
         /// <summary>
+        /// NewsTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NewsTitle;
+        
+        /// <summary>
+        /// EditNewsTitleTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox EditNewsTitleTextBox;
+        
+        /// <summary>
         /// AddNews control.
         /// </summary>
         /// <remarks>
@@ -20,6 +38,24 @@ namespace TLWebsite2011 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label AddNews;
+        
+        /// <summary>
+        /// EditTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton EditTitle;
+        
+        /// <summary>
+        /// SaveTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton SaveTitle;
         
         /// <summary>
         /// NewsList control.

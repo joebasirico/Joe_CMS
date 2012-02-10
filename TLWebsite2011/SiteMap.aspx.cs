@@ -18,8 +18,8 @@ namespace TLWebsite2011
 			dt.Columns.Add("SubTitle");
 			dt.Columns.Add("Link");
 
-			AddPage(dt, "Home", " - Main page of Technically Learning", "Default.aspx");
-			AddPage(dt, "News", " - All news at Technically Learning", "News.aspx");
+            AddPage(dt, "Home", " - Main page of " + SettingsIO.GetSetting("SiteName"), "Default.aspx");
+            AddPage(dt, "News", " - " + SettingsIO.GetSetting("NewsTitle") + SettingsIO.GetSetting("SiteName"), "News.aspx");
 			AddPage(dt, "SiteMap", " - This sitemap page", "Sitemap.aspx");
 
 			foreach (PageIO page in PageIO.GetAllRecentPages())

@@ -16,7 +16,7 @@ namespace TLWebsite2011
             base.Page_Load(sender, e);
             pageName = "Default";
             contentDescription = "News Items";
-            Page.Title = Settings.Default.SiteName;
+            Page.Title = SettingsIO.GetSetting("SiteName");
 
             if (0 < userID)
             {
@@ -24,7 +24,9 @@ namespace TLWebsite2011
                 EditButton2.Visible = true;
             }
 
-            PopulateNews(Settings.Default.NewsCountFront);
+            int newsCount = 3;
+            int.TryParse(SettingsIO.GetSetting("NewsCountFront"), out newsCount);
+            PopulateNews(newsCount);
 
             PopulateTemplate();
         }
@@ -42,10 +44,10 @@ namespace TLWebsite2011
             {
                 CustomHeader.Visible = true;
                 CustomHeader.Text = page.Body;
-                Page.Title = Settings.Default.SiteName + page.Title;
+                Page.Title = SettingsIO.GetSetting("SiteName") + page.Title;
             }
             else
-                SiteName.Text = Settings.Default.SiteName;
+                SiteName.Text = SettingsIO.GetSetting("SiteName");
 
             //General Template
             page = new PageIO(GetUniqueTemplateName());
@@ -109,7 +111,9 @@ namespace TLWebsite2011
                 r["Date"] = n.Updated.ToShortDateString();
                 r["Author"] = Auth.LookupUserName(n.UpdatedBy);
                 string htmlBody = "";
-                bool wasTruncated = n.GetBodyAsHTML(Settings.Default.TruncateNewsFront, out htmlBody);
+                int truncatedNewsFront = 500;
+                int.TryParse(SettingsIO.GetSetting("TruncatedNewsFront"), out truncatedNewsFront);
+                bool wasTruncated = n.GetBodyAsHTML(truncatedNewsFront, out htmlBody);
                 if (wasTruncated)
                     r["Body"] = htmlBody + "<a href=\"" + link + "\">... read more.</a>";
                 else
@@ -133,6 +137,7 @@ namespace TLWebsite2011
                 SystemContent.Visible = false;
 
                 EditButton.Visible = false;
+                EditButton2.Visible = false;
                 EditBody.Visible = true;
 
                 if (!string.IsNullOrEmpty(SettingsIO.GetSetting(GetUniqueStyleSheetName())))
@@ -152,7 +157,15 @@ namespace TLWebsite2011
 
         protected void Save_Click(object sender, EventArgs e)
         {
-            PageIO page = new PageIO(EditTitleTextBox.Text, "", GetUniqueTemplateName() , EditBodyTextBox.Text, System.DateTime.Now, ContentTypeDropDown.SelectedValue, userID, false);
+            page = new PageIO(EditTitleTextBox.Text, "", GetUniqueTemplateName() , EditBodyTextBox.Text, System.DateTime.Now, ContentTypeDropDown.SelectedValue, userID, false);
+            page.SavePage();
+
+            EditButton_Click(sender, e);
+        }
+
+        protected void Finish_Click(object sender, EventArgs e)
+        {
+            PageIO page = new PageIO(EditTitleTextBox.Text, "", GetUniqueTemplateName(), EditBodyTextBox.Text, System.DateTime.Now, ContentTypeDropDown.SelectedValue, userID, false);
             page.SavePage();
 
             Response.Redirect(Request.Url.AbsolutePath);

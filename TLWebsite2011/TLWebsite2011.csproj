@@ -57,6 +57,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Donate.aspx" />
     <Content Include="Edit.aspx" />
+    <Content Include="EditMasterTemplate.aspx" />
     <Content Include="EditNews.aspx" />
     <Content Include="Forgot.aspx" />
     <Content Include="GetInvolved.htm" />
@@ -159,6 +160,13 @@
     </Compile>
     <Compile Include="Edit.aspx.designer.cs">
       <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditMasterTemplate.aspx.cs">
+      <DependentUpon>EditMasterTemplate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditMasterTemplate.aspx.designer.cs">
+      <DependentUpon>EditMasterTemplate.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditNews.aspx.cs">
       <DependentUpon>EditNews.aspx</DependentUpon>

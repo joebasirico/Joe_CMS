@@ -10,21 +10,20 @@ using System.Threading;
 
 namespace TLWebsite2011
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class Login : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Guid session = new Guid();
-            //we've never seen this user before or they've cleared their cookies
-            if (Request.Cookies["session"] != null && Guid.TryParse(Request.Cookies["session"].Value, out session))
+            base.Page_Load(sender, e);
+            if (userID != 0)
             {
-                int userID = Auth.checkSession(session);
-                if (userID != 0)
-                {
-                    LoginPanel.Visible = false;
-                    AlreadyLoggedIn.Visible = true;
-                }
+                LoginPanel.Visible = false;
+                AlreadyLoggedIn.Visible = true;
             }
+
+            if (string.IsNullOrWhiteSpace(SettingsIO.GetSetting("AuthCode")))
+                AuthCodeCheck.Visible = false;
+
 
             String scriptName = "SetFocusScript";
             Type scriptType = this.GetType();

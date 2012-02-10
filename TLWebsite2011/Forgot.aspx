@@ -20,8 +20,7 @@
 			<h1>
 				Password Recovery</h1>
 			<div class="section">
-				An e-mail is on it's way with instructions on how to reset your password. Thanks
-				for using WikiRater!
+				An e-mail is on it's way with instructions on how to reset your password.
 			</div>
 	</asp:Panel>
 	<asp:Panel runat="server" ID="PasswordReset" Visible="false">
@@ -29,7 +28,7 @@
 				Password Recovery</h1>
 			<div class="section">
 				<asp:Label ID="resetMessage" runat="server" />
-				Please enter a new password for WikiRater (don't worry, I won't look).
+				Please enter a new password (don't worry, I won't look).
 				<br />
 				<asp:TextBox runat="server" ID="Password1" TextMode="Password"></asp:TextBox><br />
 				<asp:TextBox runat="server" ID="Password2" TextMode="Password"></asp:TextBox><br />
@@ -41,7 +40,7 @@
 				Password Recovery</h1>
 			<div class="section">
 				Success! You've reset your password, and you've been logged in. Feel free to browse
-				around!</a>
+				around!
 			</div>
 	</asp:Panel>
 </asp:Content>

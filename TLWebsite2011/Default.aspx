@@ -80,12 +80,7 @@
         <h2>Custom StyleSheet</h2>
         <div>Leave blank to use the default.</div>
         <asp:TextBox ID="EditStyleSheetTextBox" runat="server" Width="665px"></asp:TextBox><br />
-        <asp:DropDownList ID="ContentTypeDropDown" runat="server">
-            <asp:ListItem Value="PlainText">Plain Text</asp:ListItem>
-            <asp:ListItem Selected="True">Markdown</asp:ListItem>
-            <asp:ListItem>HTML</asp:ListItem>
-        </asp:DropDownList>
-        <br />
+        
         This page accepts Markdown, and easy to learn markup language. <a href="Show.aspx?page=Markdown"
             target="_blank">Click here</a> for more information.<br />
         <table width="700px">
@@ -105,6 +100,12 @@
         to go. If you want to put a link to log people in add &&SYSTEM_LOGIN&& to the text
         (optional).
         <h2>Body</h2>
+        <asp:DropDownList ID="ContentTypeDropDown" runat="server">
+            <asp:ListItem Value="PlainText">Plain Text</asp:ListItem>
+            <asp:ListItem Selected="True">Markdown</asp:ListItem>
+            <asp:ListItem>HTML</asp:ListItem>
+        </asp:DropDownList>
+        <br />
         <asp:TextBox ID="EditBodyTextBox" runat="server" TextMode="MultiLine" Height="326px"
             Width="665px"></asp:TextBox>
         
@@ -114,7 +115,8 @@
                 Width="665px"></asp:TextBox>
         </div>
         <br />
-        <asp:Button ID="Save" runat="server" Text="Save" OnClick="Save_Click" />
+        <asp:Button ID="Save" runat="server" Text="Save" OnClick="Save_Click" /> 
+        <asp:Button ID="Finish" runat="server" Text="Finish" onclick="Finish_Click" />
     </asp:Panel>
     </form>
 </body>

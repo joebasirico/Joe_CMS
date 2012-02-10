@@ -33,7 +33,7 @@ namespace TLWebsite2011
                 return "";
         }
 
-        public static void SetSettings(string key, string value)
+        public static void SaveSetting(string key, string value)
         {
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TLConnectionString"].ConnectionString))
             {
