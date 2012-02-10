@@ -68,6 +68,40 @@ GO
 
 GO
 /*
+The column [dbo].[Settings].[Description] is being dropped, data loss could occur.
+
+The column [dbo].[Settings].[FriendlyName] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [dbo].[Settings])
+    RAISERROR ('Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+PRINT N'Dropping DF_Settings_Description...';
+
+
+GO
+ALTER TABLE [dbo].[Settings] DROP CONSTRAINT [DF_Settings_Description];
+
+
+GO
+PRINT N'Dropping DF_Settings_FriendlyName...';
+
+
+GO
+ALTER TABLE [dbo].[Settings] DROP CONSTRAINT [DF_Settings_FriendlyName];
+
+
+GO
+PRINT N'Altering [dbo].[Settings]...';
+
+
+GO
+ALTER TABLE [dbo].[Settings] DROP COLUMN [Description], COLUMN [FriendlyName];
+
+
+GO
+/*
 Post-Deployment Script Template							
 --------------------------------------------------------------------------------------
  This file contains SQL statements that will be appended to the build script.		

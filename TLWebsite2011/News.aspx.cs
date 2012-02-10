@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using TLWebsite2011.Properties;
 using System.Data;
 
 namespace Joe_CMS

@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"
-	CodeBehind="UploadedFiles.aspx.cs" Inherits="TLWebsite2011.UploadedFiles" %>
+	CodeBehind="UploadedFiles.aspx.cs" Inherits="Joe_CMS.UploadedFiles" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

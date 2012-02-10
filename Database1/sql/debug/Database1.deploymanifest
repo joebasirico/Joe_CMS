@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetConnectionString>Data Source=.\SQLEXPRESS;Integrated Security=True;Pooling=False</TargetConnectionString>
     <TargetDatabase>TL_CMS</TargetDatabase>
-    <DeployToDatabase>True</DeployToDatabase>
+    <DeployToDatabase>False</DeployToDatabase>
     <DeployToScript>True</DeployToScript>
     <SourceModel>Database1.dbschema</SourceModel>
     <DeployScriptFileName>Database1.sql</DeployScriptFileName>

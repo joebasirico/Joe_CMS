@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"
-	CodeBehind="Edit.aspx.cs" Inherits="TLWebsite2011.Edit" ValidateRequest="false" %>
+	CodeBehind="Edit.aspx.cs" Inherits="Joe_CMS.Edit" ValidateRequest="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 	<style type="text/css">

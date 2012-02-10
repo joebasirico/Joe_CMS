@@ -9,8 +9,6 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using TLWebsite2011;
-using TLWebsite2011.Properties;
 
 namespace Joe_CMS
 {

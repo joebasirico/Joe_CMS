@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"
-    CodeBehind="404.aspx.cs" Inherits="TLWebsite2011._404" %>
+    CodeBehind="404.aspx.cs" Inherits="Joe_CMS._404" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <asp:Literal ID="StyleSheet404" runat="server"></asp:Literal>
