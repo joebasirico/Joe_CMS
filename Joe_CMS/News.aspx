@@ -33,10 +33,10 @@
     <asp:DataPager ID="NewsPager" runat="server" PagedControlID="NewsList" 
         onprerender="NewsPager_PreRender">
         <Fields>
-            <asp:NextPreviousPagerField FirstPageText="&lt;&lt;" ShowFirstPageButton="True" ShowNextPageButton="False"
+            <asp:NextPreviousPagerField FirstPageText="|&lt;&lt;" ShowFirstPageButton="True" ShowNextPageButton="False"
                 ShowPreviousPageButton="False" />
             <asp:NumericPagerField />
-            <asp:NextPreviousPagerField LastPageText="&gt;&gt;" ShowLastPageButton="True" ShowNextPageButton="False"
+            <asp:NextPreviousPagerField LastPageText="&gt;&gt;}" ShowLastPageButton="True" ShowNextPageButton="False"
                 ShowPreviousPageButton="False" />
         </Fields>
     </asp:DataPager>

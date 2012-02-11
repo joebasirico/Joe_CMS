@@ -57,6 +57,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Donate.aspx" />
     <Content Include="Edit.aspx" />
+    <Content Include="EditCSS.aspx" />
     <Content Include="EditMasterTemplate.aspx" />
     <Content Include="EditNews.aspx" />
     <Content Include="Forgot.aspx" />
@@ -72,6 +73,7 @@
     <Content Include="Programs.htm" />
     <Content Include="Register.aspx" />
     <Content Include="Resources.htm" />
+    <Content Include="Settings.aspx" />
     <Content Include="Show.aspx" />
     <Content Include="SiteMap.aspx" />
     <Content Include="SiteResources\Images\animation-sm.jpg" />
@@ -163,6 +165,13 @@
     <Compile Include="Edit.aspx.designer.cs">
       <DependentUpon>Edit.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditCSS.aspx.cs">
+      <DependentUpon>EditCSS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditCSS.aspx.designer.cs">
+      <DependentUpon>EditCSS.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EditMasterTemplate.aspx.cs">
       <DependentUpon>EditMasterTemplate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -230,17 +239,19 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.aspx.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings.aspx.designer.cs">
+      <DependentUpon>Settings.aspx</DependentUpon>
     </Compile>
     <Compile Include="SettingsIO.cs" />
     <Compile Include="Show.aspx.cs">
@@ -256,6 +267,9 @@
     </Compile>
     <Compile Include="SiteMap.aspx.designer.cs">
       <DependentUpon>SiteMap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stylesheet.ashx.cs">
+      <DependentUpon>Stylesheet.ashx</DependentUpon>
     </Compile>
     <Compile Include="UpdateMyInfo.aspx.cs">
       <DependentUpon>UpdateMyInfo.aspx</DependentUpon>
@@ -298,13 +312,10 @@
       <LastGenOutput>DataClasses.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
     <None Include="SiteResources\Images\donatebutton.psd" />
     <None Include="SiteResources\Images\social network icons.psd" />
     <None Include="SiteResources\Images\Thumbs.db" />
+    <Content Include="Stylesheet.ashx" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

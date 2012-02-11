@@ -52,6 +52,8 @@ namespace Joe_CMS
 			TitleBox.Text = page.Title;
 			SubTitleBox.Text = page.SubTitle;
 			URLBox.Text = page.URLTitle;
+            IsDraftCheckBox.Checked = page.IsDraft;
+            IsPrivateCheckBox.Checked = page.IsPrivate;
 			BodyBox.Text = page.Body;
 			ContentTypeDropDown.SelectedItem.Selected = false;
 			ContentTypeDropDown.Items.FindByValue(page.ContentType).Selected = true;
@@ -67,7 +69,9 @@ namespace Joe_CMS
 			else
 				url = PageIO.GetResolvedURLText(URLBox.Text);
 
-			PageIO page = new PageIO(TitleBox.Text, SubTitleBox.Text, url, BodyBox.Text, System.DateTime.Now, ContentTypeDropDown.SelectedValue, userID, false);
+			PageIO page = new PageIO(TitleBox.Text, SubTitleBox.Text, url, BodyBox.Text, 
+                System.DateTime.Now, ContentTypeDropDown.SelectedValue, userID, 
+                IsDraftCheckBox.Checked, IsPrivateCheckBox.Checked);
 			page.SavePage();
 
 			Response.Redirect("Show.aspx?page="+page.URLTitle);

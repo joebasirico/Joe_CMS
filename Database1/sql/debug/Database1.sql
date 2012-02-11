@@ -68,6 +68,14 @@ GO
 
 GO
 /*
+The column [dbo].[Pages].[IsPrivate] is being dropped, data loss could occur.
+*/
+
+IF EXISTS (select top 1 1 from [dbo].[Pages])
+    RAISERROR ('Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+/*
 The column [dbo].[Settings].[Description] is being dropped, data loss could occur.
 
 The column [dbo].[Settings].[FriendlyName] is being dropped, data loss could occur.
@@ -75,6 +83,14 @@ The column [dbo].[Settings].[FriendlyName] is being dropped, data loss could occ
 
 IF EXISTS (select top 1 1 from [dbo].[Settings])
     RAISERROR ('Rows were detected. The schema update is terminating because data loss might occur.', 16, 127) WITH NOWAIT
+
+GO
+PRINT N'Dropping DF_Pages_IsPrivate...';
+
+
+GO
+ALTER TABLE [dbo].[Pages] DROP CONSTRAINT [DF_Pages_IsPrivate];
+
 
 GO
 PRINT N'Dropping DF_Settings_Description...';
@@ -93,6 +109,14 @@ ALTER TABLE [dbo].[Settings] DROP CONSTRAINT [DF_Settings_FriendlyName];
 
 
 GO
+PRINT N'Altering [dbo].[Pages]...';
+
+
+GO
+ALTER TABLE [dbo].[Pages] DROP COLUMN [IsPrivate];
+
+
+GO
 PRINT N'Altering [dbo].[Settings]...';
 
 
@@ -100,6 +124,24 @@ GO
 ALTER TABLE [dbo].[Settings] DROP COLUMN [Description], COLUMN [FriendlyName];
 
 
+GO
+PRINT N'Altering [dbo].[CreatePage]...';
+
+
+GO
+ALTER PROCEDURE [dbo].[CreatePage]
+	@Title nvarchar(512),
+	@SubTitle nvarchar(512),
+	@URLTitle nvarchar(512),
+	@Body text, 
+	@Updated datetime, 
+	@ContentType nvarchar(50),
+	@UpdatedBy int,
+	@IsDraft bit
+AS
+	INSERT INTO [Pages] Values
+	(@Title, @SubTitle, @URLTitle, @Body, @Updated, @ContentType, @UpdatedBy, @IsDraft)
+	RETURN
 GO
 /*
 Post-Deployment Script Template							

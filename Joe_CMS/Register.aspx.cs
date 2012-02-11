@@ -30,11 +30,19 @@ namespace Joe_CMS
 						DataClassesDataContext dc = new DataClassesDataContext();
 						if (null == dc.Users.FirstOrDefault(u => u.email == email.Text))
 						{
-							if (!new Regex(SettingsIO.GetSetting("UsernameRegex")).IsMatch(UsernameBox.Text))
+                            string usernameRegex = SettingsIO.GetSetting("UsernameRegex");
+                            if(string.IsNullOrWhiteSpace(usernameRegex))
+                                usernameRegex = @"^[a-zA-Z0-9_\.\-]{3,}$";
+
+							if (!new Regex(usernameRegex).IsMatch(UsernameBox.Text))
 								Message.Text = SettingsIO.GetSetting("UsernameFailedMatchMessage");
 							else
 							{
-								if (!new Regex(SettingsIO.GetSetting("emailRegex")).IsMatch(email.Text))
+                                string emailRegex = SettingsIO.GetSetting("emailRegex");
+                                if (string.IsNullOrWhiteSpace(emailRegex))
+                                    emailRegex = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
+
+                                if (!new Regex(emailRegex).IsMatch(email.Text))
 									Message.Text = SettingsIO.GetSetting("EmailFailedMatchMessage");
 								else
 								{
@@ -118,7 +126,7 @@ The username you chose was: {0}
 			mm.BodyEncoding = System.Text.Encoding.ASCII;
 			mm.IsBodyHtml = false;
 
-			SmtpClient client = new SmtpClient();
+			SmtpClient client = new SmtpClient(SettingsIO.GetSetting("emailServer"));
 			client.Credentials = new NetworkCredential(SettingsIO.GetSetting("noReplyEmailUser"), SettingsIO.GetSetting("noReplyEmailName"));
 			client.Send(mm);
 		}

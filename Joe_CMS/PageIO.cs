@@ -20,6 +20,7 @@ namespace Joe_CMS
         public string ContentType = "";
         public int UpdatedBy = -1;
         public bool IsDraft = false;
+        public bool IsPrivate = false;
 
         public PageIO(string urlTitle)
         {
@@ -41,6 +42,7 @@ namespace Joe_CMS
                     ContentType = reader.GetString(6);
                     UpdatedBy = reader.GetInt32(7);
                     IsDraft = reader.GetBoolean(8);
+                    IsPrivate = reader.GetBoolean(9);
                 }
             }
         }
@@ -67,12 +69,13 @@ namespace Joe_CMS
                     ContentType = reader.GetString(6);
                     UpdatedBy = reader.GetInt32(7);
                     IsDraft = reader.GetBoolean(8);
+                    IsPrivate = reader.GetBoolean(9);
                 }
             }
         }
 
         public PageIO(string title, string subTitle, string urlTitle, string body,
-            DateTime updated, string contentType, int updatedBy, bool isDraft)
+            DateTime updated, string contentType, int updatedBy, bool isDraft, bool isPrivate)
         {
             Title = title;
             SubTitle = subTitle;
@@ -82,6 +85,7 @@ namespace Joe_CMS
             ContentType = contentType;
             UpdatedBy = updatedBy;
             IsDraft = isDraft;
+            IsPrivate = isPrivate;
         }
 
         public static string GetResolvedURLText(string url)
@@ -102,6 +106,7 @@ namespace Joe_CMS
                 command.Parameters.AddWithValue("@Updated", System.DateTime.Now);
                 command.Parameters.AddWithValue("@ContentType", ContentType);
                 command.Parameters.AddWithValue("@IsDraft", IsDraft);
+                command.Parameters.AddWithValue("@IsPrivate", IsPrivate);
                 command.Parameters.AddWithValue("@UpdatedBy", UpdatedBy);
                 command.CommandType = CommandType.StoredProcedure;
                 command.ExecuteNonQuery();
@@ -121,6 +126,7 @@ namespace Joe_CMS
                 command.Parameters.AddWithValue("@Updated", UpdatedOverride);
                 command.Parameters.AddWithValue("@ContentType", ContentType);
                 command.Parameters.AddWithValue("@IsDraft", IsDraft);
+                command.Parameters.AddWithValue("@IsPrivate", IsPrivate);
                 command.CommandType = CommandType.StoredProcedure;
                 command.ExecuteNonQuery();
             }
@@ -193,7 +199,7 @@ namespace Joe_CMS
             {
                 PageIO p = new PageIO(reader.GetString(1), reader.GetString(2),
                     reader.GetString(3), reader.GetString(4), reader.GetDateTime(5),
-                    reader.GetString(6), reader.GetInt32(7), reader.GetBoolean(8));
+                    reader.GetString(6), reader.GetInt32(7), reader.GetBoolean(8), reader.GetBoolean(9));
                 p.ID = reader.GetInt32(0);
                 pages.Add(p);
             }

@@ -86,7 +86,10 @@ namespace Joe_CMS
             if (!string.IsNullOrEmpty(SettingsIO.GetSetting(GetUniqueStyleSheetName())))
                 StyleSheet.Text = String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" />", SettingsIO.GetSetting(GetUniqueStyleSheetName()));
             else
-                StyleSheet.Text = String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" />", SettingsIO.GetSetting("DefaultStyleSheet"));
+            {
+                
+                StyleSheet.Text = "<link href=\"Stylesheet.ashx\" rel=\"stylesheet\" type=\"text/css\" />";
+            }
         }
 
         private void PopulateNews(int count)
@@ -156,7 +159,8 @@ namespace Joe_CMS
 
         protected void Save_Click(object sender, EventArgs e)
         {
-            page = new PageIO(EditTitleTextBox.Text, "", GetUniqueTemplateName() , EditBodyTextBox.Text, System.DateTime.Now, ContentTypeDropDown.SelectedValue, userID, false);
+            page = new PageIO(EditTitleTextBox.Text, "", GetUniqueTemplateName() , EditBodyTextBox.Text, 
+                System.DateTime.Now, ContentTypeDropDown.SelectedValue, userID, false, true);
             page.SavePage();
 
             EditButton_Click(sender, e);
@@ -164,7 +168,8 @@ namespace Joe_CMS
 
         protected void Finish_Click(object sender, EventArgs e)
         {
-            PageIO page = new PageIO(EditTitleTextBox.Text, "", GetUniqueTemplateName(), EditBodyTextBox.Text, System.DateTime.Now, ContentTypeDropDown.SelectedValue, userID, false);
+            PageIO page = new PageIO(EditTitleTextBox.Text, "", GetUniqueTemplateName(), EditBodyTextBox.Text, 
+                System.DateTime.Now, ContentTypeDropDown.SelectedValue, userID, false, true);
             page.SavePage();
 
             Response.Redirect(Request.Url.AbsolutePath);

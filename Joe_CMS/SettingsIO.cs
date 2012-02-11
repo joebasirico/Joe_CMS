@@ -33,6 +33,38 @@ namespace Joe_CMS
                 return "";
         }
 
+        public static Tuple<string, string, string> GetCompleteSetting(string key)
+        {
+            int count = 0;
+            string title = "";
+            string description = "";
+            string value = "";
+
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand("GetCompleteSetting", conn);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@SettingKey", key);
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    title = reader.GetString(1);
+                    description = reader.GetString(2);
+                    value = reader.GetString(4);
+                    count++;
+                }
+            }
+
+            Tuple<string, string, string> setting = new Tuple<string, string, string>(title, description, value);
+
+            if (count == 1)
+                return setting;
+            else
+                return null;
+        }
+
         public static void SaveSetting(string key, string value)
         {
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))

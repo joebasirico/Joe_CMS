@@ -20,6 +20,10 @@
 			<asp:TextBox ID="URLBox" runat="server" CssClass="EditURL"></asp:TextBox>(leave
 			this blank unless you know what you're doing)</div>
 		<br />
+        <asp:CheckBox ID="IsDraftCheckBox" runat="server" Text="Draft" 
+        ToolTip="Check this checkbox if this page will be public later, but should be hidden until it is finished" />
+        <asp:CheckBox ID="IsPrivateCheckBox" runat="server" Text="Private"
+        ToolTip="Check this checkbox if this page should only be shown to other administrators" /><br />
 		Content Type:
 		<asp:DropDownList ID="ContentTypeDropDown" runat="server">
 			<asp:ListItem Value="PlainText">Plain Text</asp:ListItem>

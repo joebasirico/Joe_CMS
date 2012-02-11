@@ -29,10 +29,11 @@ namespace Joe_CMS
                     CustomBody.Visible = true;
                     CustomBodyHTML.Text = page.GetBodyAsHTML();
                 }
+
                 if (!string.IsNullOrEmpty(SettingsIO.GetSetting("StyleSheet404")))
                     StyleSheet404.Text = String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" />", SettingsIO.GetSetting("StyleSheet404"));
                 else
-                    StyleSheet404.Text = String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" />", SettingsIO.GetSetting("DefaultStyleSheet"));
+                    StyleSheet404.Text = "<link href=\"Stylesheet.ashx\" rel=\"stylesheet\" type=\"text/css\" />";
             }
         }
 
@@ -61,7 +62,7 @@ namespace Joe_CMS
 
         protected void Save_Click(object sender, EventArgs e)
         {
-            PageIO page = new PageIO("", "", pageName, EditBodyTextBox.Text, System.DateTime.Now, ContentTypeDropDown.SelectedValue, userID, false);
+            PageIO page = new PageIO("", "", pageName, EditBodyTextBox.Text, System.DateTime.Now, ContentTypeDropDown.SelectedValue, userID, false, true);
             page.SavePage();
 
             Response.Redirect(Request.Url.AbsolutePath);

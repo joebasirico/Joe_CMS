@@ -13,7 +13,7 @@
             Custom StyleSheet</h2>
         <div>
             Leave blank to use the default.</div>
-        <asp:TextBox ID="EditStyleSheetTextBox" runat="server" Width="665px"></asp:TextBox><br />
+        <asp:TextBox ID="EditStyleSheetTextBox" runat="server" Width="100%"></asp:TextBox><br />
         This page accepts Markdown, and easy to learn markup language. <a href="Show.aspx?page=Markdown"
             target="_blank">Click here</a> for more information.<br />
         <table width="700px">
@@ -41,12 +41,12 @@
         </asp:DropDownList>
         <br />
         <asp:TextBox ID="EditBodyTextBox" runat="server" TextMode="MultiLine" Height="326px"
-            Width="665px"></asp:TextBox>
+            Width="100%"></asp:TextBox>
         <div id="EditHeaderWrapper">
             <h2>
                 Header</h2>
             <asp:TextBox ID="EditHeaderTextBox" runat="server" TextMode="MultiLine" Height="120px"
-                Width="665px"></asp:TextBox>
+                Width="100%"></asp:TextBox>
         </div>
         <br />
         <asp:Button ID="Save" runat="server" Text="Save" OnClick="Save_Click" />

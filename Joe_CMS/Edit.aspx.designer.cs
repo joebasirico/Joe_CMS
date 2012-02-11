@@ -58,6 +58,24 @@ namespace Joe_CMS {
         protected global::System.Web.UI.WebControls.TextBox URLBox;
         
         /// <summary>
+        /// IsDraftCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox IsDraftCheckBox;
+        
+        /// <summary>
+        /// IsPrivateCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox IsPrivateCheckBox;
+        
+        /// <summary>
         /// ContentTypeDropDown control.
         /// </summary>
         /// <remarks>

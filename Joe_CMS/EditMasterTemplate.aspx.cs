@@ -42,7 +42,7 @@ namespace Joe_CMS
 
         protected void Save_Click(object sender, EventArgs e)
         {
-            page = new PageIO("", "", GetUniqueTemplateName(), EditBodyTextBox.Text, System.DateTime.Now, ContentTypeDropDown.SelectedValue, userID, false);
+            page = new PageIO("", "", GetUniqueTemplateName(), EditBodyTextBox.Text, System.DateTime.Now, ContentTypeDropDown.SelectedValue, userID, false, true);
             page.SavePage();
 
 
@@ -50,7 +50,7 @@ namespace Joe_CMS
 
         protected void Finish_Click(object sender, EventArgs e)
         {
-            PageIO page = new PageIO("", "", GetUniqueTemplateName(), EditBodyTextBox.Text, System.DateTime.Now, ContentTypeDropDown.SelectedValue, userID, false);
+            PageIO page = new PageIO("", "", GetUniqueTemplateName(), EditBodyTextBox.Text, System.DateTime.Now, ContentTypeDropDown.SelectedValue, userID, false, true);
             page.SavePage();
 
             Response.Redirect("Default.aspx");

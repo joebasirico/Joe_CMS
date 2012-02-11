@@ -41,7 +41,7 @@ namespace Joe_CMS
             if (!string.IsNullOrEmpty(SettingsIO.GetSetting(css)))
                 MasterStyleSheet.Text = String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" />", SettingsIO.GetSetting(css));
             else
-                MasterStyleSheet.Text = String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" />", SettingsIO.GetSetting("DefaultStyleSheet"));
+                MasterStyleSheet.Text = "<link href=\"Stylesheet.ashx\" rel=\"stylesheet\" type=\"text/css\" />";
 
             //Header
             PageIO headerPage = new PageIO(header);
