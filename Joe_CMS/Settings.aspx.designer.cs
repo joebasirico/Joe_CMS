@@ -67,6 +67,33 @@ namespace Joe_CMS {
         protected global::System.Web.UI.WebControls.TextBox NewsTitleValue;
         
         /// <summary>
+        /// NewsStoryItemsOnFrontTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NewsStoryItemsOnFrontTitle;
+        
+        /// <summary>
+        /// NewsStoryItemsOnFrontDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NewsStoryItemsOnFrontDescription;
+        
+        /// <summary>
+        /// NewsStoryItemsOnFrontValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NewsStoryItemsOnFrontValue;
+        
+        /// <summary>
         /// NewsStoryLengthFrontPageTitle control.
         /// </summary>
         /// <remarks>

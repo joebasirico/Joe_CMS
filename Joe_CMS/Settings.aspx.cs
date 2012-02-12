@@ -19,6 +19,7 @@ namespace Joe_CMS
         {
             PopulateTriple("SiteName", SiteNameTitle, SiteNameDescription, SiteNameValue);
             PopulateTriple("NewsTitle", NewsTitleTitle, NewsTitleDescription, NewsTitleValue);
+            PopulateTriple("NewsCountFront", NewsStoryItemsOnFrontTitle, NewsStoryItemsOnFrontDescription, NewsStoryItemsOnFrontValue);
             PopulateTriple("TruncatedNewsFront", NewsStoryLengthFrontPageTitle, NewsStoryLengthFrontPageDescription, NewsStoryLengthFrontPageValue);
             PopulateTriple("TruncatedNews", NewsStoryLengthNewsPageTitle, NewsStoryLengthNewsPageDescription, NewsStoryLengthNewsPageValue);
             PopulateTriple("NewsItemsPerPage", NewsStoryItemsPerPageTitle, NewsStoryItemsPerPageDescription, NewsStoryItemsPerPageValue);

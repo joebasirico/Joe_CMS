@@ -28,6 +28,16 @@
         <tr>
             <td>
                 <strong>
+                    <asp:Label ID="NewsStoryItemsOnFrontTitle" runat="server"></asp:Label></strong><br />
+                <asp:Label ID="NewsStoryItemsOnFrontDescription" runat="server"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="NewsStoryItemsOnFrontValue" runat="server" Width="400px"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>
                     <asp:Label ID="NewsStoryLengthFrontPageTitle" runat="server"></asp:Label></strong><br />
                 <asp:Label ID="NewsStoryLengthFrontPageDescription" runat="server"></asp:Label>
             </td>
