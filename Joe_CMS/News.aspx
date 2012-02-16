@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1 class="page-title"><asp:Label ID="NewsTitle" runat="server"></asp:Label><asp:TextBox ID="EditNewsTitleTextBox" runat="server" Visible="false"></asp:TextBox></h1>
+    <h1 class="NewsPageTitle"><asp:Label ID="NewsTitle" runat="server"></asp:Label><asp:TextBox ID="EditNewsTitleTextBox" runat="server" Visible="false"></asp:TextBox></h1>
     <asp:Label ID="AddNews" runat="server" Visible="false"></asp:Label>
     <asp:LinkButton ID="EditTitle" runat="server" Visible="false" 
         onclick="EditTitle_Click" Text="Edit Title"></asp:LinkButton><asp:LinkButton ID="SaveTitle" 
@@ -14,14 +14,14 @@
             <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
         </LayoutTemplate>
         <ItemTemplate>
-            <h2 class="page-sub-title">
+            <h2 class="NewsTitle">
                 <a href='<%# Eval("Link")%>'>
                     <%# Eval("Title")%></a></h2>
-            <div class="page-date">
+            <div class="NewsSubTitle">
                 <%# Eval("Date")%>
                 - Posted by
                 <%# Eval("Author")%></div>
-            <div>
+            <div class="NewsBody">
                 <%# Eval("Body")%>
             </div>
         </ItemTemplate>

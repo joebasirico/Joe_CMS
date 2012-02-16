@@ -142,6 +142,7 @@ namespace Joe_CMS
                     return Body;
                 case "Markdown":
                     Markdown m = new Markdown();
+                    Body = Regex.Replace(Body, @"\[(.+?)\]\(([a-z0-9]+)\)", "[$1](Show.aspx?page=$2)", RegexOptions.IgnoreCase);
                     return m.Transform(Body);
                 default: //assume HTML
                     return Body;

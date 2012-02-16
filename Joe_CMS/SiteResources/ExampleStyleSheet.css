@@ -1,0 +1,215 @@
+﻿/*=========================================
+Site-wide Styles
+http://kuler.adobe.com/#themeID/15325
+=========================================*/
+body
+{
+    background-color: #002F2F;
+    font-family: Cambria, "Hoefler Text" , Utopia, "Liberation Serif" , "Nimbus Roman No9 L Regular" , Times, "Times New Roman" , serif;
+}
+
+h1
+{
+    font-family: Candara, Calibri, Segoe, "Segoe UI" , Optima, Arial, sans-serif;
+    text-transform: capitalize;
+}
+
+h2
+{
+    font-family: Candara, Calibri, Segoe, "Segoe UI" , Optima, Arial, sans-serif;
+}
+
+h3
+{
+    font-family: Candara, Calibri, Segoe, "Segoe UI" , Optima, Arial, sans-serif;
+}
+
+h4
+{
+    font-family: Candara, Calibri, Segoe, "Segoe UI" , Optima, Arial, sans-serif;
+}
+
+a
+{
+    color: #046380;
+    text-decoration: none;
+}
+
+a :hover
+{
+    color: #012834;
+}
+
+div
+{
+}
+
+p
+{
+}
+
+.Message
+{
+    color: Red;
+    font-weight: bold;
+}
+
+.BodyWrapper
+{
+    width: 800px;
+    padding: 10px;
+    padding-left: 100px;
+    background-color: White;
+    border: 2px solid #A7A37E;
+    margin: 10px auto 10px auto;
+}
+
+/*=========================================
+Default.aspx Styles
+=========================================*/
+/*-----------------------------------------
+Default News Styles
+-----------------------------------------*/
+/*Wraps each news item on the front page*/
+.DefaultNewsWrap
+{
+    padding-bottom: 20px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #046380;
+}
+
+/*The Title of each news item on the front page*/
+.DefaultNewsTitle
+{
+    font-family: Cambria, "Hoefler Text" , Utopia, "Liberation Serif" , "Nimbus Roman No9 L Regular" , Times, "Times New Roman" , serif;
+    font-size: 18pt;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.DefaultNewsSubTitle
+{
+    font-style: italic;
+    background-color: #EFECCA;
+}
+
+/*The body of each news item on the front page*/
+.DefaultNewsBody
+{
+}
+/*-----------------------------------------
+Default.aspx Styles for editing the page
+-----------------------------------------*/
+/*This wraps the Title Text box on the edit Default.aspx page*/
+.DefaultEditTitle
+{
+}
+
+/*This wraps the Body textbox on the edit Default.aspx page*/
+.EditDefaultBody
+{
+}
+
+/*This wraps the Header textbox on the edit Default.aspx page*/
+.EditDefaultHeader
+{
+}
+
+/*=========================================
+News.aspx Styles
+=========================================*/
+/*The News Page's Title at the top of the page*/
+.NewsTitle
+{
+}
+
+.NewsAdminButtons
+{
+}
+
+.NewsBody
+{
+}
+
+.NewsDateAutor
+{
+}
+/*=========================================
+EditNews.aspx Styles
+=========================================*/
+/*The News Page's Title at the top of the page*/
+.EditNewsTitle
+{
+    font-family: Cambria, "Hoefler Text" , Utopia, "Liberation Serif" , "Nimbus Roman No9 L Regular" , Times, "Times New Roman" , serif;
+    font-size: 22pt;
+    font-weight: bold;
+    border: none;
+}
+
+/*Things like the markdown links and upload files link*/
+.EditNewsAdminButtons
+{
+}
+
+
+.EditNewsUploadLinks
+{
+}
+
+.EditNewsBody
+{
+    padding: 10px;
+    border: 5px solid #ddd;
+    width: 80%;
+    height: 350px;
+}
+
+
+/*=========================================
+Edit.aspx Styles
+=========================================*/
+.EditTitle
+{
+    font-family: Cambria, "Hoefler Text" , Utopia, "Liberation Serif" , "Nimbus Roman No9 L Regular" , Times, "Times New Roman" , serif;
+    font-size: 22pt;
+    font-weight: bold;
+}
+
+.EditPageSubtitle
+{
+}
+
+.EditPageURL
+{
+}
+
+.EditUploadLinks
+{
+}
+
+.EditPageBody
+{
+    padding: 10px;
+    border: 5px solid #ddd;
+    width: 80%;
+    height: 350px;
+}
+
+/*=========================================
+Show.aspx Styles
+=========================================*/
+.PageTitle
+{
+}
+
+.PageSubTitle
+{
+}
+
+.PageBody
+{
+}
+
+.PageFooter
+{
+}

@@ -31,7 +31,7 @@ namespace Joe_CMS
 							{
 								TitleBox.Text = currentURL;
 								Message.Visible = true;
-								Message.Text = "This page doesn't exist, but because you are an admin you can create it.";
+								Message.Text = "This page doesn't exist, but because you are an admin you can create it.<br />";
 							}
 						}
 					}

@@ -41,6 +41,9 @@ namespace Joe_CMS
                     Response.Redirect("404.aspx");
             }
             //this page was called without specifying a page, just redirect to Default instead of showing an error
+            //also user is not logged in. If they're logged in redirect to the Edit page so the Admin can create a new page
+            else if (0 < userID)
+                Response.Redirect("Edit.aspx");
             else
                 Response.Redirect("Default.aspx");
 

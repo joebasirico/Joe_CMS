@@ -5,12 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <script language="Javascript" type="text/javascript" src="SiteResources/edit_area/edit_area_full.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
     <asp:TextBox ID="CSSValue" runat="server" TextMode="MultiLine" Width="100%" Height="600px"></asp:TextBox>
-    <asp:Button ID="Save" runat="server" Text="Save" onclick="Save_Click" />
+    <asp:Button ID="Save" runat="server" Text="Save" onclick="Save_Click" /> 
+        <asp:Button ID="Finish" runat="server" Text="Finish" onclick="Finish_Click" />
     </div>
     </form>
 </body>

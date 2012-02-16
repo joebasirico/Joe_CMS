@@ -46,7 +46,7 @@ namespace Joe_CMS {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel DefaultPreContentPanel;
+        protected global::System.Web.UI.WebControls.PlaceHolder DefaultPreContentPanel;
         
         /// <summary>
         /// SiteName control.
@@ -73,7 +73,7 @@ namespace Joe_CMS {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel CustomPreContentPanel;
+        protected global::System.Web.UI.WebControls.PlaceHolder CustomPreContentPanel;
         
         /// <summary>
         /// PreContentHTML control.
@@ -91,7 +91,7 @@ namespace Joe_CMS {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel SystemContent;
+        protected global::System.Web.UI.WebControls.PlaceHolder SystemContent;
         
         /// <summary>
         /// NewsList control.
@@ -109,7 +109,7 @@ namespace Joe_CMS {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel DefaultPostNewsPanel;
+        protected global::System.Web.UI.WebControls.PlaceHolder DefaultPostNewsPanel;
         
         /// <summary>
         /// DefaultLoginText control.
@@ -127,7 +127,7 @@ namespace Joe_CMS {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel CustomPostContentPanel;
+        protected global::System.Web.UI.WebControls.PlaceHolder CustomPostContentPanel;
         
         /// <summary>
         /// PostContentHTML control.
@@ -154,7 +154,7 @@ namespace Joe_CMS {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel EditBody;
+        protected global::System.Web.UI.WebControls.PlaceHolder EditBody;
         
         /// <summary>
         /// EditTitleTextBox control.
