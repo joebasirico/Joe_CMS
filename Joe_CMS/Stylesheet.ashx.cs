@@ -15,7 +15,12 @@ namespace Joe_CMS
         {
             context.Response.ContentType = "text/css";
             PageIO defaultCSS = new PageIO("System_CSS");
-            context.Response.Write(defaultCSS.Body);
+            if (!string.IsNullOrWhiteSpace(defaultCSS.Body))
+                context.Response.Write(defaultCSS.Body);
+            else
+            {
+                context.Response.WriteFile("SiteResources/ExampleStyleSheet.css");
+            }
         }
 
         public bool IsReusable
