@@ -8,23 +8,26 @@ using System.Text;
 
 namespace Joe_CMS
 {
-    public partial class EditCSS : System.Web.UI.Page
+    public partial class EditCSS : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
+            base.Page_Load(sender, e);
+            if (0 < userID)
             {
-                PageIO css = new PageIO("System_CSS");
-                CSSValue.Text = css.Body;
-            }
+                if (!Page.IsPostBack)
+                {
+                    PageIO css = new PageIO("System_CSS");
+                    CSSValue.Text = css.Body;
+                }
 
-            String scriptName = "EditArea";
-            Type scriptType = this.GetType();
+                String scriptName = "EditArea";
+                Type scriptType = this.GetType();
 
-            ClientScriptManager cs = Page.ClientScript;
-            if (!cs.IsStartupScriptRegistered(scriptType, scriptName))
-            {
-                string editAreaScript = @"editAreaLoader.init({
+                ClientScriptManager cs = Page.ClientScript;
+                if (!cs.IsStartupScriptRegistered(scriptType, scriptName))
+                {
+                    string editAreaScript = @"editAreaLoader.init({
 			id: '" + CSSValue.ClientID + @"'	// id of the textarea to transform		
 			,start_highlight: true	// if start with highlight
 			,allow_resize: 'both'
@@ -33,8 +36,12 @@ namespace Joe_CMS
 			,language: 'en'
 			,syntax: 'css'	
 		});";
-                cs.RegisterStartupScript(scriptType, scriptName, editAreaScript, true);
+                    cs.RegisterStartupScript(scriptType, scriptName, editAreaScript, true);
+                }
             }
+            else
+                Response.Redirect("Login.aspx");
+
         }
 
         protected void Save_Click(object sender, EventArgs e)

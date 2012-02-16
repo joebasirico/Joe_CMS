@@ -8,7 +8,7 @@
 			<table>
 				<tr>
 					<td>
-						<strong>Please Login</strong>
+						<h1>Please Login</h1>
 					</td>
 					<td align="right">
 						<a href="Register.aspx">...or register <asp:Label ID="AuthCodeCheck" runat="server">(Authorization Code Needed)</asp:Label></a>
@@ -46,11 +46,11 @@
 			</table>
 	</asp:Panel>
 	<asp:Panel ID="LoginCompletePanel" runat="server" Visible="false">
-			<strong>Login Complete</strong><br />
+			<h1>Login Complete</h1><br />
 			You have been logged successfully in.
 	</asp:Panel>
 	<asp:Panel ID="AlreadyLoggedIn" runat="server" Visible="false">
-			<strong>Already Logged In</strong><br />
+			<h1>Already Logged In</h1><br />
 			It looks like you're already logged in.<br />
 			<br />
 			If you need to <a href="Logout.aspx">logout</a>, you can do that too.

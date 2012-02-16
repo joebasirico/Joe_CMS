@@ -5,34 +5,33 @@ http://kuler.adobe.com/#themeID/15325
 body
 {
     background-color: #002F2F;
-    font-family: Cambria, "Hoefler Text" , Utopia, "Liberation Serif" , "Nimbus Roman No9 L Regular" , Times, "Times New Roman" , serif;
-}
+     font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;}
 
 h1
 {
-    font-family: Candara, Calibri, Segoe, "Segoe UI" , Optima, Arial, sans-serif;
+    font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
     text-transform: capitalize;
 }
 
 h2
 {
-    font-family: Candara, Calibri, Segoe, "Segoe UI" , Optima, Arial, sans-serif;
+    font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
 
 h3
 {
-    font-family: Candara, Calibri, Segoe, "Segoe UI" , Optima, Arial, sans-serif;
+    font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
 
 h4
 {
-    font-family: Candara, Calibri, Segoe, "Segoe UI" , Optima, Arial, sans-serif;
+    font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
 
 a
 {
     color: #046380;
-    text-decoration: none;
+    text-decoration:none;
 }
 
 a :hover
@@ -75,13 +74,13 @@ Default News Styles
 {
     padding-bottom: 20px;
     margin-bottom: 5px;
-    border-bottom: 1px solid #046380;
+    border-bottom: 1px solid #046380
 }
 
 /*The Title of each news item on the front page*/
 .DefaultNewsTitle
 {
-    font-family: Cambria, "Hoefler Text" , Utopia, "Liberation Serif" , "Nimbus Roman No9 L Regular" , Times, "Times New Roman" , serif;
+    font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
     font-size: 18pt;
     font-weight: bold;
     text-transform: capitalize;
@@ -90,12 +89,13 @@ Default News Styles
 .DefaultNewsSubTitle
 {
     font-style: italic;
-    background-color: #EFECCA;
+    background-color: #EFECCA
 }
 
 /*The body of each news item on the front page*/
 .DefaultNewsBody
 {
+    
 }
 /*-----------------------------------------
 Default.aspx Styles for editing the page
@@ -103,16 +103,40 @@ Default.aspx Styles for editing the page
 /*This wraps the Title Text box on the edit Default.aspx page*/
 .DefaultEditTitle
 {
+    font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+    font-size: 22px;
+    font-weight: bold;
+    border: 5px solid #ddd;
+    padding: 10px;
+    width: 80%;
 }
 
 /*This wraps the Body textbox on the edit Default.aspx page*/
 .EditDefaultBody
 {
+    padding: 10px;
+    border: 5px solid #ddd;
+    width: 80%;
+    height: 350px;
 }
 
 /*This wraps the Header textbox on the edit Default.aspx page*/
 .EditDefaultHeader
 {
+    padding: 10px;
+    border: 5px solid #ddd;
+    width: 80%;
+    height: 150px;
+}
+
+.EditDefaultUploadLinks
+{
+
+}
+
+.EditDefaultAdminButtons
+{
+
 }
 
 /*=========================================
@@ -121,6 +145,8 @@ News.aspx Styles
 /*The News Page's Title at the top of the page*/
 .NewsTitle
 {
+    font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+    font-size: 22px;
 }
 
 .NewsAdminButtons
@@ -140,10 +166,12 @@ EditNews.aspx Styles
 /*The News Page's Title at the top of the page*/
 .EditNewsTitle
 {
-    font-family: Cambria, "Hoefler Text" , Utopia, "Liberation Serif" , "Nimbus Roman No9 L Regular" , Times, "Times New Roman" , serif;
-    font-size: 22pt;
+    font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+    font-size: 22px;
     font-weight: bold;
-    border: none;
+    border: 5px solid #ddd;
+    padding: 10px;
+    width: 80%;
 }
 
 /*Things like the markdown links and upload files link*/
@@ -154,6 +182,7 @@ EditNews.aspx Styles
 
 .EditNewsUploadLinks
 {
+    width: 80%;
 }
 
 .EditNewsBody
@@ -168,15 +197,24 @@ EditNews.aspx Styles
 /*=========================================
 Edit.aspx Styles
 =========================================*/
-.EditTitle
+.EditPageTitle
 {
-    font-family: Cambria, "Hoefler Text" , Utopia, "Liberation Serif" , "Nimbus Roman No9 L Regular" , Times, "Times New Roman" , serif;
-    font-size: 22pt;
+    font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+    font-size: 22px;
     font-weight: bold;
+    border: 5px solid #ddd;
+    padding: 10px;
+    width: 80%;
 }
 
 .EditPageSubtitle
 {
+    font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+    font-size: 18px;
+    font-weight: bold;
+    border: 5px solid #ddd;
+    padding: 10px;
+    width: 80%;
 }
 
 .EditPageURL
@@ -204,6 +242,9 @@ Show.aspx Styles
 
 .PageSubTitle
 {
+    font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .PageBody

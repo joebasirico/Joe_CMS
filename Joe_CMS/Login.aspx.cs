@@ -12,6 +12,7 @@ namespace Joe_CMS
 {
     public partial class Login : BasePage
     {
+        string previousPage = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             base.Page_Load(sender, e);
@@ -62,15 +63,14 @@ namespace Joe_CMS
                     Response.Cookies.Add(new HttpCookie("session", session.ToString()));
                     if (RememberMe.Checked)
                         Response.Cookies["session"].Expires = DateTime.Now.AddMonths(1);
-
-
-                    Response.Redirect("Default.aspx");
                 }
                 else
                 {
                     Message.Text = "Incorrect username or password, please try again.<br/>";
                     Auth.CreateEvent("Failed Login Attempt", "By user: " + UsernameBox.Text, Request.UserHostAddress);
                 }
+
+                Response.Redirect("Default.aspx");
             }
             catch (ThreadAbortException)
             {
