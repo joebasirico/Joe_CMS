@@ -52,27 +52,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="404.aspx" />
-    <Content Include="About.htm" />
-    <Content Include="BoardMembers.htm" />
     <Content Include="Default.aspx" />
-    <Content Include="Donate.aspx" />
     <Content Include="Edit.aspx" />
     <Content Include="EditCSS.aspx" />
     <Content Include="EditMasterTemplate.aspx" />
     <Content Include="EditNews.aspx" />
     <Content Include="Forgot.aspx" />
-    <Content Include="GetInvolved.htm" />
-    <Content Include="LegoRobotics.htm" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
-    <Content Include="mission.htm" />
-    <Content Include="MoreInfo.htm" />
     <Content Include="News.aspx" />
     <Content Include="NewsItem.aspx" />
     <Content Include="History.aspx" />
-    <Content Include="Programs.htm" />
     <Content Include="Register.aspx" />
-    <Content Include="Resources.htm" />
     <Content Include="Settings.aspx" />
     <Content Include="Show.aspx" />
     <Content Include="SiteMap.aspx" />
@@ -202,9 +193,9 @@
     <Content Include="Upload.aspx" />
     <Content Include="UploadDelete.aspx" />
     <Content Include="UploadedFiles.aspx" />
-    <Content Include="Web.config">
+    <None Include="Web.config">
       <SubType>Designer</SubType>
-    </Content>
+    </None>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -235,13 +226,6 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Donate.aspx.cs">
-      <DependentUpon>Donate.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Donate.aspx.designer.cs">
-      <DependentUpon>Donate.aspx</DependentUpon>
     </Compile>
     <Compile Include="Edit.aspx.cs">
       <DependentUpon>Edit.aspx</DependentUpon>
