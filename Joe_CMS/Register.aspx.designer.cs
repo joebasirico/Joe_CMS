@@ -76,15 +76,6 @@ namespace Joe_CMS {
         protected global::System.Web.UI.WebControls.Button DoLogin;
         
         /// <summary>
-        /// RegistrationCompletePanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel RegistrationCompletePanel;
-        
-        /// <summary>
         /// AlreadyLoggedIn control.
         /// </summary>
         /// <remarks>

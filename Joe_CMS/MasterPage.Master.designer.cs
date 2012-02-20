@@ -13,15 +13,6 @@ namespace Joe_CMS {
     public partial class MasterPage {
         
         /// <summary>
-        /// MasterStyleSheet control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal MasterStyleSheet;
-        
-        /// <summary>
         /// head control.
         /// </summary>
         /// <remarks>

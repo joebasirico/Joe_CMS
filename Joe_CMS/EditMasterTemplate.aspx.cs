@@ -20,11 +20,6 @@ namespace Joe_CMS
                 
             if (!Page.IsPostBack)
             {
-                if (!string.IsNullOrEmpty(SettingsIO.GetSetting(GetUniqueStyleSheetName())))
-                    EditStyleSheetTextBox.Text = SettingsIO.GetSetting(GetUniqueStyleSheetName());
-                else
-                    EditStyleSheetTextBox.Text = SettingsIO.GetSetting("DefaultStyleSheet");
-
                 page = new PageIO(GetUniqueTemplateName());
                 if (-1 != page.ID)
                 {

@@ -35,11 +35,6 @@ namespace Joe_CMS
             return "System_" + pageName;
         }
 
-        protected string GetUniqueStyleSheetName()
-        {
-            return "System_" + pageName + "_StyleSheet";
-        }
-
         protected string GetUniqueHeaderName()
         {
             return "System_" + pageName + "_Header";

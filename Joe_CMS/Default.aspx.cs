@@ -14,7 +14,6 @@ namespace Joe_CMS
         {
             base.Page_Load(sender, e);
             pageName = "Default";
-            contentDescription = "News Items";
             Page.Title = SettingsIO.GetSetting("SiteName");
 
             if (0 < userID)
@@ -39,14 +38,11 @@ namespace Joe_CMS
 
             //Header Template 
             page = new PageIO(GetUniqueHeaderName());
-            if (-1 != page.ID && !string.IsNullOrWhiteSpace(page.Body))
+            if (-1 != page.ID)
             {
                 CustomHeader.Visible = true;
                 CustomHeader.Text = page.Body;
-                Page.Title = SettingsIO.GetSetting("SiteName") + page.Title;
             }
-            else
-                SiteName.Text = SettingsIO.GetSetting("SiteName");
 
             //General Template
             page = new PageIO(GetUniqueTemplateName());
@@ -56,6 +52,11 @@ namespace Joe_CMS
                 CustomPostContentPanel.Visible = true;
                 DefaultPostNewsPanel.Visible = false;
                 DefaultPreContentPanel.Visible = false;
+
+                if (!string.IsNullOrWhiteSpace(page.Title))
+                    Page.Title = SettingsIO.GetSetting("SiteName") + " " + page.Title;
+                else
+                    Page.Title = SettingsIO.GetSetting("SiteName");
 
                 string pageContent = page.GetBodyAsHTML();
 
@@ -80,16 +81,12 @@ namespace Joe_CMS
                 }
             }
             else
-                DefaultLoginText.Text = loginText;
-
-            //Custom Stylesheet
-            if (!string.IsNullOrEmpty(SettingsIO.GetSetting(GetUniqueStyleSheetName())))
-                StyleSheet.Text = String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" />", SettingsIO.GetSetting(GetUniqueStyleSheetName()));
-            else
             {
-                
-                StyleSheet.Text = "<link href=\"Stylesheet.ashx\" rel=\"stylesheet\" type=\"text/css\" />";
+                Page.Title = SettingsIO.GetSetting("SiteName");
+                SiteName.Text = SettingsIO.GetSetting("SiteName");
+                DefaultLoginText.Text = loginText;
             }
+
         }
 
         private void PopulateNews(int count)
@@ -130,49 +127,7 @@ namespace Joe_CMS
 
         protected void EditButton_Click(object sender, EventArgs e)
         {
-            if (0 < userID)
-            {
-                CustomPreContentPanel.Visible = false;
-                CustomPostContentPanel.Visible = false;
-                DefaultPostNewsPanel.Visible = false;
-                DefaultPreContentPanel.Visible = false;
-                SystemContent.Visible = false;
-
-                EditButton.Visible = false;
-                EditButton2.Visible = false;
-                EditBody.Visible = true;
-
-                if (!string.IsNullOrEmpty(SettingsIO.GetSetting(GetUniqueStyleSheetName())))
-                    EditStyleSheetTextBox.Text = SettingsIO.GetSetting(GetUniqueStyleSheetName());
-                else
-                    EditStyleSheetTextBox.Text = SettingsIO.GetSetting("DefaultStyleSheet");
-
-                if (-1 != page.ID)
-                {
-                    EditTitleTextBox.Text = page.Title;
-                    EditBodyTextBox.Text = page.Body;
-                    ContentTypeDropDown.SelectedItem.Selected = false;
-                    ContentTypeDropDown.Items.FindByValue(page.ContentType).Selected = true;
-                }
-            }
-        }
-
-        protected void Save_Click(object sender, EventArgs e)
-        {
-            page = new PageIO(EditTitleTextBox.Text, "", GetUniqueTemplateName() , EditBodyTextBox.Text, 
-                System.DateTime.Now, ContentTypeDropDown.SelectedValue, userID, false, true);
-            page.SavePage();
-
-            EditButton_Click(sender, e);
-        }
-
-        protected void Finish_Click(object sender, EventArgs e)
-        {
-            PageIO page = new PageIO(EditTitleTextBox.Text, "", GetUniqueTemplateName(), EditBodyTextBox.Text, 
-                System.DateTime.Now, ContentTypeDropDown.SelectedValue, userID, false, true);
-            page.SavePage();
-
-            Response.Redirect(Request.Url.AbsolutePath);
+            Response.Redirect("EditDefault.aspx");
         }
     }
 }

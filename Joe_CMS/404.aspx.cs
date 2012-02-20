@@ -29,11 +29,6 @@ namespace Joe_CMS
                     CustomBody.Visible = true;
                     CustomBodyHTML.Text = page.GetBodyAsHTML();
                 }
-
-                if (!string.IsNullOrEmpty(SettingsIO.GetSetting("StyleSheet404")))
-                    StyleSheet404.Text = String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" />", SettingsIO.GetSetting("StyleSheet404"));
-                else
-                    StyleSheet404.Text = "<link href=\"Stylesheet.ashx\" rel=\"stylesheet\" type=\"text/css\" />";
             }
         }
 
@@ -45,11 +40,6 @@ namespace Joe_CMS
                 CustomBody.Visible = false;
                 EditButton.Visible = false; 
                 EditBody.Visible = true;
-
-                if (!string.IsNullOrEmpty(SettingsIO.GetSetting("StyleSheet404")))
-                    EditStyleSheetTextBox.Text = SettingsIO.GetSetting("StyleSheet404");
-                else
-                    EditStyleSheetTextBox.Text = SettingsIO.GetSetting("DefaultStyleSheet");
 
                 if (-1 != page.ID)
                 {

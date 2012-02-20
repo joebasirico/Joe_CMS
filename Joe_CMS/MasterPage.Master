@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <asp:Literal ID="MasterStyleSheet" runat="server"></asp:Literal>
+    <link href="Stylesheet.ashx" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <asp:Literal ID="MasterHeader" runat="server"></asp:Literal>

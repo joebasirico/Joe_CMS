@@ -55,6 +55,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Edit.aspx" />
     <Content Include="EditCSS.aspx" />
+    <Content Include="EditDefault.aspx" />
     <Content Include="EditMasterTemplate.aspx" />
     <Content Include="EditNews.aspx" />
     <Content Include="Forgot.aspx" />
@@ -64,9 +65,18 @@
     <Content Include="NewsItem.aspx" />
     <Content Include="History.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="RegistrationComplete.aspx" />
     <Content Include="Settings.aspx" />
     <Content Include="Show.aspx" />
     <Content Include="SiteMap.aspx" />
+    <Content Include="SiteResources\edit_area\autocompletion.js" />
+    <Content Include="SiteResources\edit_area\edit_area.css" />
+    <Content Include="SiteResources\edit_area\edit_area.js" />
+    <Content Include="SiteResources\edit_area\edit_area_full.js" />
+    <Content Include="SiteResources\edit_area\edit_area_functions.js" />
+    <Content Include="SiteResources\edit_area\edit_area_loader.js" />
+    <Content Include="SiteResources\edit_area\elements_functions.js" />
+    <Content Include="SiteResources\edit_area\highlight.js" />
     <Content Include="SiteResources\edit_area\images\autocompletion.gif" />
     <Content Include="SiteResources\edit_area\images\close.gif" />
     <Content Include="SiteResources\edit_area\images\fullscreen.gif" />
@@ -87,23 +97,34 @@
     <Content Include="SiteResources\edit_area\images\statusbar_resize.gif" />
     <Content Include="SiteResources\edit_area\images\undo.gif" />
     <Content Include="SiteResources\edit_area\images\word_wrap.gif" />
+    <Content Include="SiteResources\edit_area\keyboard.js" />
+    <Content Include="SiteResources\edit_area\langs\bg.js" />
     <Content Include="SiteResources\edit_area\langs\cs.js" />
+    <Content Include="SiteResources\edit_area\langs\de.js" />
     <Content Include="SiteResources\edit_area\langs\dk.js" />
     <Content Include="SiteResources\edit_area\langs\en.js" />
+    <Content Include="SiteResources\edit_area\langs\eo.js" />
     <Content Include="SiteResources\edit_area\langs\es.js" />
     <Content Include="SiteResources\edit_area\langs\fi.js" />
+    <Content Include="SiteResources\edit_area\langs\fr.js" />
     <Content Include="SiteResources\edit_area\langs\hr.js" />
     <Content Include="SiteResources\edit_area\langs\it.js" />
     <Content Include="SiteResources\edit_area\langs\ja.js" />
+    <Content Include="SiteResources\edit_area\langs\mk.js" />
     <Content Include="SiteResources\edit_area\langs\nl.js" />
     <Content Include="SiteResources\edit_area\langs\pl.js" />
     <Content Include="SiteResources\edit_area\langs\pt.js" />
+    <Content Include="SiteResources\edit_area\langs\ru.js" />
     <Content Include="SiteResources\edit_area\langs\sk.js" />
     <Content Include="SiteResources\edit_area\langs\zh.js" />
     <Content Include="SiteResources\edit_area\license_apache.txt" />
     <Content Include="SiteResources\edit_area\license_bsd.txt" />
+    <Content Include="SiteResources\edit_area\license_lgpl.txt" />
+    <Content Include="SiteResources\edit_area\manage_area.js" />
+    <Content Include="SiteResources\edit_area\plugins\charmap\charmap.js" />
     <Content Include="SiteResources\edit_area\plugins\charmap\css\charmap.css" />
     <Content Include="SiteResources\edit_area\plugins\charmap\images\charmap.gif" />
+    <Content Include="SiteResources\edit_area\plugins\charmap\jscripts\map.js" />
     <Content Include="SiteResources\edit_area\plugins\charmap\langs\bg.js" />
     <Content Include="SiteResources\edit_area\plugins\charmap\langs\cs.js" />
     <Content Include="SiteResources\edit_area\plugins\charmap\langs\de.js" />
@@ -143,14 +164,32 @@
     <Content Include="SiteResources\edit_area\plugins\test\langs\ru.js" />
     <Content Include="SiteResources\edit_area\plugins\test\langs\sk.js" />
     <Content Include="SiteResources\edit_area\plugins\test\langs\zh.js" />
+    <Content Include="SiteResources\edit_area\plugins\test\test.js" />
     <Content Include="SiteResources\edit_area\plugins\test\test2.js" />
+    <Content Include="SiteResources\edit_area\regexp.js" />
+    <Content Include="SiteResources\edit_area\reg_syntax.js" />
+    <Content Include="SiteResources\edit_area\reg_syntax\basic.js" />
     <Content Include="SiteResources\edit_area\reg_syntax\brainfuck.js" />
     <Content Include="SiteResources\edit_area\reg_syntax\c.js" />
+    <Content Include="SiteResources\edit_area\reg_syntax\coldfusion.js" />
+    <Content Include="SiteResources\edit_area\reg_syntax\cpp.js" />
+    <Content Include="SiteResources\edit_area\reg_syntax\css.js" />
     <Content Include="SiteResources\edit_area\reg_syntax\html.js" />
     <Content Include="SiteResources\edit_area\reg_syntax\java.js" />
+    <Content Include="SiteResources\edit_area\reg_syntax\js.js" />
+    <Content Include="SiteResources\edit_area\reg_syntax\pas.js" />
+    <Content Include="SiteResources\edit_area\reg_syntax\perl.js" />
+    <Content Include="SiteResources\edit_area\reg_syntax\php.js" />
+    <Content Include="SiteResources\edit_area\reg_syntax\python.js" />
     <Content Include="SiteResources\edit_area\reg_syntax\robotstxt.js" />
     <Content Include="SiteResources\edit_area\reg_syntax\ruby.js" />
+    <Content Include="SiteResources\edit_area\reg_syntax\sql.js" />
+    <Content Include="SiteResources\edit_area\reg_syntax\tsql.js" />
+    <Content Include="SiteResources\edit_area\reg_syntax\vb.js" />
     <Content Include="SiteResources\edit_area\reg_syntax\xml.js" />
+    <Content Include="SiteResources\edit_area\resize_area.js" />
+    <Content Include="SiteResources\edit_area\search_replace.js" />
+    <Content Include="SiteResources\edit_area\template.html" />
     <Content Include="SiteResources\ExampleStyleSheet.css" />
     <Content Include="SiteResources\Images\animation-sm.jpg" />
     <Content Include="SiteResources\Images\banner1.jpg" />
@@ -193,6 +232,8 @@
     <Content Include="Upload.aspx" />
     <Content Include="UploadDelete.aspx" />
     <Content Include="UploadedFiles.aspx" />
+    <None Include="SiteResources\edit_area\edit_area_compressor.php" />
+    <None Include="SiteResources\edit_area\edit_area_full.gz" />
     <None Include="Web.config">
       <SubType>Designer</SubType>
     </None>
@@ -240,6 +281,13 @@
     </Compile>
     <Compile Include="EditCSS.aspx.designer.cs">
       <DependentUpon>EditCSS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditDefault.aspx.cs">
+      <DependentUpon>EditDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditDefault.aspx.designer.cs">
+      <DependentUpon>EditDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="EditMasterTemplate.aspx.cs">
       <DependentUpon>EditMasterTemplate.aspx</DependentUpon>
@@ -315,6 +363,13 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="RegistrationComplete.aspx.cs">
+      <DependentUpon>RegistrationComplete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrationComplete.aspx.designer.cs">
+      <DependentUpon>RegistrationComplete.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Settings.aspx.cs">
       <DependentUpon>Settings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -373,7 +428,6 @@
     <Content Include="MasterPage.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="SiteResources\edit_area\plugins\charmap\jscripts\" />
     <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>

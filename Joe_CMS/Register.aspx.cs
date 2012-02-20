@@ -9,6 +9,7 @@ using System.Text;
 using System.Security.Cryptography;
 using System.Net.Mail;
 using System.Net;
+using System.Threading;
 
 namespace Joe_CMS
 {
@@ -69,13 +70,11 @@ namespace Joe_CMS
 										Auth.CreateEvent("Successful Login", "By user: " + UsernameBox.Text, Request.UserHostAddress);
 										Response.Cookies.Add(new HttpCookie("session", session.ToString()));
 
-										//Change the UI to reflect everytihng went well
-										RegisterPanel.Visible = false;
-										RegistrationCompletePanel.Visible = true;
-
 										//send them a welcome email!
 										if (bool.Parse(SettingsIO.GetSetting("SendWelcomeMail")))
 											SendEmail(UsernameBox.Text, email.Text);
+
+                                        Response.Redirect("RegistrationComplete.aspx");
 									}
 									else
 									{
@@ -95,6 +94,10 @@ namespace Joe_CMS
 				else
 					Message.Text = "Invalid Registration Code. Type is carefully, it is also case sensitive.";
 			}
+            catch (ThreadAbortException)
+            {
+
+            }
 			catch (Exception ex)
 			{
 				Message.Text = "Sorry, you couldn't be registered because: " + Server.HtmlEncode(ex.Message);

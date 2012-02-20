@@ -8,50 +8,43 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
+    This page accepts Markdown, and easy to learn markup language. <a href="Show.aspx?page=Markdown"
+        target="_blank">Click here</a> for more information.<br />
+    <table width="700px">
+        <tr>
+            <td>
+                <a href="Upload.aspx" target="_blank"><strong>Upload</strong> image or file</a>
+            </td>
+            <td>
+                <a href="UploadedFiles.aspx" target="_blank"><strong>View</strong> Uploaded Files</a>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <br />
+    Be sure to include the text &&SYSTEM_CONTENT&& (All Caps), where you want the
+    <asp:Label ID="ContentDescription" runat="server"></asp:Label>
+    to go. If you want to put a link to log people in add &&SYSTEM_LOGIN&& to the text
+    (optional).
+    <h2>
+        Body</h2>
+    <asp:DropDownList ID="ContentTypeDropDown" runat="server">
+        <asp:ListItem Value="PlainText">Plain Text</asp:ListItem>
+        <asp:ListItem>Markdown</asp:ListItem>
+        <asp:ListItem Selected="True">HTML</asp:ListItem>
+    </asp:DropDownList>
+    <br />
+    <asp:TextBox ID="EditBodyTextBox" runat="server" TextMode="MultiLine" Height="326px"
+        Width="100%"></asp:TextBox>
+    <div id="EditHeaderWrapper">
         <h2>
-            Custom StyleSheet</h2>
-        <div>
-            Leave blank to use the default.</div>
-        <asp:TextBox ID="EditStyleSheetTextBox" runat="server" Width="100%"></asp:TextBox><br />
-        This page accepts Markdown, and easy to learn markup language. <a href="Show.aspx?page=Markdown"
-            target="_blank">Click here</a> for more information.<br />
-        <table width="700px">
-            <tr>
-                <td>
-                    <a href="Upload.aspx" target="_blank"><strong>Upload</strong> image or file</a>
-                </td>
-                <td>
-                    <a href="UploadedFiles.aspx" target="_blank"><strong>View</strong> Uploaded Files</a>
-                </td>
-            </tr>
-        </table>
-        <br />
-        <br />
-        Be sure to include the text &&SYSTEM_CONTENT&& (All Caps), where you want the
-        <asp:Label ID="ContentDescription" runat="server"></asp:Label>
-        to go. If you want to put a link to log people in add &&SYSTEM_LOGIN&& to the text
-        (optional).
-        <h2>
-            Body</h2>
-        <asp:DropDownList ID="ContentTypeDropDown" runat="server">
-            <asp:ListItem Value="PlainText">Plain Text</asp:ListItem>
-            <asp:ListItem>Markdown</asp:ListItem>
-            <asp:ListItem Selected="True">HTML</asp:ListItem>
-        </asp:DropDownList>
-        <br />
-        <asp:TextBox ID="EditBodyTextBox" runat="server" TextMode="MultiLine" Height="326px"
+            Header</h2>
+        <asp:TextBox ID="EditHeaderTextBox" runat="server" TextMode="MultiLine" Height="120px"
             Width="100%"></asp:TextBox>
-        <div id="EditHeaderWrapper">
-            <h2>
-                Header</h2>
-            <asp:TextBox ID="EditHeaderTextBox" runat="server" TextMode="MultiLine" Height="120px"
-                Width="100%"></asp:TextBox>
-        </div>
-        <br />
-        <asp:Button ID="Save" runat="server" Text="Save" OnClick="Save_Click" />
-        <asp:Button ID="Finish" runat="server" Text="Finish" OnClick="Finish_Click" />
     </div>
+    <br />
+    <asp:Button ID="Save" runat="server" Text="Save" OnClick="Save_Click" />
+    <asp:Button ID="Finish" runat="server" Text="Finish" OnClick="Finish_Click" />
     </form>
 </body>
 </html>

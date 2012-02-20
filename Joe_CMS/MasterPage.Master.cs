@@ -11,7 +11,6 @@ namespace Joe_CMS
 	{
         string template = "System_Master";
         string header = "System_Master_Header";
-        string css = "System_Master_StyleSheet";
         string contentPlaceHolder = "&&SYSTEM_CONTENT&&";
         string loginPlaceHolder = "&&SYSTEM_LOGIN&&";
 
@@ -36,12 +35,6 @@ namespace Joe_CMS
 			{
                 loginText = "<a href=\"/Login.aspx\">Login</a>";
 			}
-
-
-            if (!string.IsNullOrEmpty(SettingsIO.GetSetting(css)))
-                MasterStyleSheet.Text = String.Format("<link href=\"{0}\" rel=\"stylesheet\" type=\"text/css\" />", SettingsIO.GetSetting(css));
-            else
-                MasterStyleSheet.Text = "<link href=\"Stylesheet.ashx\" rel=\"stylesheet\" type=\"text/css\" />";
 
             //Header
             PageIO headerPage = new PageIO(header);

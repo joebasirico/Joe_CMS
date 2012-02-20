@@ -2,7 +2,7 @@
     CodeBehind="404.aspx.cs" Inherits="Joe_CMS._404" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <asp:Literal ID="StyleSheet404" runat="server"></asp:Literal>
+    <link href="Stylesheet.ashx" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Label ID="Message" runat="server" Visible="false"></asp:Label>
@@ -19,7 +19,6 @@
     </asp:Panel>
     <asp:LinkButton ID="EditButton" runat="server" Visible="false" OnClick="EditButton_Click">Edit This Page</asp:LinkButton>
     <asp:Panel ID="EditBody" runat="server" Visible="false">
-        <asp:TextBox ID="EditStyleSheetTextBox" runat="server" Width="665px"></asp:TextBox><br />
         <asp:DropDownList ID="ContentTypeDropDown" runat="server">
             <asp:ListItem Value="PlainText">Plain Text</asp:ListItem>
             <asp:ListItem Selected="True">Markdown</asp:ListItem>
@@ -38,7 +37,8 @@
                 </td>
             </tr>
         </table>
-        <asp:TextBox ID="EditBodyTextBox" runat="server" TextMode="MultiLine" Height="326px" Width="665px"></asp:TextBox>
+        <asp:TextBox ID="EditBodyTextBox" runat="server" TextMode="MultiLine" Height="326px"
+            Width="665px"></asp:TextBox>
         <br />
         <asp:Button ID="Save" runat="server" Text="Save" OnClick="Save_Click" />
     </asp:Panel>
