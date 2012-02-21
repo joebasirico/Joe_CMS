@@ -39,7 +39,7 @@ namespace Joe_CMS
 					if (userID != 0)
 						return Auth.LookupUserName(userID);
 				}
-				Response.Redirect("Login.aspx");
+                Response.Redirect("Login.aspx?ReturnURL=" + Request.Path);
 			}
 			catch (ThreadAbortException)
 			{

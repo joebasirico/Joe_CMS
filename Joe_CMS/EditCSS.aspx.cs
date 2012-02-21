@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text;
+using System.IO;
 
 namespace Joe_CMS
 {
@@ -18,7 +19,18 @@ namespace Joe_CMS
                 if (!Page.IsPostBack)
                 {
                     PageIO css = new PageIO("System_CSS");
-                    CSSValue.Text = css.Body;
+                    if (!string.IsNullOrWhiteSpace(css.Body))
+                    {
+                        CSSValue.Text = css.Body;
+                        Message.Text = @"note: You have edited this stylesheet. If you need to return to the default
+just delete everything here and it'll pop back in (trust me).<br />";
+                    }
+                    else
+                    {
+                        Message.Text = @"note: this stylesheet is the default. Once you save it you will 
+overwrite this. If you ever need to go back to this one, just delete everything and it'll come right back.<br />";
+                        CSSValue.Text = File.ReadAllText(Server.MapPath("/SiteResources/ExampleStyleSheet.css"));
+                    }
                 }
 
                 String scriptName = "EditArea";
@@ -40,7 +52,7 @@ namespace Joe_CMS
                 }
             }
             else
-                Response.Redirect("Login.aspx");
+                Response.Redirect("Login.aspx?ReturnURL=" + Request.Path);
 
         }
 

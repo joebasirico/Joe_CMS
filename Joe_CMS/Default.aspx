@@ -24,14 +24,11 @@
             <h2>
                 News:
             </h2>
-            <!--foo-->
     </asp:PlaceHolder>
     <asp:PlaceHolder ID="CustomPreContentPanel" runat="server" Visible="false">
-        <!--foo-->
         <asp:Literal ID="PreContentHTML" runat="server"></asp:Literal>
     </asp:PlaceHolder>
     <asp:PlaceHolder ID="SystemContent" runat="server">
-        <!--foo-->
         <asp:ListView ID="NewsList" runat="server">
             <LayoutTemplate>
                 <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>

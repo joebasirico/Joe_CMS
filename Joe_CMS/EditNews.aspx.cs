@@ -33,12 +33,12 @@ namespace Joe_CMS
 				}
 				else
 				{
-					Response.Redirect("Login.aspx");
+                    Response.Redirect("Login.aspx?ReturnURL=" + Request.Path);
 				}
 			}
 			else
 			{
-				Response.Redirect("Login.aspx");
+                Response.Redirect("Login.aspx?ReturnURL=" + Request.Path);
 			}
 		}
 

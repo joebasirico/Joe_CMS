@@ -74,7 +74,7 @@ namespace Joe_CMS
 										if (bool.Parse(SettingsIO.GetSetting("SendWelcomeMail")))
 											SendEmail(UsernameBox.Text, email.Text);
 
-                                        Response.Redirect("RegistrationComplete.aspx");
+                                        Response.Redirect("Show.aspx?page=RegistrationComplete");
 									}
 									else
 									{

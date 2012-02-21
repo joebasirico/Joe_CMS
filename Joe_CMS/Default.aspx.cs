@@ -78,6 +78,7 @@ namespace Joe_CMS
                 {
                     PreContentHTML.Text = pageContent;
                     PostContentHTML.Text = "";
+                    SystemContent.Visible = false;
                 }
             }
             else

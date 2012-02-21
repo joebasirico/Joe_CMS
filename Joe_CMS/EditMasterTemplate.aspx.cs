@@ -14,7 +14,7 @@ namespace Joe_CMS
             base.Page_Load(sender, e);
 
             if (0 > userID)
-                Response.Redirect("Login.aspx");
+                Response.Redirect("Login.aspx?ReturnURL=" + Request.Path);
             pageName = "Master";
             contentDescription = "Page's Content";
                 

@@ -21,26 +21,27 @@ namespace Joe_CMS
                 LoginPanel.Visible = false;
                 AlreadyLoggedIn.Visible = true;
             }
+            else
+            {
+                String scriptName = "SetFocusScript";
+                Type scriptType = this.GetType();
+
+                ClientScriptManager cs = Page.ClientScript;
+                if (!cs.IsStartupScriptRegistered(scriptType, scriptName))
+                {
+                    StringBuilder setUserNameFocus = new StringBuilder();
+
+                    setUserNameFocus.Append("<script language='Javascript'> function setfocus(){");
+                    setUserNameFocus.Append("document.getElementById(\"" +
+                    UsernameBox.ClientID + "\").focus();");
+                    setUserNameFocus.Append("} setfocus();</script>");
+
+                    cs.RegisterStartupScript(scriptType, scriptName, setUserNameFocus.ToString());
+                }
+            }
 
             if (string.IsNullOrWhiteSpace(SettingsIO.GetSetting("AuthCode")))
                 AuthCodeCheck.Visible = false;
-
-
-            String scriptName = "SetFocusScript";
-            Type scriptType = this.GetType();
-
-            ClientScriptManager cs = Page.ClientScript;
-            if (!cs.IsStartupScriptRegistered(scriptType, scriptName))
-            {
-                StringBuilder setUserNameFocus = new StringBuilder();
-
-                setUserNameFocus.Append("<script language='Javascript'> function setfocus(){");
-                setUserNameFocus.Append("document.getElementById(\"" +
-                UsernameBox.ClientID + "\").focus();");
-                setUserNameFocus.Append("} setfocus();</script>");
-
-                cs.RegisterStartupScript(scriptType, scriptName, setUserNameFocus.ToString());
-            }
         }
 
         protected void DoLogin_Click(object sender, EventArgs e)
@@ -69,7 +70,8 @@ namespace Joe_CMS
                     Message.Text = "Incorrect username or password, please try again.<br/>";
                     Auth.CreateEvent("Failed Login Attempt", "By user: " + UsernameBox.Text, Request.UserHostAddress);
                 }
-
+                if(null != Request["ReturnURL"] && !string.IsNullOrWhiteSpace(Request["ReturnURL"]))
+                    Response.Redirect("~" + Request["ReturnURL"]);
                 Response.Redirect("Default.aspx");
             }
             catch (ThreadAbortException)

@@ -65,7 +65,6 @@
     <Content Include="NewsItem.aspx" />
     <Content Include="History.aspx" />
     <Content Include="Register.aspx" />
-    <Content Include="RegistrationComplete.aspx" />
     <Content Include="Settings.aspx" />
     <Content Include="Show.aspx" />
     <Content Include="SiteMap.aspx" />
@@ -362,13 +361,6 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="RegistrationComplete.aspx.cs">
-      <DependentUpon>RegistrationComplete.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="RegistrationComplete.aspx.designer.cs">
-      <DependentUpon>RegistrationComplete.aspx</DependentUpon>
     </Compile>
     <Compile Include="Settings.aspx.cs">
       <DependentUpon>Settings.aspx</DependentUpon>

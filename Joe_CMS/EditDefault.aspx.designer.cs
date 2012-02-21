@@ -10,34 +10,52 @@
 namespace Joe_CMS {
     
     
-    public partial class EditCSS {
+    public partial class EditDefault {
         
         /// <summary>
-        /// form1 control.
+        /// EditTitleTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.TextBox EditTitleTextBox;
         
         /// <summary>
-        /// Message control.
+        /// ContentDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Message;
+        protected global::System.Web.UI.WebControls.Label ContentDescription;
         
         /// <summary>
-        /// CSSValue control.
+        /// ContentTypeDropDown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox CSSValue;
+        protected global::System.Web.UI.WebControls.DropDownList ContentTypeDropDown;
+        
+        /// <summary>
+        /// EditBodyTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox EditBodyTextBox;
+        
+        /// <summary>
+        /// EditHeaderTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox EditHeaderTextBox;
         
         /// <summary>
         /// Save control.
