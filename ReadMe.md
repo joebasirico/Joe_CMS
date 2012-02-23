@@ -1,6 +1,12 @@
-#Registration Complete
+#Read Me
 
-Nice work, you've registered yourself and it looks like everything went swimmingly! On this page you'll find some help on how to modify Joe_CMS and make it yours. You can even edit this page! If you'd like you can bookmark this page to return to it at any time.
+I wrote Joe_CMS after trying to get some of the "big" CMS's [Joomla](http://www.joomla.org/), [Drupal](http://drupal.org/), etc. working for weeks. 
+
+*The intent of this CMS is the right balance between features and simplicity, leaning toward simplicity.*
+
+You can create new pages easily, link within the site easily and manage a blog easily. You can even make changes to the CSS and templates online (if you're so inclined), you guessed it, easily. 
+
+On this page you'll find some help on how to modify Joe_CMS and make it yours.
 
 ##Intro
 
