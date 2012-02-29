@@ -24,12 +24,24 @@ namespace Joe_CMS
             PopulateTriple("TruncatedNews", NewsStoryLengthNewsPageTitle, NewsStoryLengthNewsPageDescription, NewsStoryLengthNewsPageValue);
             PopulateTriple("NewsItemsPerPage", NewsStoryItemsPerPageTitle, NewsStoryItemsPerPageDescription, NewsStoryItemsPerPageValue);
             PopulateTriple("AuthCode", AuthorizationCodeTitle, AuthorizationCodeDescription, AuthorizationCodeValue);
+            PopulateTriple("SupportMail", SupportMailTitle, SupportMailDescription, SupportMailValue);
+            PopulateTriple("emailServer", EmailServerTitle, EmailServerDescription, EmailServerValue);
+            PopulateTriple("noReplyEmail", NoReplyEmailTitle, NoReplyEmailDescription, NoReplyEmailValue);
+            PopulateTriple("noReplyEmailUser", NoReplyEmailUserTitle, NoReplyEmailUserDescription, NoReplyEmailUserValue);
+            PopulateTriple("noReplyEmailPass", NoReplyEmailPassTitle, NoReplyEmailPassDescription, NoReplyEmailPassValue);
+            
 
             Tuple<string, string, string> addSocialSetting = SettingsIO.GetCompleteSetting("AddSocialLinks");
             AddSocialLinksCheckBox.Text = addSocialSetting.Item1;
             bool addSocial = false;
             bool.TryParse(addSocialSetting.Item3, out addSocial);
             AddSocialLinksCheckBox.Checked = addSocial;
+
+            Tuple<string, string, string> SendWelcomeMail = SettingsIO.GetCompleteSetting("SendWelcomeMail");
+            SendWelcomeMailCheckBox.Text = SendWelcomeMail.Item1;
+            bool sendMail = false;
+            bool.TryParse(SendWelcomeMail.Item3, out sendMail);
+            SendWelcomeMailCheckBox.Checked = sendMail;
 
             Tuple<string, string, string> socialHTML = SettingsIO.GetCompleteSetting("SocialHTMLCode");
             AddSocialLinksTitle.Text = socialHTML.Item1;
@@ -56,9 +68,18 @@ namespace Joe_CMS
             SettingsIO.SaveSetting("AuthCode", AuthorizationCodeValue.Text);
             SettingsIO.SaveSetting("AddSocialLinks", AddSocialLinksCheckBox.Checked.ToString());
             SettingsIO.SaveSetting("SocialHTMLCode", AddSocialLinksValue.Text);
+            SettingsIO.SaveSetting("SupportMail", SupportMailValue.Text);
+            SettingsIO.SaveSetting("emailServer", EmailServerValue.Text);
+            SettingsIO.SaveSetting("noReplyEmail", NoReplyEmailValue.Text);
+            SettingsIO.SaveSetting("noReplyEmailUser", NoReplyEmailUserValue.Text);
+            SettingsIO.SaveSetting("noReplyEmailPass", NoReplyEmailPassValue.Text);
+            SettingsIO.SaveSetting("SendWelcomeMail", SendWelcomeMailCheckBox.Checked.ToString());
+
 
             Message.Visible = true;
             Message.Text = "Your new settings have been saved.";
+
+            PopulateValues();
         }
     }
 }

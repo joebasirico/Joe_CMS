@@ -184,6 +184,33 @@ namespace Joe_CMS {
         protected global::System.Web.UI.WebControls.TextBox NewsStoryLengthNewsPageValue;
         
         /// <summary>
+        /// SupportMailTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label SupportMailTitle;
+        
+        /// <summary>
+        /// SupportMailDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label SupportMailDescription;
+        
+        /// <summary>
+        /// SupportMailValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SupportMailValue;
+        
+        /// <summary>
         /// AddSocialLinksTitle control.
         /// </summary>
         /// <remarks>
@@ -245,6 +272,123 @@ namespace Joe_CMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox AuthorizationCodeValue;
+        
+        /// <summary>
+        /// SendWelcomeMailCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox SendWelcomeMailCheckBox;
+        
+        /// <summary>
+        /// EmailServerTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label EmailServerTitle;
+        
+        /// <summary>
+        /// EmailServerDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label EmailServerDescription;
+        
+        /// <summary>
+        /// EmailServerValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox EmailServerValue;
+        
+        /// <summary>
+        /// NoReplyEmailTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NoReplyEmailTitle;
+        
+        /// <summary>
+        /// NoReplyEmailDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NoReplyEmailDescription;
+        
+        /// <summary>
+        /// NoReplyEmailValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NoReplyEmailValue;
+        
+        /// <summary>
+        /// NoReplyEmailUserTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NoReplyEmailUserTitle;
+        
+        /// <summary>
+        /// NoReplyEmailUserDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NoReplyEmailUserDescription;
+        
+        /// <summary>
+        /// NoReplyEmailUserValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NoReplyEmailUserValue;
+        
+        /// <summary>
+        /// NoReplyEmailPassTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NoReplyEmailPassTitle;
+        
+        /// <summary>
+        /// NoReplyEmailPassDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NoReplyEmailPassDescription;
+        
+        /// <summary>
+        /// NoReplyEmailPassValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NoReplyEmailPassValue;
         
         /// <summary>
         /// Save control.
