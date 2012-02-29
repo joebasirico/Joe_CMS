@@ -56,6 +56,9 @@ namespace Joe_CMS
             SettingsIO.SaveSetting("AuthCode", AuthorizationCodeValue.Text);
             SettingsIO.SaveSetting("AddSocialLinks", AddSocialLinksCheckBox.Checked.ToString());
             SettingsIO.SaveSetting("SocialHTMLCode", AddSocialLinksValue.Text);
+
+            Message.Visible = true;
+            Message.Text = "Your new settings have been saved.";
         }
     }
 }
