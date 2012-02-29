@@ -40,13 +40,17 @@ namespace Joe_CMS
             page = new PageIO("", "", GetUniqueTemplateName(), EditBodyTextBox.Text, System.DateTime.Now, ContentTypeDropDown.SelectedValue, userID, false, true);
             page.SavePage();
 
-
+            PageIO header = new PageIO("", "", GetUniqueHeaderName(), EditHeaderTextBox.Text, System.DateTime.Now, "HTML", userID, false, true);
+            header.SavePage();
         }
 
         protected void Finish_Click(object sender, EventArgs e)
         {
             PageIO page = new PageIO("", "", GetUniqueTemplateName(), EditBodyTextBox.Text, System.DateTime.Now, ContentTypeDropDown.SelectedValue, userID, false, true);
             page.SavePage();
+
+            PageIO header = new PageIO("", "", GetUniqueHeaderName(), EditHeaderTextBox.Text, System.DateTime.Now, "HTML", userID, false, true);
+            header.SavePage();
 
             Response.Redirect("Default.aspx");
         }
