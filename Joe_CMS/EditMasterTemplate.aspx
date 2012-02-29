@@ -1,15 +1,17 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditMasterTemplate.aspx.cs"
-    Inherits="Joe_CMS.EditMasterTemplate" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true"
+    CodeBehind="EditMasterTemplate.aspx.cs" Inherits="Joe_CMS.EditMasterTemplate" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    This page accepts Markdown, and easy to learn markup language. <a href="Show.aspx?page=Markdown"
-        target="_blank">Click here</a> for more information.<br />
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <h1>
+        Editing Master Template</h1>
+    <div>
+        <em>Use this page to edit the template that will be applied to all pages except Default.aspx</em><br /></div>
+
+    <div>
+        This page accepts Markdown, and easy to learn markup language. <a href="Show.aspx?page=Markdown"
+            target="_blank">Click here</a> for more information.</div>
     <table width="700px">
         <tr>
             <td>
@@ -45,6 +47,4 @@
     <br />
     <asp:Button ID="Save" runat="server" Text="Save" OnClick="Save_Click" />
     <asp:Button ID="Finish" runat="server" Text="Finish" OnClick="Finish_Click" />
-    </form>
-</body>
-</html>
+</asp:Content>

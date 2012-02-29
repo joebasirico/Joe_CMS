@@ -4,30 +4,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    
     <asp:Literal ID="CustomHeader" runat="server" Visible="false"></asp:Literal>
-
     <link href="Stylesheet.ashx" rel="stylesheet" type="text/css" />
-
 </head>
 <body>
     <form id="form1" runat="server">
-    <asp:PlaceHolder ID="DefaultPreContentPanel" runat="server">
-        <div class="BodyWrapper">
-            <h1>
-                <asp:Label ID="SiteName" runat="server"></asp:Label></h1>
-            <div>
-                Welcome to your start page of Joe_CMS, the easiest CMS to administer. You can get
-                started by creating a user, logging in and clicking this
-                <asp:LinkButton ID="EditButton" runat="server" Visible="false" OnClick="EditButton_Click">Edit This Page</asp:LinkButton>
-                button or the one at the bottom of the page.</div>
-            <h2>
-                News:
-            </h2>
-    </asp:PlaceHolder>
-    <asp:PlaceHolder ID="CustomPreContentPanel" runat="server" Visible="false">
-        <asp:Literal ID="PreContentHTML" runat="server"></asp:Literal>
-    </asp:PlaceHolder>
+    <asp:Literal ID="PreContentHTML" runat="server"></asp:Literal>
     <asp:PlaceHolder ID="SystemContent" runat="server">
         <asp:ListView ID="NewsList" runat="server">
             <LayoutTemplate>
@@ -51,12 +33,7 @@
             </EmptyDataTemplate>
         </asp:ListView>
     </asp:PlaceHolder>
-    <asp:PlaceHolder ID="DefaultPostNewsPanel" runat="server">
-        <asp:Label ID="DefaultLoginText" runat="server"></asp:Label>
-        </div> </asp:PlaceHolder>
-    <asp:PlaceHolder ID="CustomPostContentPanel" runat="server" Visible="false">
-        <asp:Literal ID="PostContentHTML" runat="server"></asp:Literal>
-    </asp:PlaceHolder>
+    <asp:Literal ID="PostContentHTML" runat="server"></asp:Literal>
     <asp:LinkButton ID="EditButton2" runat="server" Visible="false" OnClick="EditButton_Click">Edit This Page</asp:LinkButton>
     </form>
 </body>

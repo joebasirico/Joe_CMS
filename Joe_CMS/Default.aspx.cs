@@ -17,10 +17,7 @@ namespace Joe_CMS
             Page.Title = SettingsIO.GetSetting("SiteName");
 
             if (0 < userID)
-            {
-                EditButton.Visible = true;
                 EditButton2.Visible = true;
-            }
 
             int newsCount = 3;
             int.TryParse(SettingsIO.GetSetting("NewsCountFront"), out newsCount);
@@ -46,13 +43,8 @@ namespace Joe_CMS
 
             //General Template
             page = new PageIO(GetUniqueTemplateName());
-            if (-1 != page.ID && !string.IsNullOrWhiteSpace(page.Body))
+            if (-1 != page.ID)
             {
-                CustomPreContentPanel.Visible = true;
-                CustomPostContentPanel.Visible = true;
-                DefaultPostNewsPanel.Visible = false;
-                DefaultPreContentPanel.Visible = false;
-
                 if (!string.IsNullOrWhiteSpace(page.Title))
                     Page.Title = SettingsIO.GetSetting("SiteName") + " " + page.Title;
                 else
@@ -84,8 +76,6 @@ namespace Joe_CMS
             else
             {
                 Page.Title = SettingsIO.GetSetting("SiteName");
-                SiteName.Text = SettingsIO.GetSetting("SiteName");
-                DefaultLoginText.Text = loginText;
             }
 
         }

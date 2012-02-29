@@ -337,11 +337,11 @@ Images
 
 Images are a lot like links. You might find the Markdown syntax too limiting for what you want to do. There is no way to manage wrapping or dimensions of images in markdown. If you need to do something complicated, you should use the HTML image tag `<img>`. Markdown allows you to inject HTML throughout our document.
 
-    ![Our Logo!](/SiteResources/Images/Logo.jpg)
+    ![Snow, by Joe Basirico[http://farm8.staticflickr.com/7159/6608581857_ab49f2ff15.jpg)
 
 Will Produce:
 
-![Our Logo!](/SiteResources/Images/Logo.jpg)
+![Snow, by Joe Basirico](http://farm8.staticflickr.com/7159/6608581857_ab49f2ff15.jpg)
 
 
 ---------------------------------------

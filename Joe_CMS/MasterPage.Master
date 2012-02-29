@@ -12,12 +12,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div class="BodyWrapper">
         <asp:Literal ID="MasterPreBody" runat="server"></asp:Literal>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
         <asp:Literal ID="MasterPostBody" runat="server"></asp:Literal>
-    </div>
     </form>
 </body>
 </html>

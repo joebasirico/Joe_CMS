@@ -32,9 +32,6 @@ namespace Joe_CMS
                     else
                     {
                         EditTitleTextBox.Text = SettingsIO.GetSetting("SiteName");
-                        EditBodyTextBox.Text = defaultBody;
-                        ContentTypeDropDown.SelectedItem.Selected = false;
-                        ContentTypeDropDown.Items.FindByValue("HTML").Selected = true;
                     }
                 }
 
@@ -63,24 +60,5 @@ namespace Joe_CMS
 
             Response.Redirect("Default.aspx");
         }
-
-        string defaultBody = @"
-            <div class=""BodyWrapper"">
-                <h1>
-                    " + SettingsIO.GetSetting("SiteName") +@"</h1>
-                <div>
-                    Welcome to your start page of Joe_CMS, the easiest CMS to administer. You can get
-                    started by creating a user, logging in and clicking this
-                    <asp:LinkButton ID=""EditButton"" runat=""server"" Visible=""false"" OnClick=""EditButton_Click"">Edit This Page</asp:LinkButton>
-                    button or the one at the bottom of the page.</div>
-                <h2>
-                    News:
-                </h2>
-                <div>
-                  &&SYSTEM_CONTENT&&
-                </div>
-                &&SYSTEM_LOGIN&&
-            </div>
-";
     }
 }
