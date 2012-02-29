@@ -21,7 +21,8 @@ namespace Joe_CMS
 			dt.Columns.Add("Link");
 
             AddPage(dt, "Home", " - Main page of " + SettingsIO.GetSetting("SiteName"), "Default.aspx");
-            AddPage(dt, "News", " - " + SettingsIO.GetSetting("NewsTitle") + " " + SettingsIO.GetSetting("SiteName"), "News.aspx");
+            if(!string.IsNullOrWhiteSpace(SettingsIO.GetSetting("NewsTitle")))
+                AddPage(dt, SettingsIO.GetSetting("NewsTitle"), " - " + SettingsIO.GetSetting("NewsTitle") + " for " + SettingsIO.GetSetting("SiteName"), "News.aspx");
 			AddPage(dt, "SiteMap", " - This sitemap page", "Sitemap.aspx");
 
 			foreach (PageIO page in PageIO.GetAllRecentPages())
