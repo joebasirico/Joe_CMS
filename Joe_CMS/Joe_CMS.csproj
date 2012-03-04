@@ -32,7 +32,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AntiXSSLibrary, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d127efab8a9c114f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AntiXSSLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RssToolkit, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\RssToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -231,6 +239,8 @@
     <Content Include="Upload.aspx" />
     <Content Include="UploadDelete.aspx" />
     <Content Include="UploadedFiles.aspx" />
+    <Content Include="rss.ashx" />
+    <Content Include="SEOSitemap.ashx" />
     <None Include="SiteResources\edit_area\edit_area_compressor.php" />
     <None Include="SiteResources\edit_area\edit_area_full.gz" />
     <None Include="Web.config">
@@ -302,6 +312,9 @@
     <Compile Include="EditNews.aspx.designer.cs">
       <DependentUpon>EditNews.aspx</DependentUpon>
     </Compile>
+    <Compile Include="rss.ashx.cs">
+      <DependentUpon>rss.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Forgot.aspx.cs">
       <DependentUpon>Forgot.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -361,6 +374,9 @@
     </Compile>
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SEOSitemap.ashx.cs">
+      <DependentUpon>SEOSitemap.ashx</DependentUpon>
     </Compile>
     <Compile Include="Settings.aspx.cs">
       <DependentUpon>Settings.aspx</DependentUpon>

@@ -44,6 +44,7 @@ namespace Joe_CMS
 
 		private void PopulatePage(NewsIO news)
 		{
+            EditOrCreateTitle.Text = "Editing: " + news.Title;
 			TitleBox.Text = news.Title;
 			DateBox.Text = news.Updated.ToString();
 			BodyBox.Text = news.Body;

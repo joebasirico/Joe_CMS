@@ -34,6 +34,9 @@ namespace Joe_CMS
 				{
 					string savePath = appPath + Path.DirectorySeparatorChar + saveDir + Path.DirectorySeparatorChar +
 						Server.HtmlEncode(Uploader.FileName);
+                    if(!Directory.Exists(appPath + Path.DirectorySeparatorChar + saveDir))
+                        Directory.CreateDirectory(appPath + Path.DirectorySeparatorChar + saveDir);
+
 					Uploader.SaveAs(savePath);
 
 					Message.Visible = true;

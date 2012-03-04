@@ -64,15 +64,17 @@ namespace Joe_CMS
                     Response.Cookies.Add(new HttpCookie("session", session.ToString()));
                     if (RememberMe.Checked)
                         Response.Cookies["session"].Expires = DateTime.Now.AddMonths(1);
+
+                    if (null != Request["ReturnURL"] && !string.IsNullOrWhiteSpace(Request["ReturnURL"]))
+                        Response.Redirect("~" + Request["ReturnURL"]);
+                    else
+                        Response.Redirect("Default.aspx");
                 }
                 else
                 {
                     Message.Text = "Incorrect username or password, please try again.<br/>";
                     Auth.CreateEvent("Failed Login Attempt", "By user: " + UsernameBox.Text, Request.UserHostAddress);
                 }
-                if(null != Request["ReturnURL"] && !string.IsNullOrWhiteSpace(Request["ReturnURL"]))
-                    Response.Redirect("~" + Request["ReturnURL"]);
-                Response.Redirect("Default.aspx");
             }
             catch (ThreadAbortException)
             {

@@ -68,7 +68,9 @@ namespace Joe_CMS
 										Guid session = Guid.NewGuid();
 										Auth.createSession(userID, session);
 										Auth.CreateEvent("Successful Login", "By user: " + UsernameBox.Text, Request.UserHostAddress);
-										Response.Cookies.Add(new HttpCookie("session", session.ToString()));
+                                        HttpCookie sessionCookie = new HttpCookie("session", session.ToString());
+                                        sessionCookie.HttpOnly = true;
+                                        Response.Cookies.Add(sessionCookie);
 
 										//send them a welcome email!
 										if (bool.Parse(SettingsIO.GetSetting("SendWelcomeMail")))
@@ -86,7 +88,7 @@ namespace Joe_CMS
 							}
 						}
 						else
-							Message.Text = "That email address is already in use. If you have a user and you forgot your password you can try the <a href=\"Forgot.aspx\"> page to retrieve it.";
+							Message.Text = "That email address is already in use. If you have a user and you forgot your password you can try the <a href=\"Forgot.aspx\"> page to retrieve it.</a>";
 					}
 					else
 						Message.Text = "That username is already in use, please select another.";

@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<asp:Panel ID="LoginPanel" runat="server">
 		<h1>Login</h1>
-			<asp:Label ID="Message" runat="server"></asp:Label>
+			<asp:Label ID="Message" runat="server" CssClass="Message"></asp:Label>
 			<table>
 				<tr>
 					<td>

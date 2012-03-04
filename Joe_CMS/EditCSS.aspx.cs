@@ -58,15 +58,13 @@ overwrite this. If you ever need to go back to this one, just delete everything 
 
         protected void Save_Click(object sender, EventArgs e)
         {
-            PageIO css = new PageIO("System_CSS");
-            css.Body = CSSValue.Text;
+            PageIO css = new PageIO("System_CSS", "", "System_CSS", CSSValue.Text, DateTime.Now, "HTML", 0, false, true);
             css.SavePage();
         }
 
         protected void Finish_Click(object sender, EventArgs e)
         {
-            PageIO css = new PageIO("System_CSS");
-            css.Body = CSSValue.Text;
+            PageIO css = new PageIO("System_CSS", "", "System_CSS", CSSValue.Text, DateTime.Now, "HTML", 0, false, true);
             css.SavePage();
             Response.Redirect(Request.Url.AbsolutePath);
         }

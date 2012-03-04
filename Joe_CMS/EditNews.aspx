@@ -5,6 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Panel ID="Create" runat="server">
+    <h1><asp:Label ID="EditOrCreateTitle" runat="server" Text="Create a new post"></asp:Label></h1>
         <asp:Label ID="Message" runat="server" Visible="false" CssClass="Message"></asp:Label>
         <asp:TextBox ID="TitleBox" runat="server" CssClass="EditNewsTitle"></asp:TextBox>
         <div class="EditNewsAdminButtons">
