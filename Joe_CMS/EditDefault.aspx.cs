@@ -38,6 +38,34 @@ namespace Joe_CMS
                 PageIO header = new PageIO(GetUniqueHeaderName());
                 if (!string.IsNullOrWhiteSpace(header.Body) && !Page.IsPostBack)
                     EditHeaderTextBox.Text = header.Body;
+
+                String scriptName = "EditArea";
+                Type scriptType = this.GetType();
+
+                ClientScriptManager cs = Page.ClientScript;
+                if (!cs.IsStartupScriptRegistered(scriptType, scriptName))
+                {
+                    string editAreaScript = @"editAreaLoader.init({
+			id: '" + EditBodyTextBox.ClientID + @"'	// id of the textarea to transform		
+			,start_highlight: true	// if start with highlight
+			,allow_resize: 'both'
+			,allow_toggle: true
+			,word_wrap: true
+			,language: 'en'
+			,syntax: 'html'	
+		});
+editAreaLoader.init({
+			id: '" + EditHeaderTextBox.ClientID + @"'	// id of the textarea to transform		
+			,start_highlight: true	// if start with highlight
+			,allow_resize: 'both'
+			,allow_toggle: true
+			,word_wrap: true
+			,language: 'en'
+			,syntax: 'html'	
+		});
+";
+                    cs.RegisterStartupScript(scriptType, scriptName, editAreaScript, true);
+                }
             }
             else
                 Response.Redirect("Login.aspx?ReturnURL=" + Request.Path);

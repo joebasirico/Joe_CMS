@@ -2,6 +2,7 @@
     CodeBehind="EditMasterTemplate.aspx.cs" Inherits="Joe_CMS.EditMasterTemplate" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<script language="Javascript" type="text/javascript" src="SiteResources/edit_area/edit_area_full.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>

@@ -13,26 +13,57 @@ namespace Joe_CMS
         {
             base.Page_Load(sender, e);
 
-            if (0 > userID)
-                Response.Redirect("Login.aspx?ReturnURL=" + Request.Path);
-            pageName = "Master";
-            contentDescription = "Page's Content";
-                
-            if (!Page.IsPostBack)
+            if (0 < userID)
             {
-                page = new PageIO(GetUniqueTemplateName());
-                if (-1 != page.ID)
+                pageName = "Master";
+                contentDescription = "Page's Content";
+
+                if (!Page.IsPostBack)
                 {
-                    EditBodyTextBox.Text = page.Body;
-                    ContentTypeDropDown.SelectedItem.Selected = false;
-                    ContentTypeDropDown.Items.FindByValue(page.ContentType).Selected = true;
+                    page = new PageIO(GetUniqueTemplateName());
+                    if (-1 != page.ID)
+                    {
+                        EditBodyTextBox.Text = page.Body;
+                        ContentTypeDropDown.SelectedItem.Selected = false;
+                        ContentTypeDropDown.Items.FindByValue(page.ContentType).Selected = true;
+                    }
+
+                    //Header
+                    PageIO headerPage = new PageIO(GetUniqueHeaderName());
+                    if (-1 != headerPage.ID)
+                        EditHeaderTextBox.Text = headerPage.GetBodyAsHTML();
                 }
 
-                //Header
-                PageIO headerPage = new PageIO(GetUniqueHeaderName());
-                if (-1 != headerPage.ID)
-                    EditHeaderTextBox.Text = headerPage.GetBodyAsHTML();
+                String scriptName = "EditArea";
+                Type scriptType = this.GetType();
+
+                ClientScriptManager cs = Page.ClientScript;
+                if (!cs.IsStartupScriptRegistered(scriptType, scriptName))
+                {
+                    string editAreaScript = @"editAreaLoader.init({
+			id: '" + EditBodyTextBox.ClientID + @"'	// id of the textarea to transform		
+			,start_highlight: true	// if start with highlight
+			,allow_resize: 'both'
+			,allow_toggle: true
+			,word_wrap: true
+			,language: 'en'
+			,syntax: 'html'	
+		});
+editAreaLoader.init({
+			id: '" + EditHeaderTextBox.ClientID + @"'	// id of the textarea to transform		
+			,start_highlight: true	// if start with highlight
+			,allow_resize: 'both'
+			,allow_toggle: true
+			,word_wrap: true
+			,language: 'en'
+			,syntax: 'html'	
+		});
+";
+                    cs.RegisterStartupScript(scriptType, scriptName, editAreaScript, true);
+                }
             }
+            else
+                Response.Redirect("Login.aspx?ReturnURL=" + Request.Path);
         }
 
         protected void Save_Click(object sender, EventArgs e)
