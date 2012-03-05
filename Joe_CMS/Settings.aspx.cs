@@ -62,6 +62,7 @@ namespace Joe_CMS
         {
             SettingsIO.SaveSetting("SiteName", SiteNameValue.Text);
             SettingsIO.SaveSetting("NewsTitle", NewsTitleValue.Text);
+            SettingsIO.SaveSetting("NewsCountFront", NewsStoryItemsOnFrontValue.Text);
             SettingsIO.SaveSetting("TruncatedNewsFront", NewsStoryLengthFrontPageValue.Text);
             SettingsIO.SaveSetting("TruncatedNews", NewsStoryLengthNewsPageValue.Text);
             SettingsIO.SaveSetting("NewsItemsPerPage", NewsStoryItemsPerPageValue.Text);
