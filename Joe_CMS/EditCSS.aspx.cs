@@ -43,6 +43,7 @@ overwrite this. If you ever need to go back to this one, just delete everything 
 			id: '" + CSSValue.ClientID + @"'	// id of the textarea to transform		
 			,start_highlight: true	// if start with highlight
 			,allow_resize: 'both'
+            ,display: 'later'
 			,allow_toggle: true
 			,word_wrap: true
 			,language: 'en'

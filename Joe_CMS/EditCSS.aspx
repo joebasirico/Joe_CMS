@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
         <asp:Label ID="Message" runat="server" Visible="false" CssClass="Message"></asp:Label>
-        <asp:TextBox ID="CSSValue" runat="server" TextMode="MultiLine" Width="100%" Height="600px"></asp:TextBox>
+        <asp:TextBox ID="CSSValue" runat="server" TextMode="MultiLine" CssClass="CSSTextBox"></asp:TextBox>
         <asp:Button ID="Save" runat="server" Text="Save" OnClick="Save_Click" />
         <asp:Button ID="Finish" runat="server" Text="Finish" OnClick="Finish_Click" />
     </div>
