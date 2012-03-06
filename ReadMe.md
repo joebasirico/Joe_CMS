@@ -8,6 +8,33 @@ You can create new pages easily, link within the site easily and manage a blog e
 
 On this page you'll find some help on how to modify Joe_CMS and make it yours.
 
+##Summary
+ - [Default.aspx](Default.aspx) - the main "homepage" that people will see first this is the only page that doesn't use the master template, you'll have to skin this on your own.
+
+ - [EditDefault.aspx](EditDefault.aspx) - Edit the look and feel of Default.aspx.
+
+ - [EditMasterTemplate.aspx](EditMasterTemplate.aspx) - All pages, except Default.aspx, pick up their look and feel from here.
+
+ - [EditCSS.aspx](EditCSS.aspx) - The CSS file that will be on every page can be edited here.
+
+ - [SiteMap.aspx](SiteMap.aspx) - A sitemap, if you're logged in you'll see all the pages, if you're not you'll just see the published, public ones.
+
+ - [Settings](Settings.aspx) - Configure the settings of Joe_CMS to fit your needs.
+
+ - [News.aspx](News.aspx) - your news or blog page.
+
+ - [EditNews.aspx](EditNews.aspx) - Create a new news article or edit an existing one.
+
+ - [Edit.aspx](Edit.aspx) - Create new website pages using this page. Use the ?page= parameter to edit a specific page
+
+ - [History.aspx](History.aspx?page=Markdown) - View previous versions of a page here.
+
+ - [Help](help) - This help page.
+
+ - [Markdown](Markdown) - A markdown primer.
+
+
+
 ##Intro
 
 Joe_CMS is split into three different major areas:
@@ -24,9 +51,7 @@ I think the Joe_CMS templating system is pretty easy to understand, I've tried t
 *note: for all of this stuff you'll have to be logged in, so be sure to do that before proceeding*
 
 ###Default.aspx
-As I mentioned earlier, Default.aspx is a bit of a special page. That means that it doesn't follow the same template as the rest of the site. Just click the link at the very bottom of the page that says 'Edit This Page'
-
-That will take you to another page that has three main sections: The Title, Body and Header.
+As I mentioned earlier, Default.aspx is a bit of a special page. That means that it doesn't follow the same template as the rest of the site. Just click the link at the very bottom of the page that says 'Edit This Page' That will take you to the [EditDefault.aspx](EditDefault.aspx) page that will allow you to edit the look and feel of this front page. It has three main sections: The Title, Body and Header.
 
 ####Title
 The title is the title of this page. This title will show up just for this page. You might want to call it something like 'Welcome to My Website' or something like that.
@@ -49,10 +74,6 @@ It will put a little text that will either say 'login' if you haven't logged in 
 ####Header
 If there is something that you need to put into the <head> tags on each page you can put it in this text box. You probably don't have to do this, but sometimes you'll have to put analytics, css or rss stuff up there. If you don't know what I'm talking about don't worry about this section (that why I put the 'header' at the bottom)
 
-###EditMasterTemplate.aspx
-Every other page you create will take its queue from the 'Master Template' The Master Template works the same way as the Default.aspx page, you have the same three sections: Title, Body and Header. You can also use the same two anchors: `&&SYSTEM_CONTENT&&` and `&&SYSTEM_LOGIN&&`. When you  
-
-###EditCSS.aspx
 
 ##News
 As I mentioned above, the news section is for anything that you'll be adding chronologically, like a blog. You can even call it your blog if you'd like.
@@ -111,5 +132,4 @@ If you click the other link that says 'See Previous Versions' you'll see a list 
 ##Other Settings
 There are a few other settings that you may want to change such as the name of your site, the number of news items to display on the front page, and whether or not you'd like to display social networking links on the site. You can do all of that on the [Settings](Settings.aspx) page.
 
-##Account Settings and Configuration
-You can change your e-mail address or your password on the [Update My Info](UpdateMyInfo.aspx) page. 
+##Edit CSS
