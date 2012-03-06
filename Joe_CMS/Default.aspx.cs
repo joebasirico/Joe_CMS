@@ -41,15 +41,12 @@ namespace Joe_CMS
                 CustomHeader.Text = page.Body;
             }
 
+            Page.Title = SettingsIO.GetSetting("SiteName") + " - Home";
+
             //General Template
             page = new PageIO(GetUniqueTemplateName());
             if (-1 != page.ID)
             {
-                if (!string.IsNullOrWhiteSpace(page.Title))
-                    Page.Title = SettingsIO.GetSetting("SiteName") + " " + page.Title;
-                else
-                    Page.Title = SettingsIO.GetSetting("SiteName");
-
                 string pageContent = page.GetBodyAsHTML();
 
                 //if we can't find it unencoded try encoding is and try again
@@ -73,11 +70,6 @@ namespace Joe_CMS
                     SystemContent.Visible = false;
                 }
             }
-            else
-            {
-                Page.Title = SettingsIO.GetSetting("SiteName");
-            }
-
         }
 
         private void PopulateNews(int count)
