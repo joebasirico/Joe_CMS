@@ -24,14 +24,9 @@ namespace Joe_CMS
                 {
                     if (!string.IsNullOrWhiteSpace(page.Body))
                     {
-                        EditTitleTextBox.Text = page.Title;
                         EditBodyTextBox.Text = page.Body;
                         ContentTypeDropDown.SelectedItem.Selected = false;
                         ContentTypeDropDown.Items.FindByValue(page.ContentType).Selected = true;
-                    }
-                    else
-                    {
-                        EditTitleTextBox.Text = SettingsIO.GetSetting("SiteName");
                     }
                 }
 
@@ -73,7 +68,7 @@ editAreaLoader.init({
 
         protected void Save_Click(object sender, EventArgs e)
         {
-            page = new PageIO(EditTitleTextBox.Text, "", GetUniqueTemplateName(), EditBodyTextBox.Text,
+            page = new PageIO("", "", GetUniqueTemplateName(), EditBodyTextBox.Text,
                 System.DateTime.Now, ContentTypeDropDown.SelectedValue, userID, false, true);
             page.SavePage();
 
