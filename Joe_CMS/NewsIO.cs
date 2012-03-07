@@ -6,6 +6,9 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
 using System.Text.RegularExpressions;
+using TidyNet;
+using System.IO;
+using System.Text;
 
 namespace Joe_CMS
 {
@@ -117,12 +120,12 @@ namespace Joe_CMS
 			Markdown m = new Markdown();
 			if (-1 == truncateChars || Body.Length <= truncateChars)
 			{
-				HTMLBody = m.Transform(Body);
+				HTMLBody = TidyItUp(m.Transform(Body));
 				return false;
 			}
 			else
 			{
-				HTMLBody = m.Transform(Body).Substring(0, truncateChars);
+                HTMLBody = TidyItUp(m.Transform(Body).Substring(0, truncateChars) + " ...");
 				return true;
 			}
 		}
@@ -145,5 +148,36 @@ namespace Joe_CMS
 			}
 
 		}
+
+        private string TidyItUp(string malformed)
+        {
+            Tidy tidy = new Tidy();
+            tidy.Options.DocType = DocType.Omit;
+            tidy.Options.DropFontTags = true;
+            tidy.Options.LogicalEmphasis = true;
+            tidy.Options.Xhtml = false;
+            tidy.Options.XmlOut = false;
+            tidy.Options.MakeClean = true;
+            tidy.Options.TidyMark = false;
+            tidy.Options.QuoteNbsp = false;
+            tidy.Options.NumEntities = true;
+            tidy.Options.EncloseText = false;
+            tidy.Options.CharEncoding = CharEncoding.UTF8;
+
+            TidyMessageCollection tmc = new TidyMessageCollection();
+            MemoryStream input = new MemoryStream();
+            MemoryStream output = new MemoryStream();
+
+            byte[] bytes = Encoding.UTF8.GetBytes(malformed);
+            input.Write(bytes, 0, bytes.Length);
+            input.Position = 0;
+            tidy.Parse(input, output, tmc);
+
+            string result = Encoding.UTF8.GetString(output.ToArray());
+
+            result = result.Remove(result.LastIndexOf("</body>")).Substring(result.IndexOf("<body>") + 7).Trim();
+
+            return result;
+        }
 	}
 }

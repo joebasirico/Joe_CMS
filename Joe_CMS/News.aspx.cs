@@ -14,6 +14,7 @@ namespace Joe_CMS
         {
             base.Page_Load(sender, e);
 
+            Page.Title = SettingsIO.GetSetting("NewsTitle") + " " +SettingsIO.GetSetting("SiteName");
             NewsTitle.Text = SettingsIO.GetSetting("NewsTitle");
             if (userID != 0)
             {
@@ -63,7 +64,7 @@ namespace Joe_CMS
                 int.TryParse(SettingsIO.GetSetting("TruncatedNews"), out newsLength);
                 bool wasTruncated = n.GetBodyAsHTML(newsLength, out htmlBody);
                 if (wasTruncated)
-                    r["Body"] = htmlBody + "<a href=\"" + link + "\">... read more.</a>";
+                    r["Body"] = htmlBody + "<a href=\"" + link + "\">read more...</a>";
                 else
                     r["Body"] = htmlBody + "<a href=\"" + link + "\">Link to this article.</a>";
 

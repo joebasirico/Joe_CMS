@@ -33,6 +33,10 @@ namespace Joe_CMS
 							EditText.Text = "<a href=\"EditNews.aspx?id=" + news.ID + "\">Edit</a>";
 						}
 					}
+                    bool addSocial = false;
+                    bool.TryParse(SettingsIO.GetSetting("AddSocialLinks"), out addSocial);
+                    if (addSocial)
+                        SocialLinks.Text = String.Format(SettingsIO.GetSetting("SocialHTMLCode"), Request.Url);
 				}
 				else
 					Response.Redirect("404.aspx");
@@ -43,6 +47,7 @@ namespace Joe_CMS
 
 		private void PopulatePage(NewsIO news)
 		{
+            Page.Title = news.Title;
 			Title = news.Title;
 			TitleLabel.Text = news.Title;
 			string htmlbody = "";

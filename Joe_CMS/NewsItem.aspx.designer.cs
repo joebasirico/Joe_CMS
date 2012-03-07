@@ -49,15 +49,6 @@ namespace Joe_CMS {
         protected global::System.Web.UI.WebControls.LinkButton DeleteNews;
         
         /// <summary>
-        /// BodyLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal BodyLabel;
-        
-        /// <summary>
         /// DateLabel control.
         /// </summary>
         /// <remarks>
@@ -74,6 +65,24 @@ namespace Joe_CMS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label AuthorLabel;
+        
+        /// <summary>
+        /// BodyLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal BodyLabel;
+        
+        /// <summary>
+        /// SocialLinks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal SocialLinks;
         
         /// <summary>
         /// Deleted control.

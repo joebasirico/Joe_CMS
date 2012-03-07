@@ -15,7 +15,7 @@ namespace Joe_CMS
             base.Page_Load(sender, e);
             pageName = "Default";
             Page.Title = SettingsIO.GetSetting("SiteName");
-
+            RSS.Text = @"<link rel='alternate' type='application/rss+xml' title='" + SettingsIO.GetSetting("SiteName") + "' href='~/rss.ashx' />";
             if (0 < userID)
                 EditButton2.Visible = true;
 
@@ -97,7 +97,7 @@ namespace Joe_CMS
                 int.TryParse(SettingsIO.GetSetting("TruncatedNewsFront"), out truncatedNewsFront);
                 bool wasTruncated = n.GetBodyAsHTML(truncatedNewsFront, out htmlBody);
                 if (wasTruncated)
-                    r["Body"] = htmlBody + "<a href=\"" + link + "\">... read more.</a>";
+                    r["Body"] = htmlBody + "<a href=\"" + link + "\">read more...</a>";
                 else
                     r["Body"] = htmlBody + "<a href=\"" + link + "\">Link to this article.</a>";
 

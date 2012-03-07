@@ -8,26 +8,27 @@
         <h1 class="NewsTitle">
             <asp:Label ID="TitleLabel" runat="server" /></h1>
         <div class="NewsAdminButtons">
-        <table width="700px">
-            <tr>
-                <td>
-                    <strong>
-                        <asp:Label ID="EditText" runat="server" Visible="false"></asp:Label></strong>
-                </td>
-                <td align="right">
-                    <asp:LinkButton ID="DeleteNews" runat="server" Visible="false" Text="Delete" OnClick="DeleteNews_Click"
-                        OnClientClick="return confirm('Are you sure you want to delete this news item? This cannot be undone!')"></asp:LinkButton>
-                </td>
-            </tr>
-        </table>
-        </div>
-        <div class="NewsBody">
-            <asp:Literal ID="BodyLabel" runat="server"></asp:Literal>
+            <table width="700px">
+                <tr>
+                    <td>
+                        <strong>
+                            <asp:Label ID="EditText" runat="server" Visible="false"></asp:Label></strong>
+                    </td>
+                    <td align="right">
+                        <asp:LinkButton ID="DeleteNews" runat="server" Visible="false" Text="Delete" OnClick="DeleteNews_Click"
+                            OnClientClick="return confirm('Are you sure you want to delete this news item? This cannot be undone!')"></asp:LinkButton>
+                    </td>
+                </tr>
+            </table>
         </div>
         <div class="NewsDateAuthor">
             <asp:Label ID="DateLabel" runat="server" />
             - Posted by
             <asp:Label ID="AuthorLabel" runat="server" /></div>
+        <div class="NewsBody">
+            <asp:Literal ID="BodyLabel" runat="server"></asp:Literal>
+        </div>
+        <asp:Literal ID="SocialLinks" runat="server" />
     </asp:Panel>
     <asp:Panel ID="Deleted" runat="server" Visible="false">
         <h1>

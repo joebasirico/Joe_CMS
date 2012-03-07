@@ -6,6 +6,7 @@
     <title></title>
     <asp:Literal ID="CustomHeader" runat="server" Visible="false"></asp:Literal>
     <link href="Stylesheet.ashx" rel="stylesheet" type="text/css" />
+    <asp:Literal ID="RSS" runat="server"></asp:Literal>
 </head>
 <body>
     <form id="form1" runat="server">
