@@ -15,7 +15,7 @@ namespace Joe_CMS
             base.Page_Load(sender, e);
             pageName = "Default";
             Page.Title = SettingsIO.GetSetting("SiteName");
-            RSS.Text = @"<link rel='alternate' type='application/rss+xml' title='" + SettingsIO.GetSetting("SiteName") + "' href='~/rss.ashx' />";
+            RSS.Text = @"<link rel='alternate' type='application/rss+xml' title='" + SettingsIO.GetSetting("SiteName") + "' href='/rss.ashx' />";
             if (0 < userID)
                 EditButton2.Visible = true;
 

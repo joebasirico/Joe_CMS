@@ -13,7 +13,7 @@
                 <asp:Label ID="SiteNameDescription" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="SiteNameValue" runat="server" Width="400px"></asp:TextBox>
+                <asp:TextBox ID="SiteNameValue" runat="server" CssClass="SingleLineTextBox"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -23,7 +23,7 @@
                 <asp:Label ID="NewsTitleDescription" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="NewsTitleValue" runat="server" Width="400px"></asp:TextBox>
+                <asp:TextBox ID="NewsTitleValue" runat="server" CssClass="SingleLineTextBox"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -33,7 +33,7 @@
                 <asp:Label ID="NewsStoryItemsOnFrontDescription" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="NewsStoryItemsOnFrontValue" runat="server" Width="400px"></asp:TextBox>
+                <asp:TextBox ID="NewsStoryItemsOnFrontValue" runat="server" CssClass="SingleLineTextBox"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -43,7 +43,7 @@
                 <asp:Label ID="NewsStoryLengthFrontPageDescription" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="NewsStoryLengthFrontPageValue" runat="server" Width="400px"></asp:TextBox>
+                <asp:TextBox ID="NewsStoryLengthFrontPageValue" runat="server" CssClass="SingleLineTextBox"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -53,7 +53,7 @@
                 <asp:Label ID="NewsStoryItemsPerPageDescription" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="NewsStoryItemsPerPageValue" runat="server" Width="400px"></asp:TextBox>
+                <asp:TextBox ID="NewsStoryItemsPerPageValue" runat="server" CssClass="SingleLineTextBox"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -63,7 +63,7 @@
                 <asp:Label ID="NewsStoryLengthNewsPageDescription" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="NewsStoryLengthNewsPageValue" runat="server" Width="400px"></asp:TextBox>
+                <asp:TextBox ID="NewsStoryLengthNewsPageValue" runat="server" CssClass="SingleLineTextBox"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -73,7 +73,7 @@
                 <asp:Label ID="SupportMailDescription" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="SupportMailValue" runat="server" Width="400px"></asp:TextBox>
+                <asp:TextBox ID="SupportMailValue" runat="server" CssClass="SingleLineTextBox"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -84,7 +84,7 @@
             </td>
             <td>
                 <asp:CheckBox ID="AddSocialLinksCheckBox" runat="server" /><br />
-                <asp:TextBox ID="AddSocialLinksValue" runat="server" Width="400px" Height="150px"
+                <asp:TextBox ID="AddSocialLinksValue" runat="server" CssClass="MultiLineTextBox"
                     TextMode="MultiLine"></asp:TextBox>
             </td>
         </tr>
@@ -95,7 +95,7 @@
                 <asp:Label ID="AuthorizationCodeDescription" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="AuthorizationCodeValue" runat="server" Width="400px"></asp:TextBox>
+                <asp:TextBox ID="AuthorizationCodeValue" runat="server" CssClass="SingleLineTextBox"></asp:TextBox>
             </td>
         </tr>
     </table>
@@ -115,7 +115,7 @@
                 <asp:Label ID="EmailServerDescription" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="EmailServerValue" runat="server" Width="400px"></asp:TextBox>
+                <asp:TextBox ID="EmailServerValue" runat="server" CssClass="SingleLineTextBox"></asp:TextBox>
             </td>
         </tr>
                 <tr>
@@ -125,7 +125,7 @@
                 <asp:Label ID="NoReplyEmailDescription" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="NoReplyEmailValue" runat="server" Width="400px"></asp:TextBox>
+                <asp:TextBox ID="NoReplyEmailValue" runat="server" CssClass="SingleLineTextBox"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -135,7 +135,7 @@
                 <asp:Label ID="NoReplyEmailUserDescription" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="NoReplyEmailUserValue" runat="server" Width="400px"></asp:TextBox>
+                <asp:TextBox ID="NoReplyEmailUserValue" runat="server" CssClass="SingleLineTextBox"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -145,7 +145,7 @@
                 <asp:Label ID="NoReplyEmailPassDescription" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="NoReplyEmailPassValue" runat="server" Width="400px"></asp:TextBox>
+                <asp:TextBox ID="NoReplyEmailPassValue" runat="server" CssClass="SingleLineTextBox"></asp:TextBox>
             </td>
         </tr>
         <tr>
