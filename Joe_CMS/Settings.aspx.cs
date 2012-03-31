@@ -62,8 +62,10 @@ namespace Joe_CMS
             }
             else
             {
-                AddSocialLinksCheckBox.Text = "Set to true to add the HTML below to each page automatically. Use this to add social networking links to each page.";
+                string description = "Set to true to add the HTML below to each page automatically. Use this to add social networking links to each page.";
+                AddSocialLinksCheckBox.Text = description;
                 AddSocialLinksCheckBox.Checked = false;
+                SettingsIO.SaveSetting("AddSocialLinks", "Add Social Links", description, "False");
             }
 
             Tuple<string, string, string> sendWelcomeMail = SettingsIO.GetCompleteSetting("SendWelcomeMail");
@@ -76,8 +78,10 @@ namespace Joe_CMS
             }
             else
             {
-                SendWelcomeMailCheckBox.Text = "Whether or not the system should send an e-mail when new users register on the system.";
+                string description = "Whether or not the system should send an e-mail when new users register on the system.";
+                SendWelcomeMailCheckBox.Text = description;
                 SendWelcomeMailCheckBox.Checked = false;
+                SettingsIO.SaveSetting("SendWelcomeMail", "Send Welcome Mail", description, "False");
             }
 
         }
@@ -97,6 +101,7 @@ namespace Joe_CMS
                 titleLbl.Text = titleDefault;
                 descriptionLbl.Text = descriptionDefault;
                 valueTextBox.Text = valueDefault;
+                SettingsIO.SaveSetting(name, titleDefault, descriptionDefault, valueDefault);
             }
         }
 

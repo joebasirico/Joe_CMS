@@ -78,5 +78,22 @@ namespace Joe_CMS
                 command.ExecuteNonQuery();
             }
         }
+
+        internal static void SaveSetting(string key, string title, string description, string value)
+        {
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString))
+            {
+                conn.Open();
+                //This will update the value if it exists, and create it if it doesn't
+                SqlCommand command = new SqlCommand("INSERT INTO Settings (FriendlyName, Description, SettingKey, SettingValue) VALUES (@FriendlyName, @Description, @SettingKey, @SettingValue)", conn);
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("@FriendlyName", title);
+                command.Parameters.AddWithValue("@Description", description);
+                command.Parameters.AddWithValue("@SettingKey", key);
+                command.Parameters.AddWithValue("@SettingValue", value);
+                command.ExecuteNonQuery();
+            }
+        }
     }
 }
