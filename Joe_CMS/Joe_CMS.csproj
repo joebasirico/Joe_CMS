@@ -61,6 +61,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\TidyNet.dll</HintPath>
     </Reference>
+    <Reference Include="Yahoo.Yui.Compressor, Version=1.7.0.0, Culture=neutral, PublicKeyToken=f8b4b81ec75097e2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Yahoo.Yui.Compressor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="404.aspx" />
@@ -202,43 +206,7 @@
     <Content Include="SiteResources\edit_area\search_replace.js" />
     <Content Include="SiteResources\edit_area\template.html" />
     <Content Include="SiteResources\ExampleStyleSheet.css" />
-    <Content Include="SiteResources\Images\animation-sm.jpg" />
-    <Content Include="SiteResources\Images\banner1.jpg" />
-    <Content Include="SiteResources\Images\banner2.jpg" />
-    <Content Include="SiteResources\Images\banner3.jpg" />
-    <Content Include="SiteResources\Images\banner4.jpg" />
-    <Content Include="SiteResources\Images\banner5.jpg" />
-    <Content Include="SiteResources\Images\banner6.jpg" />
-    <Content Include="SiteResources\Images\bg-bottom-shadow.jpg" />
-    <Content Include="SiteResources\Images\bg-shadow.jpg" />
-    <Content Include="SiteResources\Images\bg-top-shadow.jpg" />
-    <Content Include="SiteResources\Images\donate-button.png" />
-    <Content Include="SiteResources\Images\doticon-active.png" />
-    <Content Include="SiteResources\Images\doticon-hover.png" />
-    <Content Include="SiteResources\Images\doticon.png" />
-    <Content Include="SiteResources\Images\facebook-icon-sm.png" />
-    <Content Include="SiteResources\Images\facebook-icon.png" />
-    <Content Include="SiteResources\Images\footer-nav-bg.jpg" />
-    <Content Include="SiteResources\Images\IdealNetworkLogo.gif" />
-    <Content Include="SiteResources\Images\kids-sm.jpg" />
-    <Content Include="SiteResources\Images\lego1-shadow.jpg" />
-    <Content Include="SiteResources\Images\lego1.jpg" />
-    <Content Include="SiteResources\Images\lego2.jpg" />
-    <Content Include="SiteResources\Images\lego3.jpg" />
-    <Content Include="SiteResources\Images\lego4.jpg" />
-    <Content Include="SiteResources\Images\linkedin-icon-sm.png" />
-    <Content Include="SiteResources\Images\linkedin-icon.png" />
-    <Content Include="SiteResources\Images\Logo.jpg" />
-    <Content Include="SiteResources\Images\Logo_small_square.jpg" />
-    <Content Include="SiteResources\Images\prog-sm.jpg" />
-    <Content Include="SiteResources\Images\sub-divider.jpg" />
-    <Content Include="SiteResources\Images\tagline-bg.jpg" />
-    <Content Include="SiteResources\Images\tl_mockup.jpg" />
-    <Content Include="SiteResources\Images\transparent-bg.png" />
-    <Content Include="SiteResources\Images\twitter-icon-sm.png" />
-    <Content Include="SiteResources\Images\twitter-icon.png" />
     <Content Include="SiteResources\jquery-1.3.2.min.js" />
-    <Content Include="SiteResources\stylesheet.css" />
     <Content Include="UpdateMyInfo.aspx" />
     <Content Include="Upload.aspx" />
     <Content Include="UploadDelete.aspx" />
@@ -448,9 +416,6 @@
       <LastGenOutput>DataClasses.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="SiteResources\Images\donatebutton.psd" />
-    <None Include="SiteResources\Images\social network icons.psd" />
-    <None Include="SiteResources\Images\Thumbs.db" />
     <Content Include="Stylesheet.ashx" />
   </ItemGroup>
   <ItemGroup>

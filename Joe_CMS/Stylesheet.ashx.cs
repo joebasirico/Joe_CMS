@@ -14,12 +14,21 @@ namespace Joe_CMS
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/css";
-            PageIO defaultCSS = new PageIO("System_CSS");
-            if (!string.IsNullOrWhiteSpace(defaultCSS.Body))
-                context.Response.Write(defaultCSS.Body);
+            //first try the minified version
+            PageIO minifiedCSS = new PageIO("System_CSS_Min");
+            if (!string.IsNullOrWhiteSpace(minifiedCSS.Body))
+                context.Response.Write(minifiedCSS.Body);
             else
             {
-                context.Response.WriteFile("SiteResources/ExampleStyleSheet.css");
+                //now try the uncompressed version.
+                PageIO defaultCSS = new PageIO("System_CSS");
+                if (!string.IsNullOrWhiteSpace(defaultCSS.Body))
+                    context.Response.Write(defaultCSS.Body);
+                else
+                {
+                    //Default version
+                    context.Response.WriteFile("SiteResources/ExampleStyleSheet.css");
+                }
             }
         }
 

@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text;
 using System.IO;
+using Yahoo.Yui.Compressor;
 
 namespace Joe_CMS
 {
@@ -61,12 +62,19 @@ overwrite this. If you ever need to go back to this one, just delete everything 
         {
             PageIO css = new PageIO("System_CSS", "", "System_CSS", CSSValue.Text, DateTime.Now, "HTML", 0, false, true);
             css.SavePage();
+
+            PageIO css_min = new PageIO("System_CSS_Min", "", "System_CSS_Min", CssCompressor.Compress(CSSValue.Text), DateTime.Now, "HTML", 0, false, true);
+            css_min.SavePage();
         }
 
         protected void Finish_Click(object sender, EventArgs e)
         {
             PageIO css = new PageIO("System_CSS", "", "System_CSS", CSSValue.Text, DateTime.Now, "HTML", 0, false, true);
             css.SavePage();
+            
+            PageIO css_min = new PageIO("System_CSS_Min", "", "System_CSS_Min", CssCompressor.Compress(CSSValue.Text), DateTime.Now, "HTML", 0, false, true);
+            css_min.SavePage();
+
             Response.Redirect(Request.Url.AbsolutePath);
         }
     }
