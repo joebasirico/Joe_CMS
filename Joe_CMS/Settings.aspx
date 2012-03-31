@@ -166,7 +166,8 @@
             </td>
             <td>
                 <asp:TextBox ID="NoReplyEmailPassValue" runat="server" CssClass="SingleLineTextBox" TextMode="Password"></asp:TextBox>
-            </td>
+                <br />
+                *stored, but not displayed here</td>
         </tr>
         <tr>
             <td colspan="2" align="right">

@@ -31,20 +31,15 @@ namespace Joe_CMS
 						DataClassesDataContext dc = new DataClassesDataContext();
 						if (null == dc.Users.FirstOrDefault(u => u.email == email.Text))
 						{
-                            string usernameRegex = SettingsIO.GetSetting("UsernameRegex");
-                            if(string.IsNullOrWhiteSpace(usernameRegex))
-                                usernameRegex = @"^[a-zA-Z0-9_\.\-]{3,}$";
-
+                            string usernameRegex = @"^[a-zA-Z0-9_\.\-]{3,}$";
 							if (!new Regex(usernameRegex).IsMatch(UsernameBox.Text))
-								Message.Text = SettingsIO.GetSetting("UsernameFailedMatchMessage");
+                                Message.Text = "Usernames must be greater than three characters and only contain only a-z 0-9, _, -, .";
 							else
 							{
-                                string emailRegex = SettingsIO.GetSetting("emailRegex");
-                                if (string.IsNullOrWhiteSpace(emailRegex))
-                                    emailRegex = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
+                                string emailRegex = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
 
                                 if (!new Regex(emailRegex).IsMatch(email.Text))
-									Message.Text = SettingsIO.GetSetting("EmailFailedMatchMessage");
+									Message.Text = "The e-mail address you entered doesn''t seem to be valid.";
 								else
 								{
 									//Add the user

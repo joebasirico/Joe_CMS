@@ -86,7 +86,6 @@ namespace Joe_CMS
                 conn.Open();
                 //This will update the value if it exists, and create it if it doesn't
                 SqlCommand command = new SqlCommand("INSERT INTO Settings (FriendlyName, Description, SettingKey, SettingValue) VALUES (@FriendlyName, @Description, @SettingKey, @SettingValue)", conn);
-                command.CommandType = System.Data.CommandType.StoredProcedure;
 
                 command.Parameters.AddWithValue("@FriendlyName", title);
                 command.Parameters.AddWithValue("@Description", description);
