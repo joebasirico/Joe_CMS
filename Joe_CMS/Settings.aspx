@@ -165,7 +165,7 @@
                 <asp:Label ID="NoReplyEmailPassDescription" runat="server"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="NoReplyEmailPassValue" runat="server" CssClass="SingleLineTextBox"></asp:TextBox>
+                <asp:TextBox ID="NoReplyEmailPassValue" runat="server" CssClass="SingleLineTextBox" TextMode="Password"></asp:TextBox>
             </td>
         </tr>
         <tr>
