@@ -184,6 +184,60 @@ namespace Joe_CMS {
         protected global::System.Web.UI.WebControls.TextBox NewsStoryLengthNewsPageValue;
         
         /// <summary>
+        /// PreviousPageTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PreviousPageTitle;
+        
+        /// <summary>
+        /// PreviousPageDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PreviousPageDescription;
+        
+        /// <summary>
+        /// PreviousPageValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox PreviousPageValue;
+        
+        /// <summary>
+        /// NextPageTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NextPageTitle;
+        
+        /// <summary>
+        /// NextPageDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NextPageDescription;
+        
+        /// <summary>
+        /// NextPageValue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NextPageValue;
+        
+        /// <summary>
         /// SupportMailTitle control.
         /// </summary>
         /// <remarks>

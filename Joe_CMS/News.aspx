@@ -4,11 +4,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1 class="NewsPageTitle"><asp:Label ID="NewsTitle" runat="server"></asp:Label><asp:TextBox ID="EditNewsTitleTextBox" runat="server" Visible="false"></asp:TextBox></h1>
+    <h1 class="NewsPageTitle">
+        <asp:Label ID="NewsTitle" runat="server"></asp:Label><asp:TextBox ID="EditNewsTitleTextBox"
+            runat="server" Visible="false"></asp:TextBox></h1>
     <asp:Label ID="AddNews" runat="server" Visible="false"></asp:Label>
-    <asp:LinkButton ID="EditTitle" runat="server" Visible="false" 
-        onclick="EditTitle_Click" Text="Edit Title"></asp:LinkButton><asp:LinkButton ID="SaveTitle" 
-        runat="server" Visible="false" onclick="SaveTitle_Click" Text="Save Title"></asp:LinkButton>
+    <asp:LinkButton ID="EditTitle" runat="server" Visible="false" OnClick="EditTitle_Click"
+        Text="Edit Title"></asp:LinkButton><asp:LinkButton ID="SaveTitle" runat="server"
+            Visible="false" OnClick="SaveTitle_Click" Text="Save Title"></asp:LinkButton>
     <asp:ListView ID="NewsList" runat="server">
         <LayoutTemplate>
             <asp:PlaceHolder runat="server" ID="itemPlaceholder"></asp:PlaceHolder>
@@ -30,13 +32,12 @@
         </EmptyDataTemplate>
     </asp:ListView>
     <br />
-    <asp:DataPager ID="NewsPager" runat="server" PagedControlID="NewsList" 
-        onprerender="NewsPager_PreRender">
+    <asp:DataPager ID="NewsPager" runat="server" PagedControlID="NewsList" OnPreRender="NewsPager_PreRender">
         <Fields>
-            <asp:NextPreviousPagerField FirstPageText="|&lt;&lt;" ShowFirstPageButton="True" ShowNextPageButton="False"
-                ShowPreviousPageButton="False" />
+            <asp:NextPreviousPagerField PreviousPageText="&lArr;" ShowLastPageButton="False" ShowNextPageButton="False"
+                ShowPreviousPageButton="True" />
             <asp:NumericPagerField />
-            <asp:NextPreviousPagerField LastPageText="&gt;&gt;}" ShowLastPageButton="True" ShowNextPageButton="False"
+            <asp:NextPreviousPagerField NextPageText="&rArr;" ShowFirstPageButton="False" ShowNextPageButton="True"
                 ShowPreviousPageButton="False" />
         </Fields>
     </asp:DataPager>

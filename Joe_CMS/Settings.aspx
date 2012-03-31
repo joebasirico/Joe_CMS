@@ -69,6 +69,26 @@
         <tr>
             <td>
                 <strong>
+                    <asp:Label ID="PreviousPageTitle" runat="server"></asp:Label></strong><br />
+                <asp:Label ID="PreviousPageDescription" runat="server"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="PreviousPageValue" runat="server" CssClass="SingleLineTextBox"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>
+                    <asp:Label ID="NextPageTitle" runat="server"></asp:Label></strong><br />
+                <asp:Label ID="NextPageDescription" runat="server"></asp:Label>
+            </td>
+            <td>
+                <asp:TextBox ID="NextPageValue" runat="server" CssClass="SingleLineTextBox"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>
                     <asp:Label ID="SupportMailTitle" runat="server"></asp:Label></strong><br />
                 <asp:Label ID="SupportMailDescription" runat="server"></asp:Label>
             </td>

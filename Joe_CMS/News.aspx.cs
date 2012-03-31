@@ -28,9 +28,33 @@ namespace Joe_CMS
         {
             int pageSize = 5;
             int.TryParse(SettingsIO.GetSetting("NewsItemsPerPage"), out pageSize);
-            NewsPager.PageSize = pageSize;
+            LoadPager(pageSize);
+
             NewsList.DataSource = PopulatePage(10000000);
             NewsList.DataBind();
+        }
+
+        private void LoadPager(int pageSize)
+        {
+            NewsPager.PageSize = pageSize;
+            if (!string.IsNullOrEmpty(SettingsIO.GetSetting("PreviousPagePagerValue")) &&
+                !string.IsNullOrEmpty(SettingsIO.GetSetting("NextPagePagerValue")))
+            {
+                NewsPager.Fields.Clear();
+                NextPreviousPagerField previousPagerField = new NextPreviousPagerField();
+                previousPagerField.PreviousPageText = SettingsIO.GetSetting("PreviousPagePagerValue");
+                previousPagerField.ShowPreviousPageButton = true;
+                NewsPager.Fields.Add(previousPagerField);
+
+                NumericPagerField numericPagerField = new NumericPagerField();
+                NewsPager.Fields.Add(numericPagerField);
+
+                NextPreviousPagerField nextPagerField = new NextPreviousPagerField();
+                nextPagerField.PreviousPageText = SettingsIO.GetSetting("NextPagePagerValue");
+                nextPagerField.ShowNextPageButton = true;
+                NewsPager.Fields.Add(nextPagerField);
+            }
+
         }
 
         private DataTable PopulatePage(int count)

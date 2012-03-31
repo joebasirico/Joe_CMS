@@ -28,7 +28,8 @@ namespace Joe_CMS
             PopulateTriple("emailServer", EmailServerTitle, EmailServerDescription, EmailServerValue);
             PopulateTriple("noReplyEmail", NoReplyEmailTitle, NoReplyEmailDescription, NoReplyEmailValue);
             PopulateTriple("noReplyEmailUser", NoReplyEmailUserTitle, NoReplyEmailUserDescription, NoReplyEmailUserValue);
-            PopulateTriple("noReplyEmailPass", NoReplyEmailPassTitle, NoReplyEmailPassDescription, NoReplyEmailPassValue);
+            PopulateTriple("PreviousPagePagerValue", PreviousPageTitle, PreviousPageDescription, PreviousPageValue);
+            PopulateTriple("NextPagePagerValue", NextPageTitle, NextPageDescription, NextPageValue);
             
 
             Tuple<string, string, string> addSocialSetting = SettingsIO.GetCompleteSetting("AddSocialLinks");
@@ -75,7 +76,8 @@ namespace Joe_CMS
             SettingsIO.SaveSetting("noReplyEmailUser", NoReplyEmailUserValue.Text);
             SettingsIO.SaveSetting("noReplyEmailPass", NoReplyEmailPassValue.Text);
             SettingsIO.SaveSetting("SendWelcomeMail", SendWelcomeMailCheckBox.Checked.ToString());
-
+            SettingsIO.SaveSetting("PreviousPagePagerValue", PreviousPageValue.Text);
+            SettingsIO.SaveSetting("NextPagePagerValue", NextPageValue.Text);
 
             Message.Visible = true;
             Message.Text = "Your new settings have been saved.";
