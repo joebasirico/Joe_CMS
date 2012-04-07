@@ -61,21 +61,23 @@ namespace Joe_CMS
 				command.Parameters.AddWithValue("@Updated", Updated);
 				command.Parameters.AddWithValue("@UpdatedBy", UpdatedBy);
 
+                command.CommandType = CommandType.StoredProcedure;
+
 				if (null == dc.NewsItems.FirstOrDefault(n => n.ID == ID))
 				{
 					command.CommandText = "CreateNews";
-				}
+                    SqlDataReader dr = command.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        ID = Convert.ToInt32(dr[0]);
+                    }
+                }
 				else
 				{
 					command.CommandText = "UpdateNews";
 					command.Parameters.AddWithValue("@ID", ID);
-				}
-				command.CommandType = CommandType.StoredProcedure;
-				command.ExecuteNonQuery();
-				if ("CreateNews" == command.CommandText)
-				{
-					List<NewsIO> newsItem = GetRecentNews(1, false);
-					ID = newsItem[0].ID;
+                    command.ExecuteNonQuery();
 				}
 			}
 		}

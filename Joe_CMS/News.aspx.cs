@@ -44,14 +44,20 @@ namespace Joe_CMS
                 NextPreviousPagerField previousPagerField = new NextPreviousPagerField();
                 previousPagerField.PreviousPageText = SettingsIO.GetSetting("PreviousPagePagerValue");
                 previousPagerField.ShowPreviousPageButton = true;
+                previousPagerField.ShowFirstPageButton = false;
+                previousPagerField.ShowLastPageButton = false;
+                previousPagerField.ShowNextPageButton = false;
                 NewsPager.Fields.Add(previousPagerField);
 
                 NumericPagerField numericPagerField = new NumericPagerField();
                 NewsPager.Fields.Add(numericPagerField);
 
                 NextPreviousPagerField nextPagerField = new NextPreviousPagerField();
-                nextPagerField.PreviousPageText = SettingsIO.GetSetting("NextPagePagerValue");
+                nextPagerField.NextPageText = SettingsIO.GetSetting("NextPagePagerValue");
                 nextPagerField.ShowNextPageButton = true;
+                nextPagerField.ShowFirstPageButton = false;
+                nextPagerField.ShowLastPageButton = false;
+                nextPagerField.ShowPreviousPageButton = false;
                 NewsPager.Fields.Add(nextPagerField);
             }
 
