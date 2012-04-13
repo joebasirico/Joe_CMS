@@ -91,6 +91,7 @@ namespace Joe_CMS
 				conn.Open();
 				SqlCommand command = new SqlCommand("GetRecentNews", conn);
 				command.Parameters.AddWithValue("@Count", count);
+                command.Parameters.AddWithValue("@ShowFutureEvents", showFutureEvents);
 				command.CommandType = CommandType.StoredProcedure;
 				SqlDataReader reader = command.ExecuteReader();
 				while (reader.Read())
@@ -177,7 +178,10 @@ namespace Joe_CMS
 
             string result = Encoding.UTF8.GetString(output.ToArray());
 
-            result = result.Remove(result.LastIndexOf("</body>")).Substring(result.IndexOf("<body>") + 7).Trim();
+            if (result.Contains("<body>"))
+                result = result.Remove(0, result.IndexOf("<body>", StringComparison.CurrentCultureIgnoreCase) + 7); //result.LastIndexOf("</body>")).Substring(result.IndexOf("<body>") + 7).Trim();
+            if (result.Contains("</body>"))
+                result = result.Remove(result.LastIndexOf("</body>", StringComparison.CurrentCultureIgnoreCase));//result.LastIndexOf("</body>")).Substring(result.IndexOf("<body>") + 7).Trim();
 
             return result;
         }
