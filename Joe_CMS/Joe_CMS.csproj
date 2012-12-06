@@ -68,12 +68,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="404.aspx" />
+    <Content Include="Admin.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Edit.aspx" />
     <Content Include="EditCSS.aspx" />
     <Content Include="EditDefault.aspx" />
     <Content Include="EditMasterTemplate.aspx" />
     <Content Include="EditNews.aspx" />
+    <Content Include="EditUser.aspx" />
     <Content Include="Forgot.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
@@ -233,6 +235,13 @@
     <Compile Include="404.aspx.designer.cs">
       <DependentUpon>404.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Auth.cs" />
     <Compile Include="BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -284,6 +293,14 @@
     <Compile Include="EditNews.aspx.designer.cs">
       <DependentUpon>EditNews.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditUser.aspx.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditUser.aspx.designer.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PBKDF2.cs" />
     <Compile Include="rss.ashx.cs">
       <DependentUpon>rss.ashx</DependentUpon>
     </Compile>

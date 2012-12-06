@@ -66,10 +66,11 @@ namespace Joe_CMS
 						if (0 != userID)
 						{
 							//set password
-							Auth.UpdatePassword(userID, Auth.ByteToHex(
-										SHA512Managed.Create().ComputeHash(
-											Encoding.ASCII.GetBytes(Auth.LookupUserName(userID) +
-											Auth.getSaltyGoo() + Password1.Text))));
+							Auth.UpdatePassword(userID, Auth.GetPBKDF2Digest(Auth.LookupUserName(userID) + Password1.Text));
+                                //Auth.ByteToHex(
+                                //        SHA512Managed.Create().ComputeHash(
+                                //            Encoding.ASCII.GetBytes(Auth.LookupUserName(userID) +
+                                //            Auth.getSaltyGoo() + Password1.Text))));
 						}
 
 						Guid session = Guid.NewGuid();
@@ -77,6 +78,7 @@ namespace Joe_CMS
 						Auth.CreateEvent("Successful Login through password reset", "By user: " + Auth.LookupUserName(userID), Request.UserHostAddress);
 
 						Response.Cookies.Add(new HttpCookie("session", session.ToString()));
+                        Response.Cookies["session"].HttpOnly = true;
 
 						//remove the reset value
 						Auth.DeleteResetValue(resetValue);

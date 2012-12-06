@@ -21,7 +21,7 @@ namespace Joe_CMS
             Rss.Channel.PubDate = DateTime.Now.ToUniversalTime().ToString();
             Rss.Channel.LastBuildDate = DateTime.Now.ToUniversalTime().ToString();
             Rss.Channel.WebMaster = SettingsIO.GetSetting("SupportMail");
-            Rss.Channel.Description = "The RSS feed for" + SettingsIO.GetSetting("SiteName");
+            Rss.Channel.Description = "The RSS feed for " + SettingsIO.GetSetting("SiteName");
             Rss.Channel.Link = "~/feed.ashx";
 
             Rss.Channel.Items = new List<RssItem>();
@@ -39,7 +39,7 @@ namespace Joe_CMS
                 int.TryParse(SettingsIO.GetSetting("TruncatedNews"), out newsLength);
                 post.GetBodyAsHTML(newsLength, out body);
                 item.Description = body;
-                item.Link = "~/NewsItem.aspx?id=" + post.ID + "&title=" + Encoder.XmlEncode(Encoder.UrlEncode(post.Title));
+                item.Link = "/NewsItem.aspx?id=" + post.ID + "&title=" + Encoder.XmlEncode(Encoder.UrlEncode(post.Title));
                 Rss.Channel.Items.Add(item);
             }
         }

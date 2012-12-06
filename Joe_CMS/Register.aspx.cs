@@ -43,19 +43,19 @@ namespace Joe_CMS
 								else
 								{
 									//Add the user
-									Auth.registerUser(UsernameBox.Text,
-										Auth.ByteToHex(
-											SHA512Managed.Create().ComputeHash(
-												Encoding.ASCII.GetBytes(UsernameBox.Text + Auth.getSaltyGoo() + PasswordBox.Text))), email.Text);
+                                    Auth.registerUser(UsernameBox.Text, Auth.GetPBKDF2Digest(UsernameBox.Text + PasswordBox.Text), email.Text);
+                                        //Auth.ByteToHex(
+                                        //    SHA512Managed.Create().ComputeHash(
+                                        //        Encoding.ASCII.GetBytes(UsernameBox.Text + Auth.getSaltyGoo() + PasswordBox.Text))), email.Text);
 									//Log the event
 									Auth.CreateEvent("Created User", "UserName: " + UsernameBox.Text + "\r\n", Request.UserHostAddress);
 
 									//Login the new user 
 									//check the user has been created properly
-									int userID = Auth.checkCredentials(UsernameBox.Text,
-												Auth.ByteToHex(
-													SHA512Managed.Create().ComputeHash(
-														Encoding.ASCII.GetBytes(UsernameBox.Text + Auth.getSaltyGoo() + PasswordBox.Text))));
+									int userID = Auth.checkCredentials(UsernameBox.Text, Auth.GetPBKDF2Digest(UsernameBox.Text + PasswordBox.Text));
+                                                //Auth.ByteToHex(
+                                                //    SHA512Managed.Create().ComputeHash(
+                                                //        Encoding.ASCII.GetBytes(UsernameBox.Text + Auth.getSaltyGoo() + PasswordBox.Text))));
 
 									//if the user is valid and the creds are still good log them in and give them a cookie yum!
 									if (userID != 0)
@@ -66,6 +66,7 @@ namespace Joe_CMS
                                         HttpCookie sessionCookie = new HttpCookie("session", session.ToString());
                                         sessionCookie.HttpOnly = true;
                                         Response.Cookies.Add(sessionCookie);
+                                        Response.Cookies["session"].HttpOnly = true;
 
 										//send them a welcome email!
 										if (bool.Parse(SettingsIO.GetSetting("SendWelcomeMail")))

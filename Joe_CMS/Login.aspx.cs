@@ -49,12 +49,20 @@ namespace Joe_CMS
             try
             {
                 int userID = 0;
+                userID = Auth.checkCredentials(UsernameBox.Text, Auth.GetPBKDF2Digest(UsernameBox.Text + PasswordBox.Text));
 
-                userID = Auth.checkCredentials(UsernameBox.Text,
-                                    Auth.ByteToHex(
-                                        SHA512Managed.Create().ComputeHash(
-                                            Encoding.ASCII.GetBytes(UsernameBox.Text + Auth.getSaltyGoo() + PasswordBox.Text))));
+                //the user might be using hte old SHA512 hash, upgrade them
+                if (userID == 0)
+                {
+                    userID = Auth.checkCredentials(UsernameBox.Text, Auth.ByteToHex(
+                                            SHA512Managed.Create().ComputeHash(
+                                                Encoding.ASCII.GetBytes(UsernameBox.Text + Auth.getSaltyGoo() + PasswordBox.Text))));
+                    
+                    //user has an old hash, upgrade them
+                    if(userID != 0)
+                        Auth.UpdatePassword(userID, Auth.GetPBKDF2Digest(UsernameBox.Text + PasswordBox.Text));
 
+                }
                 if (userID != 0)
                 {
                     Guid session = Guid.NewGuid();
@@ -62,8 +70,11 @@ namespace Joe_CMS
                     Auth.CreateEvent("Successful Login", "By user: " + UsernameBox.Text, Request.UserHostAddress);
 
                     Response.Cookies.Add(new HttpCookie("session", session.ToString()));
+                    Response.Cookies["session"].HttpOnly = true;
                     if (RememberMe.Checked)
+                    {
                         Response.Cookies["session"].Expires = DateTime.Now.AddMonths(1);
+                    }
 
                     if (null != Request["ReturnURL"] && !string.IsNullOrWhiteSpace(Request["ReturnURL"]))
                         Response.Redirect("~" + Request["ReturnURL"]);

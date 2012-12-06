@@ -5,6 +5,7 @@ using System.Web;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
+using System.Text;
 
 namespace Joe_CMS
 {
@@ -53,6 +54,20 @@ namespace Joe_CMS
 			return StringVersion;
 		}
 
+        public static string GetPBKDF2Digest(string password)
+        {
+            return GetPBKDF2Digest(password, saltyGoo, 6000);
+        }
+
+        public static string GetPBKDF2Digest(string password, string salt, int iterations)
+        {
+            string StringVersion = "";
+
+            PBKDF2.GetBytes(Encoding.ASCII.GetBytes(password), Encoding.ASCII.GetBytes(salt), iterations, 128);
+            
+            return StringVersion;
+        }
+
 		public static void UpdatePassword(int userID, string password)
 		{
 			DataClassesDataContext dc = new DataClassesDataContext();
@@ -74,6 +89,12 @@ namespace Joe_CMS
 			DataClassesDataContext dc = new DataClassesDataContext();
 			dc.CreateUser(username, password, DateTime.Now, true, email);
 		}
+
+        public static void registerUser(User thisUser)
+        {
+            DataClassesDataContext dc = new DataClassesDataContext();
+            dc.CreateUser(thisUser.UserName, thisUser.PasswordHash, DateTime.Now, thisUser.Active, thisUser.email);
+        }
 
 		public static void createSession(int userID, Guid session)
 		{

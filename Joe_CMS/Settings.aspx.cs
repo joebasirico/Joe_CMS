@@ -7,12 +7,18 @@ using System.Web.UI.WebControls;
 
 namespace Joe_CMS
 {
-    public partial class Settings : System.Web.UI.Page
+    public partial class Settings : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
-                PopulateValues();
+            base.Page_Load(sender, e);
+            if (0 < userID)
+            {
+                if (!Page.IsPostBack)
+                    PopulateValues();
+            }
+            else
+                Response.Redirect("Login.aspx?ReturnURL=" + Request.Path);
         }
 
         private void PopulateValues()

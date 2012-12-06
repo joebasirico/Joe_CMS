@@ -75,15 +75,18 @@ namespace Joe_CMS
 			{
 				if (Password1.Text == Password2.Text)
 				{
-					if (currentUser.UserID == Auth.checkCredentials(currentUser.UserName, Auth.ByteToHex(
-										SHA512Managed.Create().ComputeHash(
-											Encoding.ASCII.GetBytes(currentUser.UserName +
-											Auth.getSaltyGoo() + currentPassword.Text)))))
+					if (currentUser.UserID == Auth.checkCredentials(currentUser.UserName, 
+                        Auth.GetPBKDF2Digest(currentUser.UserName + currentPassword.Text)))
+                        //Auth.ByteToHex(
+                        //                SHA512Managed.Create().ComputeHash(
+                        //                    Encoding.ASCII.GetBytes(currentUser.UserName +
+                        //                    Auth.getSaltyGoo() + currentPassword.Text)))))
 					{
-						Auth.UpdatePassword(currentUser.UserID, Auth.ByteToHex(
-										SHA512Managed.Create().ComputeHash(
-											Encoding.ASCII.GetBytes(currentUser.UserName +
-											Auth.getSaltyGoo() + Password1.Text))));
+                        Auth.UpdatePassword(currentUser.UserID, Auth.GetPBKDF2Digest(currentUser.UserName + currentPassword.Text));
+                            //Auth.ByteToHex(
+                            //            SHA512Managed.Create().ComputeHash(
+                            //                Encoding.ASCII.GetBytes(currentUser.UserName +
+                            //                Auth.getSaltyGoo() + Password1.Text))));
 					}
 					message.Visible = true;
 					message.Text = "Your information has been successfully updated!";
