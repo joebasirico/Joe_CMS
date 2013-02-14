@@ -51,7 +51,7 @@ namespace Joe_CMS
                 int userID = 0;
                 userID = Auth.checkCredentials(UsernameBox.Text, Auth.GetPBKDF2Digest(UsernameBox.Text + PasswordBox.Text));
 
-                //the user might be using hte old SHA512 hash, upgrade them
+                //the user might be using the old SHA512 hash, upgrade them
                 if (userID == 0)
                 {
                     userID = Auth.checkCredentials(UsernameBox.Text, Auth.ByteToHex(
