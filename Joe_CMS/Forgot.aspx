@@ -20,7 +20,7 @@
 			<h1>
 				Password Recovery</h1>
 			<div class="section">
-				An e-mail is on it's way with instructions on how to reset your password.
+				An e-mail is on its way with instructions on how to reset your password.
 			</div>
 	</asp:Panel>
 	<asp:Panel runat="server" ID="PasswordReset" Visible="false">
