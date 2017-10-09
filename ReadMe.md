@@ -1,4 +1,4 @@
-#Read Me
+# Read Me
 
 I wrote Joe_CMS after trying to get some of the "big" CMS's [Joomla](http://www.joomla.org/), [Drupal](http://drupal.org/), etc. working for weeks. 
 
@@ -8,6 +8,7 @@ You can create new pages easily, link within the site easily and manage a blog e
 
 Check out more information at:
 [http://joebasirico.github.com/Joe_CMS/](http://joebasirico.github.com/Joe_CMS/)
+[http://whoisjoe.com/Show.aspx?page=Joe_CMS](http://whoisjoe.com/Show.aspx?page=Joe_CMS)
 
 Key Features of Joe_CMS are:
 
